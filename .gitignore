@@ -1,0 +1,17 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and local environment
+*.log
+.env
+.env.*
+
+# Common generated output
+dist/
+build/
+coverage/
+node_modules/
+
