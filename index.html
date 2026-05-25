@@ -6,7 +6,7 @@
     <title>isputnik</title>
     <meta
       name="description"
-      content="isputnik is a private, self-hosted family web app platform. isputnik.home is the first app: notes, media, sharing, and backups for a trusted household circle."
+      content="isputnik is an open source, self-hosted family web app platform. isputnik.home is the first app: notes, media, sharing, and backups for a trusted household circle."
     >
     <link rel="icon" href="Assets/brand/isputnik-brand-icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
@@ -19,6 +19,7 @@
       </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#apps">Apps</a>
+        <a href="#source">Source</a>
         <a href="#principles">Principles</a>
         <a href="#roadmap">Roadmap</a>
       </nav>
@@ -36,12 +37,14 @@
         </div>
         <div class="hero-content">
           <img class="hero-mark" src="Assets/brand/isputnik-brand-icon.svg" alt="" width="96" height="96">
-          <p class="eyebrow">Private software for a small trusted orbit</p>
+          <p class="eyebrow">Open source software for a small trusted orbit</p>
           <h1 id="hero-title">isputnik</h1>
           <p class="lede">
-            A self-hosted family platform for keeping notes, media, memories, and shared tools close to home.
+            A self-hosted family platform for keeping notes, media, memories, and shared tools close to home,
+            built in public for people who want to own and understand their software.
           </p>
           <div class="hero-actions" aria-label="Project actions">
+            <a class="button primary" href="https://github.com/isputnikdotnet/isputnik.main">View on GitHub</a>
             <a class="button primary" href="Documents/architecture.md">Read architecture</a>
             <a class="button secondary" href="#apps">View first app</a>
           </div>
@@ -54,8 +57,8 @@
             <p class="eyebrow">First application</p>
             <h2 id="apps-title">isputnik.home</h2>
             <p>
-              A browser-based home server app for friends and family, designed around invite-only access,
-              simple sharing, personal notes, and a digital media library.
+              An open source browser-based home server app for friends and family, designed around
+              invite-only access, simple sharing, personal notes, and a digital media library.
             </p>
           </div>
           <div class="app-tile">
@@ -64,6 +67,26 @@
               <h3>Our world revolves around you.</h3>
               <p>Private by default, shared when it matters, and small enough to maintain at home.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section source-band" id="source" aria-labelledby="source-title">
+        <div class="section-inner source-layout">
+          <div>
+            <p class="eyebrow">Open source</p>
+            <h2 id="source-title">Readable, forkable, self-hostable</h2>
+          </div>
+          <div class="source-copy">
+            <p>
+              isputnik is developed as an open source project on GitHub. The goal is a family-scale platform
+              that can be inspected, adapted, and run without handing personal data to a hosted service.
+            </p>
+            <ul class="source-list">
+              <li>Source-first project notes and architecture</li>
+              <li>Static overview site with no build dependency</li>
+              <li>App repositories that can grow independently</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -86,6 +109,10 @@
             <article>
               <h3>Modular</h3>
               <p>Notes, library, jobs, and future tools can grow independently without reshaping the core.</p>
+            </article>
+            <article>
+              <h3>Open source</h3>
+              <p>Project code and planning stay visible so the platform can be reviewed, forked, and improved.</p>
             </article>
           </div>
         </div>

@@ -327,9 +327,41 @@ h3 {
   margin: 8px 0 0;
 }
 
+.source-band {
+  background: #183641;
+}
+
+.source-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1fr);
+  gap: 44px;
+  align-items: start;
+}
+
+.source-copy p {
+  max-width: 720px;
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.source-list {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.source-list li {
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
 .principle-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -430,6 +462,7 @@ h3 {
 
   .app-layout,
   .roadmap-layout,
+  .source-layout,
   .principle-grid {
     grid-template-columns: 1fr;
   }
