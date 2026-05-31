@@ -6,131 +6,117 @@
     <title>isputnik</title>
     <meta
       name="description"
-      content="isputnik is an open source, self-hosted family web app platform. isputnik.home is the first app: notes, media, sharing, and backups for a trusted household circle."
+      content="isputnik is a work-in-progress family of open source projects: a self-hosted home server app and an Android audiobook player."
     >
-    <link rel="icon" href="Assets/brand/isputnik-brand-icon.svg" type="image/svg+xml">
+    <link rel="icon" href="Assets/brand/isputnik-logo-sputnik-earth-mark.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#" aria-label="isputnik home">
-        <img src="Assets/brand/isputnik-brand-icon.svg" alt="" width="36" height="36">
+      <a class="brand" href="#" aria-label="isputnik">
+        <img src="Assets/brand/isputnik-logo-sputnik-earth-mark.svg" alt="" width="36" height="36">
         <span>isputnik</span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#apps">Apps</a>
-        <a href="#source">Source</a>
-        <a href="#principles">Principles</a>
-        <a href="#roadmap">Roadmap</a>
+        <a href="#projects">Projects</a>
+        <a href="#status">Status</a>
+        <a href="#links">GitHub</a>
       </nav>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-scene" aria-hidden="true">
-          <span class="track track-a"></span>
-          <span class="track track-b"></span>
-          <span class="track track-c"></span>
-          <span class="node node-a"></span>
-          <span class="node node-b"></span>
-          <span class="node node-c"></span>
-        </div>
         <div class="hero-content">
-          <img class="hero-mark" src="Assets/brand/isputnik-brand-icon.svg" alt="" width="96" height="96">
-          <p class="eyebrow">Open source software for a small trusted orbit</p>
+          <img class="hero-mark" src="Assets/brand/isputnik-logo-sputnik-earth-mark.svg" alt="" width="96" height="96">
+          <p class="eyebrow">Work in progress</p>
           <h1 id="hero-title">isputnik</h1>
           <p class="lede">
-            A self-hosted family platform for keeping notes, media, memories, and shared tools close to home,
-            built in public for people who want to own and understand their software.
+            Home server plus Android player.
           </p>
-          <div class="hero-actions" aria-label="Project actions">
-            <a class="button primary" href="https://github.com/isputnikdotnet/isputnik.main">View on GitHub</a>
-            <a class="button primary" href="Documents/architecture.md">Read architecture</a>
-            <a class="button secondary" href="#apps">View first app</a>
+          <div class="hero-actions" aria-label="Repository links">
+            <a class="button primary" href="https://github.com/isputnikdotnet/isputnik.home">isputnik.home</a>
+            <a class="button primary" href="https://github.com/isputnikdotnet/isputnik.player">isputnik.player</a>
+            <a class="button secondary" href="https://github.com/isputnikdotnet/isputnik.main">isputnik.main</a>
           </div>
         </div>
       </section>
 
-      <section class="section app-band" id="apps" aria-labelledby="apps-title">
-        <div class="section-inner app-layout">
-          <div>
-            <p class="eyebrow">First application</p>
-            <h2 id="apps-title">isputnik.home</h2>
-            <p>
-              An open source browser-based home server app for friends and family, designed around
-              invite-only access, simple sharing, personal notes, and a digital media library.
-            </p>
-          </div>
-          <div class="app-tile">
-            <img src="Assets/brand/isputnik-app-icon.svg" alt="" width="88" height="88">
-            <div>
-              <h3>Our world revolves around you.</h3>
-              <p>Private by default, shared when it matters, and small enough to maintain at home.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section source-band" id="source" aria-labelledby="source-title">
-        <div class="section-inner source-layout">
-          <div>
-            <p class="eyebrow">Open source</p>
-            <h2 id="source-title">Readable, forkable, self-hostable</h2>
-          </div>
-          <div class="source-copy">
-            <p>
-              isputnik is developed as an open source project on GitHub. The goal is a family-scale platform
-              that can be inspected, adapted, and run without handing personal data to a hosted service.
-            </p>
-            <ul class="source-list">
-              <li>Source-first project notes and architecture</li>
-              <li>Static overview site with no build dependency</li>
-              <li>App repositories that can grow independently</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="principles" aria-labelledby="principles-title">
+      <section class="section project-band" id="projects" aria-labelledby="projects-title">
         <div class="section-inner">
           <div class="section-heading">
-            <p class="eyebrow">Design principles</p>
-            <h2 id="principles-title">Built for trust, not scale theatre</h2>
+            <p class="eyebrow">Projects</p>
+            <h2 id="projects-title">Current repositories</h2>
           </div>
-          <div class="principle-grid">
-            <article>
-              <h3>Self-hosted</h3>
-              <p>Runs on a home server with SQLite and filesystem storage. No required cloud dependency.</p>
+          <div class="project-grid">
+            <article class="project-card">
+              <img src="Assets/brand/isputnik-app-icon.svg" alt="" width="64" height="64">
+              <div class="project-copy">
+                <p class="project-kicker">Self-hosted web app</p>
+                <h3>isputnik.home</h3>
+                <p>Open source home server for family accounts, notes, sharing, and a digital audiobook library.</p>
+                <ul class="project-points">
+                  <li>Self-hosted on your own machine or home server</li>
+                  <li>Designed for a private home network and trusted users</li>
+                  <li>Keeps media, metadata, and backups under your control</li>
+                </ul>
+                <a href="https://github.com/isputnikdotnet/isputnik.home">GitHub repository</a>
+              </div>
             </article>
-            <article>
-              <h3>Family-friendly</h3>
-              <p>Invite-only accounts, clear roles, familiar sharing, and simple account recovery patterns.</p>
+
+            <article class="project-card">
+              <img src="Assets/brand/isputnik-player-icon.png" alt="" width="64" height="64">
+              <div class="project-copy">
+                <p class="project-kicker">Android audiobook player</p>
+                <h3>isputnik.player</h3>
+                <p class="project-codename">Code name: iSputnik Laika</p>
+                <p>Kotlin/Compose player for audiobooks, bookmarks, progress, and offline listening.</p>
+                <ul class="project-points">
+                  <li>Plays local audiobook files on Android</li>
+                  <li>Connects to isputnik.home when a server is available</li>
+                  <li>Downloads books from home for offline listening</li>
+                </ul>
+                <a href="https://github.com/isputnikdotnet/isputnik.player">GitHub repository</a>
+              </div>
             </article>
-            <article>
-              <h3>Modular</h3>
-              <p>Notes, library, jobs, and future tools can grow independently without reshaping the core.</p>
-            </article>
-            <article>
-              <h3>Open source</h3>
-              <p>Project code and planning stay visible so the platform can be reviewed, forked, and improved.</p>
+
+            <article class="project-card">
+              <img src="Assets/brand/isputnik-logo-sputnik-earth-mark.svg" alt="" width="64" height="64">
+              <div class="project-copy">
+                <p class="project-kicker">Project index</p>
+                <h3>isputnik.main</h3>
+                <p>This small landing page and shared project overview for the isputnik repositories.</p>
+                <a href="https://github.com/isputnikdotnet/isputnik.main">GitHub repository</a>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section roadmap-band" id="roadmap" aria-labelledby="roadmap-title">
-        <div class="section-inner roadmap-layout">
+      <section class="section status-band" id="status" aria-labelledby="status-title">
+        <div class="section-inner status-layout">
           <div>
-            <p class="eyebrow">Build path</p>
-            <h2 id="roadmap-title">Start small, then widen the orbit</h2>
+            <p class="eyebrow">Status</p>
+            <h2 id="status-title">Early and active</h2>
           </div>
-          <ol class="roadmap-list">
-            <li><span>01</span> Auth, invites, roles, sessions</li>
-            <li><span>02</span> App shell, profiles, themes</li>
-            <li><span>03</span> Notes with private and family sharing</li>
-            <li><span>04</span> Library uploads, thumbnails, background jobs</li>
-            <li><span>05</span> Backups, admin tools, search, optional AI services</li>
-          </ol>
+          <ul class="status-list">
+            <li><span>Home</span> Self-hosted family server, auth, admin, app shell, and audiobook library are underway.</li>
+            <li><span>Player</span> Local audiobook playback, home-server connection, and offline downloads are in progress.</li>
+            <li><span>Next</span> Sharing, notes, backup tooling, and server-to-player downloads.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section links-band" id="links" aria-labelledby="links-title">
+        <div class="section-inner links-layout">
+          <div>
+            <p class="eyebrow">GitHub</p>
+            <h2 id="links-title">Source links</h2>
+          </div>
+          <div class="link-list">
+            <a href="https://github.com/isputnikdotnet/isputnik.home">github.com/isputnikdotnet/isputnik.home</a>
+            <a href="https://github.com/isputnikdotnet/isputnik.player">github.com/isputnikdotnet/isputnik.player</a>
+            <a href="https://github.com/isputnikdotnet/isputnik.main">github.com/isputnikdotnet/isputnik.main</a>
+          </div>
         </div>
       </section>
     </main>

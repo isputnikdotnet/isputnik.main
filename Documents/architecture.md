@@ -8,8 +8,9 @@ direction in one small static site.
 
 ### isputnik.home
 
-The first app in the orbit. It is planned as a private, self-hosted web
-application for a trusted household circle.
+Open source, self-hosted web application for a trusted household circle. It is
+designed for a private home network, with local storage and administration under
+the home server owner's control.
 
 Core areas:
 
@@ -18,6 +19,30 @@ Core areas:
 - Media uploads, thumbnails, and library browsing
 - Background jobs for processing and backups
 - Simple administration for a home server owner
+- Home-network first deployment with no required hosted service
+
+Repository: https://github.com/isputnikdotnet/isputnik.home
+
+### isputnik.player
+
+Android audiobook player, code name **iSputnik Laika**, for local files,
+bookmarks, progress, and offline downloads from `isputnik.home`.
+
+Core areas:
+
+- Local audiobook playback
+- Metadata, cover art, bookmarks, and progress
+- Kotlin, Jetpack Compose, Media3 ExoPlayer, Room
+- Connection to `isputnik.home` for browsing and downloading books
+- Offline listening after books are downloaded from the home server
+
+Repository: https://github.com/isputnikdotnet/isputnik.player
+
+### isputnik.main
+
+Small static index for the project family.
+
+Repository: https://github.com/isputnikdotnet/isputnik.main
 
 ## Principles
 
@@ -38,4 +63,3 @@ This repository should stay lightweight:
 - Shared brand assets
 - Cross-project overview documents
 - Links to active app repositories as they are created
-
