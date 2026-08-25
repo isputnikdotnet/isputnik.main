@@ -6,7 +6,7 @@
     <title>isputnik</title>
     <meta
       name="description"
-      content="isputnik is a work-in-progress family of open source projects: a self-hosted home server app and an Android audiobook player."
+      content="isputnik is an open source, self-hosted family media library: audiobooks, ebooks, photos, and videos on your own server, under your own roof."
     >
     <link rel="icon" href="Assets/brand/isputnik-logo-sputnik-earth-mark.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
@@ -19,6 +19,8 @@
       </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#projects">Projects</a>
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
         <a href="#status">Status</a>
         <a href="#links">GitHub</a>
       </nav>
@@ -35,14 +37,14 @@
           <span class="hero-node hero-node-c"></span>
         </div>
         <div class="hero-content">
-          <p class="eyebrow">Work in progress</p>
+          <p class="eyebrow">Open source · Self-hosted</p>
           <h1 id="hero-title">isputnik</h1>
           <p class="lede">
-            Home server plus Android player.
+            Your family's media library, under your own roof. Audiobooks, ebooks,
+            photos, and videos — served from your home, for the people you trust.
           </p>
           <div class="hero-actions" aria-label="Repository links">
             <a class="button primary" href="https://github.com/isputnikdotnet/isputnik.home">isputnik.home</a>
-            <a class="button primary" href="https://github.com/isputnikdotnet/isputnik.player">isputnik.player</a>
             <a class="button secondary" href="https://github.com/isputnikdotnet/isputnik.main">isputnik.main</a>
           </div>
         </div>
@@ -55,34 +57,23 @@
             <h2 id="projects-title">Current repositories</h2>
           </div>
           <div class="project-grid">
-            <article class="project-card">
+            <article class="project-card project-card-featured">
               <img src="Assets/brand/isputnik-app-icon.svg" alt="" width="64" height="64">
               <div class="project-copy">
-                <p class="project-kicker">Self-hosted web app</p>
+                <p class="project-kicker">Self-hosted family media library</p>
                 <h3>isputnik.home</h3>
-                <p>Open source home server for family accounts, notes, sharing, and a digital audiobook library.</p>
+                <p>
+                  An open source home server that keeps your family's audiobooks, ebooks,
+                  photos, and videos in one place — organized, searchable, and shared only
+                  with the people you choose.
+                </p>
                 <ul class="project-points">
-                  <li>Self-hosted on your own machine or home server</li>
-                  <li>Designed for a private home network and trusted users</li>
-                  <li>Keeps media, metadata, and backups under your control</li>
+                  <li>Runs on your own machine — Docker image and Unraid template included</li>
+                  <li>Family accounts with per-user progress, permissions, and profiles</li>
+                  <li>Installable as a mobile app (PWA) with offline listening</li>
+                  <li>Your media, metadata, and backups never leave your control</li>
                 </ul>
                 <a href="https://github.com/isputnikdotnet/isputnik.home">GitHub repository</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="Assets/brand/isputnik-player-icon.png" alt="" width="64" height="64">
-              <div class="project-copy">
-                <p class="project-kicker">Android audiobook player</p>
-                <h3>isputnik.player</h3>
-                <p class="project-codename">Code name: iSputnik Laika</p>
-                <p>Kotlin/Compose player for audiobooks, bookmarks, progress, and offline listening.</p>
-                <ul class="project-points">
-                  <li>Plays local audiobook files on Android</li>
-                  <li>Connects to isputnik.home when a server is available</li>
-                  <li>Downloads books from home for offline listening</li>
-                </ul>
-                <a href="https://github.com/isputnikdotnet/isputnik.player">GitHub repository</a>
               </div>
             </article>
 
@@ -99,16 +90,159 @@
         </div>
       </section>
 
+      <section class="section features-band" id="features" aria-labelledby="features-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Inside isputnik.home</p>
+            <h2 id="features-title">One server, the whole shelf</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">🎧</span>
+              <h3>Audiobooks</h3>
+              <p>A full player with chapters, bookmarks, playback speed, and progress that follows you across devices.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">📖</span>
+              <h3>Ebooks &amp; reading</h3>
+              <p>An in-browser reader for EPUB and FB2, PDF support, multi-format editions, OPDS feeds, and highlights you can keep as quotes.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">📷</span>
+              <h3>Photos &amp; videos</h3>
+              <p>A gallery with timeline and folder views, slideshows, face recognition that groups people, and duplicate cleanup tools.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">🌳</span>
+              <h3>People &amp; family tree</h3>
+              <p>Faces from the gallery become people, and people take their place on an interactive family tree.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">🗂️</span>
+              <h3>Organized your way</h3>
+              <p>Libraries, collections, series, categories, tags, favorites, and an A–Z index — with search and filters everywhere.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">🔐</span>
+              <h3>Safe to expose</h3>
+              <p>Two-factor sign-in, account lockout, rate limits, trusted zones, and admin alerts — hardened for life beyond the home network.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section spotlight-band" id="details" aria-labelledby="details-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">In depth</p>
+            <h2 id="details-title">A closer look</h2>
+          </div>
+          <div class="spotlight-grid">
+            <article class="spotlight-card">
+              <span class="feature-icon" aria-hidden="true">🎬</span>
+              <h3>Slideshows that become movies</h3>
+              <p>
+                Pick photos and videos, choose a transition — crossfade, slide, Ken Burns,
+                dip to black — set the pace, and lay your own music underneath. The server
+                even suggests slideshows on its own, clustering moments from dates, places,
+                and the people in them, with burst shots collapsed to one photo.
+              </p>
+              <ul class="project-points">
+                <li>Render to a real MP4 movie (1080p) as a background job, with live progress</li>
+                <li>Title card options: plain black, a photo, a blurred photo, or a collage</li>
+                <li>Finished movies file themselves into a gallery library — re-renders replace, never pile up</li>
+              </ul>
+            </article>
+
+            <article class="spotlight-card">
+              <span class="feature-icon" aria-hidden="true">🧹</span>
+              <h3>Duplicate photo cleanup</h3>
+              <p>
+                Phone backups run twice, cards get imported into two places — libraries
+                collect copies. A four-step wizard scans the libraries you pick, groups the
+                copies, and lets you work through them a job at a time, at your own pace.
+              </p>
+              <ul class="project-points">
+                <li>Resumable: close the browser, come back next week, your decisions are kept</li>
+                <li>Folder instructions — mark a folder's copies as the keepers, or as safe to clear</li>
+                <li>Everything removed lands in the Recycle Bin until you empty it deliberately</li>
+              </ul>
+            </article>
+
+            <article class="spotlight-card">
+              <span class="feature-icon" aria-hidden="true">🛡️</span>
+              <h3>Security, taken seriously</h3>
+              <p>
+                Built for a home network, hardened for the internet. Two-factor sign-in
+                works with an authenticator app or emailed codes, with backup codes for
+                when the phone is gone — and the server watches its own front door.
+              </p>
+              <ul class="project-points">
+                <li>Account lockout, IP blocking, and trusted zones for your home network</li>
+                <li>Rate limiting, a strict Content Security Policy, and HTTPS support with HSTS</li>
+                <li>Email alerts to admins, a full activity log, and a step-by-step exposure guide</li>
+              </ul>
+            </article>
+
+            <article class="spotlight-card">
+              <span class="feature-icon" aria-hidden="true">📴</span>
+              <h3>Offline, on your phone</h3>
+              <p>
+                Install it from the browser like an app — phone-style bottom navigation
+                included. Download audiobooks to the device and keep listening on the
+                plane, in the woods, or wherever the server can't follow.
+              </p>
+              <ul class="project-points">
+                <li>Downloaded books keep their details and player working fully offline</li>
+                <li>Progress made offline syncs back when you reconnect</li>
+                <li>Private caches are wiped on logout, so a shared phone shares nothing</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shots-band" id="screenshots" aria-labelledby="screenshots-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Screenshots</p>
+            <h2 id="screenshots-title">See it running</h2>
+          </div>
+          <div class="shots-grid">
+            <figure class="shot shot-wide">
+              <img src="Assets/screenshots/02-home.png" alt="The isputnik.home dashboard with recent items and continue rows" loading="lazy">
+              <figcaption>The home dashboard — recent additions and pick-up-where-you-left-off, across every library.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="Assets/screenshots/30-audiobooks.png" alt="The audiobook library browse page" loading="lazy">
+              <figcaption>The audiobook library.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="Assets/screenshots/31-ebooks.png" alt="The ebook library browse page" loading="lazy">
+              <figcaption>The ebook library.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="Assets/screenshots/32-gallery.png" alt="The photo gallery timeline view" loading="lazy">
+              <figcaption>The gallery timeline.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="Assets/screenshots/40-family-tree.png" alt="The interactive family tree chart" loading="lazy">
+              <figcaption>The family tree.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section class="section status-band" id="status" aria-labelledby="status-title">
         <div class="section-inner status-layout">
           <div>
             <p class="eyebrow">Status</p>
-            <h2 id="status-title">Early and active</h2>
+            <h2 id="status-title">Actively developed</h2>
           </div>
           <ul class="status-list">
-            <li><span>Home</span> Self-hosted family server, auth, admin, app shell, and audiobook library are underway.</li>
-            <li><span>Player</span> Local audiobook playback, home-server connection, and offline downloads are in progress.</li>
-            <li><span>Next</span> Sharing, notes, backup tooling, and server-to-player downloads.</li>
+            <li><span>Shipped</span> Audiobook and ebook libraries, the photo and video gallery, family tree, collections, quotes, backups, and an activity dashboard — with regular 3.x releases.</li>
+            <li><span>Deploy</span> Docker images published on every release, plus an Unraid Community Applications template for one-click install.</li>
+            <li><span>Next</span> Smarter duplicate detection, deeper mobile pages, and new home-hub modules beyond the media library.</li>
           </ul>
         </div>
       </section>
@@ -121,7 +255,6 @@
           </div>
           <div class="link-list">
             <a href="https://github.com/isputnikdotnet/isputnik.home">github.com/isputnikdotnet/isputnik.home</a>
-            <a href="https://github.com/isputnikdotnet/isputnik.player">github.com/isputnikdotnet/isputnik.player</a>
             <a href="https://github.com/isputnikdotnet/isputnik.main">github.com/isputnikdotnet/isputnik.main</a>
           </div>
         </div>
