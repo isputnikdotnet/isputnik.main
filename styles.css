@@ -1,8 +1,9 @@
 /* The page wears the app's default theme, "Minimalist", and takes its values
    from apps/web/src/styles/tokens.css in isputnik.home verbatim: warm platinum
-   canvas, black ink, no accent colour beyond the ink itself. Contrast comes
-   from the screenshots — several are captured in the app's dark theme and sit
-   on the grey like a black device on a table. */
+   canvas, black ink, no accent colour beyond the ink itself. Its shape is a
+   car-maker's model page: one full-bleed hero, a product bar that sticks, a row
+   of headline numbers, then feature groups that each scroll sideways through
+   cards, a picker for the finish, and reassurance at the end. */
 :root {
   color-scheme: light;
   --ink: #1d1d1f;
@@ -18,6 +19,11 @@
   --button-hover: #3a3a3e;
   --shadow: rgba(0, 0, 0, 0.22);
   --max: 1120px;
+  --card-w: 440px;
+  --bar-h: 64px;
+  /* The first card in a rail lines up with the content column; the rail
+     itself bleeds off the right edge. */
+  --gutter: max(20px, calc((100vw - var(--max)) / 2));
 }
 
 * {
@@ -46,76 +52,6 @@ img {
   height: auto;
 }
 
-/* The header is fixed, so a nav jump would otherwise land a section's first
-   line underneath it. */
-section[id] {
-  scroll-margin-top: 92px;
-}
-
-/* ─── Header ─────────────────────────────────────────────────────────────── */
-
-.site-header {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  width: min(var(--max), calc(100% - 32px));
-  margin: 16px auto 0;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(242, 242, 239, 0.92);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(18px);
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-  color: var(--ink);
-  text-decoration: none;
-  font-weight: 800;
-}
-
-.brand img {
-  flex: 0 0 auto;
-  border-radius: 8px;
-}
-
-.brand span {
-  white-space: nowrap;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.nav a {
-  min-height: 36px;
-  padding: 8px 10px;
-  border-radius: 6px;
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.94rem;
-  font-weight: 700;
-}
-
-.nav a:hover {
-  color: var(--ink);
-  background: var(--hover);
-}
-
-/* ─── Type ───────────────────────────────────────────────────────────────── */
-
 h1,
 h2,
 h3,
@@ -124,6 +60,19 @@ a,
 li {
   overflow-wrap: anywhere;
 }
+
+/* The product bar is sticky, so a nav jump would otherwise land a section's
+   heading underneath it. */
+section[id] {
+  scroll-margin-top: calc(var(--bar-h) + 8px);
+}
+
+.section-inner {
+  width: min(var(--max), calc(100vw - 40px));
+  margin: 0 auto;
+}
+
+/* ─── Type ───────────────────────────────────────────────────────────────── */
 
 .eyebrow {
   margin: 0 0 12px;
@@ -134,80 +83,52 @@ li {
   text-transform: uppercase;
 }
 
+.eyebrow-light {
+  color: rgba(242, 242, 239, 0.72);
+}
+
 h1 {
-  max-width: 760px;
   margin: 0;
-  color: var(--ink);
-  font-size: 8.8rem;
-  line-height: 0.88;
+  font-size: 5.6rem;
+  line-height: 0.94;
   letter-spacing: -0.02em;
 }
 
 h2 {
   margin: 0;
   color: var(--ink);
-  font-size: 3rem;
-  line-height: 1;
+  font-size: 2.8rem;
+  line-height: 1.04;
   letter-spacing: -0.01em;
 }
 
 h3 {
   margin: 0;
   color: var(--ink);
-  font-size: 1.32rem;
-  line-height: 1.18;
+  font-size: 1.25rem;
+  line-height: 1.2;
 }
 
-/* ─── Hero ───────────────────────────────────────────────────────────────── */
-
-.hero {
-  display: grid;
-  grid-template-rows: auto auto;
-  padding: 136px 20px 0;
-  background: var(--canvas);
-}
-
-.hero-content,
-.section-inner {
-  width: min(var(--max), calc(100vw - 40px));
-  margin: 0 auto;
-}
-
-.hero-content {
-  padding-bottom: 56px;
-}
-
-.lede {
-  max-width: 610px;
-  margin: 28px 0 0;
-  color: var(--ink);
-  font-size: 1.32rem;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 34px;
-}
+/* ─── Buttons ────────────────────────────────────────────────────────────── */
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  padding: 12px 18px;
+  min-height: 42px;
+  padding: 10px 18px;
   border: 1px solid transparent;
   border-radius: 7px;
   text-decoration: none;
+  font-size: 0.95rem;
   font-weight: 750;
+  white-space: nowrap;
 }
 
 /* The app's own primary button: black, white type. */
 .button.primary {
   color: #ffffff;
   background: var(--button);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
 .button.primary:hover {
@@ -224,370 +145,475 @@ h3 {
   background: var(--hover);
 }
 
-/* The product shot sits at the foot of the hero and pokes out of it into the
-   next section, the way a phone does on a launch page. The hero's canvas runs
-   on behind the top half; the intro's lighter surface takes over behind the
-   bottom half. */
-.hero-shot {
+/* ─── Site bar (over the hero, scrolls away) ─────────────────────────────── */
+
+.site-bar {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 18px 0;
+  color: #f2f2ef;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.brand img {
+  border-radius: 7px;
+}
+
+.site-bar-link {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.94rem;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.site-bar-link:hover {
+  opacity: 1;
+}
+
+/* ─── Hero ───────────────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: max(560px, 84vh);
+  padding: 120px 20px 64px;
+  color: #f2f2ef;
+  background: #06090d url("Assets/brand/sputnik-scene.webp") center right / cover no-repeat;
+  isolation: isolate;
+}
+
+/* Legibility for the copy on the empty half of the artwork. */
+.hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(6, 9, 13, 0.55) 0%, rgba(6, 9, 13, 0.15) 55%, transparent 100%),
+    linear-gradient(180deg, rgba(6, 9, 13, 0.35) 0%, transparent 30%, transparent 70%, rgba(6, 9, 13, 0.5) 100%);
+}
+
+.hero-content {
   width: min(var(--max), calc(100vw - 40px));
-  margin: 0 auto -1px;
-  padding: 0;
+  margin: 0 auto;
 }
 
-.hero-shot img {
-  display: block;
-  width: 100%;
-  border: 1px solid var(--line);
-  border-bottom: 0;
-  border-radius: 12px 12px 0 0;
-  box-shadow: 0 -10px 50px var(--shadow);
+.hero h1 {
+  color: #f2f2ef;
 }
 
-/* ─── Intro ──────────────────────────────────────────────────────────────── */
-
-.intro {
-  padding: 96px 20px 24px;
-  border-top: 1px solid var(--line-soft);
-  background: var(--surface);
-}
-
-.intro-inner {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.intro h2 {
-  font-size: 3.4rem;
-}
-
-.intro-lede {
-  max-width: 640px;
-  margin: 22px auto 0;
-  color: var(--muted);
+.lede {
+  max-width: 560px;
+  margin: 22px 0 0;
+  color: rgba(242, 242, 239, 0.86);
   font-size: 1.22rem;
 }
 
-/* ─── Feature sections ───────────────────────────────────────────────────── */
-/* Bands alternate between the two greys; nothing else changes between them. */
+/* ─── Product bar (sticks) ───────────────────────────────────────────────── */
 
-.feat {
-  padding: 96px 20px;
-  border-top: 1px solid var(--line-soft);
-  background: var(--canvas);
+.product-bar {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  border-bottom: 1px solid var(--line-soft);
+  background: rgba(242, 242, 239, 0.94);
+  backdrop-filter: blur(16px);
 }
 
-.feat-alt {
+.product-bar-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 24px;
+  align-items: center;
+  width: min(var(--max), calc(100vw - 40px));
+  min-height: var(--bar-h);
+  margin: 0 auto;
+}
+
+.product-id {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.product-id strong {
+  font-size: 1.05rem;
+}
+
+.product-id span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.product-links {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.product-links a {
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.product-links a:hover {
+  color: var(--ink);
+  background: var(--hover);
+}
+
+.product-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ─── Headline numbers ───────────────────────────────────────────────────── */
+
+.stats {
+  padding: 40px 20px;
+  border-bottom: 1px solid var(--line-soft);
   background: var(--surface);
 }
 
-.feat-inner {
+.stats-list {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(32px, 6vw, 80px);
-  align-items: center;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: min(var(--max), 100%);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
 }
 
-.feat-flip .feat-inner {
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+.stats-list li {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  padding-left: 16px;
+  border-left: 2px solid var(--ink);
 }
 
-.feat-flip .feat-copy {
-  order: 2;
-}
-
-.feat-copy h2 {
+.stats-list strong {
   font-size: 2.6rem;
-  line-height: 1.04;
+  line-height: 1;
+  letter-spacing: -0.02em;
 }
 
-.feat-copy p {
-  max-width: 480px;
-  margin: 20px 0 0;
+.stats-list span {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+/* ─── Feature groups ─────────────────────────────────────────────────────── */
+
+.group {
+  padding: 88px 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.group-alt {
+  background: var(--surface);
+}
+
+.group-head {
+  width: min(var(--max), calc(100vw - 40px));
+  margin: 0 auto 36px;
+}
+
+.group-lede {
+  max-width: 560px;
+  margin: 18px 0 0;
   color: var(--muted);
   font-size: 1.08rem;
 }
 
-.feat-points {
-  display: grid;
-  gap: 10px;
-  max-width: 480px;
-  margin: 24px 0 0;
-  padding: 0;
+/* The rail: native horizontal scrolling with snap points. */
+.rail {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 8px var(--gutter) 24px;
   list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: none;
 }
 
-.feat-points li {
-  position: relative;
-  padding-left: 24px;
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 var(--card-w);
+  scroll-snap-align: start;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--raised);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14), 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+  margin-top: 20px;
+}
+
+.card p {
+  margin: 8px 0 0;
+  color: var(--muted);
   font-size: 0.98rem;
 }
 
-/* A short rule instead of a bullet — the one ornament the theme allows. */
-.feat-points li::before {
-  position: absolute;
-  left: 0;
-  top: 0.72em;
-  width: 12px;
-  height: 2px;
-  content: "";
-  background: var(--ink);
-}
-
-.feat-media {
-  margin: 0;
-  min-width: 0;
-}
-
-.feat-media img {
-  display: block;
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
-  background: var(--raised);
-}
-
-/* A short-and-wide image (the People row, the duplicate card) is happier
-   spanning the whole width than squeezed into a column. */
-.feat-media-wide,
-.feat-media-card {
-  grid-column: 1 / -1;
-}
-
-.feat-media-card img {
-  max-width: 900px;
+.rail-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: min(var(--max), calc(100vw - 40px));
   margin: 0 auto;
 }
 
-/* ─── The rest ───────────────────────────────────────────────────────────── */
-
-.section {
-  padding: 78px 20px;
-  border-top: 1px solid var(--line-soft);
-}
-
-.section-heading {
-  max-width: 680px;
-  margin-bottom: 26px;
-}
-
-.more-band {
-  background: var(--canvas);
-}
-
-.more-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.more-card {
-  padding: 26px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--raised);
-}
-
-.more-card p {
-  margin: 10px 0 0;
+.rail-count {
+  margin-right: auto;
   color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
 }
 
-/* ─── Status, links ──────────────────────────────────────────────────────── */
-
-.status-band {
-  background: var(--surface);
+.rail-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
-.status-layout,
-.links-layout {
-  display: grid;
-  grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1fr);
-  gap: 40px;
-  align-items: start;
+.rail-btn:hover {
+  background: var(--hover);
 }
 
-.status-list {
-  display: grid;
+/* ─── Appearance: the picker ─────────────────────────────────────────────── */
+
+.picker-swatches {
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+}
+
+.swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 6px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--raised);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.swatch:hover {
+  background: var(--hover);
+}
+
+.swatch[aria-pressed="true"] {
+  border-color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+
+/* Two colours of the theme, split on the diagonal, like a paint chip. */
+.swatch-chip {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--a) 50%, var(--b) 50%);
+}
+
+.picker-selection {
+  margin: 18px 0 16px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.picker-selection strong {
+  color: var(--ink);
+}
+
+.picker-stage {
   margin: 0;
+}
+
+.picker-stage img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--raised);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Plain grids (Security) ─────────────────────────────────────────────── */
+
+.plain-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
 }
 
-.status-list li {
-  display: grid;
-  grid-template-columns: 82px minmax(0, 1fr);
-  gap: 14px;
-  align-items: center;
-  min-height: 58px;
-  padding: 12px 14px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+.plain-grid li {
+  padding-top: 16px;
+  border-top: 2px solid var(--ink);
+}
+
+.plain-grid p {
+  margin: 8px 0 0;
   color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ─── Reassurance band, footer ───────────────────────────────────────────── */
+
+.band {
+  padding: 72px 20px;
+  border-top: 1px solid var(--line-soft);
   background: var(--raised);
 }
 
-.status-list span {
-  color: var(--ink);
-  font-weight: 800;
-}
-
-.links-band {
-  background: var(--canvas);
-}
-
-.links-note {
-  max-width: 380px;
-  margin: 14px 0 0;
-  color: var(--muted);
-}
-
-.link-list {
+.band-inner {
   display: grid;
-  gap: 12px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 40px;
+  align-items: end;
 }
 
-.link-list a {
-  display: block;
-  padding: 14px 16px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--raised);
+.band-inner p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
 }
 
-.link-list a:hover {
-  background: var(--hover);
+.site-footer {
+  padding: 32px 20px;
+  border-top: 1px solid var(--line-soft);
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-/* ─── Reveal on scroll ───────────────────────────────────────────────────── */
-/* Applied only once the script has confirmed motion is welcome; without it
-   nothing is ever hidden. */
-
-.reveal-ready .feat,
-.reveal-ready .more-card,
-.reveal-ready .intro-inner {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal-ready .feat.in,
-.reveal-ready .more-card.in,
-.reveal-ready .intro-inner.in {
-  opacity: 1;
-  transform: none;
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
 
 @media (max-width: 960px) {
-  .feat-inner,
-  .feat-flip .feat-inner {
+  .stats-list,
+  .plain-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .band-inner {
     grid-template-columns: 1fr;
-    gap: 36px;
   }
 
-  .feat-flip .feat-copy {
-    order: 0;
+  .product-links {
+    display: none;
   }
 
-  .feat-copy p,
-  .feat-points {
-    max-width: none;
-  }
-
-  .status-layout,
-  .links-layout,
-  .more-grid {
-    grid-template-columns: 1fr;
+  .product-bar-inner {
+    grid-template-columns: 1fr auto;
   }
 }
 
 @media (max-width: 760px) {
-  .site-header {
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .nav {
-    max-width: 58%;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-  }
-
-  .nav a {
-    min-height: 32px;
-    padding: 6px 8px;
-    font-size: 0.86rem;
-  }
-
-  .hero {
-    padding-top: 150px;
+  :root {
+    --card-w: 82vw;
   }
 
   h1 {
-    font-size: 4.6rem;
+    font-size: 3.6rem;
   }
 
-  h2,
-  .intro h2 {
-    font-size: 2.2rem;
+  h2 {
+    font-size: 2.1rem;
   }
 
-  .feat-copy h2 {
-    font-size: 2rem;
+  .hero {
+    min-height: max(520px, 78vh);
+    padding-bottom: 44px;
+    background-position: 68% center;
   }
 
-  .lede,
-  .intro-lede {
-    font-size: 1.12rem;
+  .lede {
+    font-size: 1.08rem;
   }
 
-  .hero-actions {
-    align-items: stretch;
-  }
-
-  .button {
-    width: 100%;
-  }
-
-  .feat {
-    padding: 64px 20px;
-  }
-
-  .status-list li {
+  .stats-list {
     grid-template-columns: 1fr;
-    gap: 4px;
+    gap: 16px;
+  }
+
+  .group {
+    padding: 64px 0;
   }
 }
 
 @media (max-width: 520px) {
-  .site-header {
-    align-items: center;
-  }
-
-  .hero-content,
-  .hero-shot,
-  .section-inner {
-    width: min(350px, calc(100vw - 40px));
-  }
-
-  .nav {
+  .product-actions .secondary {
     display: none;
+  }
+
+  .plain-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 420px) {
   h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
-  h2,
-  .intro h2,
-  .feat-copy h2 {
+  h2 {
     font-size: 1.85rem;
   }
 }
