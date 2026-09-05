@@ -1,21 +1,22 @@
+/* The page wears the app's default theme, "Minimalist", and takes its values
+   from apps/web/src/styles/tokens.css in isputnik.home verbatim: warm platinum
+   canvas, black ink, no accent colour beyond the ink itself. Contrast comes
+   from the screenshots — several are captured in the app's dark theme and sit
+   on the grey like a black device on a table. */
 :root {
   color-scheme: light;
-  --ink: #101820;
-  --text: #21313d;
-  --muted: #65737e;
-  --paper: #f7f8f5;
-  --white: #ffffff;
-  --line: rgba(16, 24, 32, 0.13);
-  --teal: #0f766e;
-  --teal-soft: #d8f3ee;
-  --mint: #8ed4c6;
-  --gold: #fff0bd;
-  --amber: #d97706;
-  --amber-soft: #fff0d7;
-  --plum: #6d3a77;
-  --navy: #0f2238;
-  --navy-2: #183a54;
-  --navy-3: #24545f;
+  --ink: #1d1d1f;
+  --muted: #58585c;
+  --line: rgba(29, 29, 31, 0.3);
+  --line-soft: rgba(29, 29, 31, 0.14);
+  --canvas: #e2e2df;
+  --surface: #f2f2ef;
+  --raised: #ffffff;
+  --hover: #e4e4e0;
+  --active: #d4d4cf;
+  --button: #1d1d1f;
+  --button-hover: #3a3a3e;
+  --shadow: rgba(0, 0, 0, 0.22);
   --max: 1120px;
 }
 
@@ -30,8 +31,8 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  color: var(--text);
-  background: var(--paper);
+  color: var(--ink);
+  background: var(--canvas);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
 }
@@ -68,8 +69,8 @@ section[id] {
   padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 14px 36px rgba(16, 24, 32, 0.08);
+  background: rgba(242, 242, 239, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(18px);
 }
 
@@ -110,100 +111,10 @@ section[id] {
 
 .nav a:hover {
   color: var(--ink);
-  background: rgba(15, 118, 110, 0.1);
+  background: var(--hover);
 }
 
-/* ─── Hero ───────────────────────────────────────────────────────────────── */
-
-.hero {
-  position: relative;
-  display: grid;
-  grid-template-rows: auto auto;
-  padding: 136px 20px 0;
-  overflow: hidden;
-  color: var(--white);
-  isolation: isolate;
-  background:
-    radial-gradient(circle at 78% 20%, rgba(217, 91, 61, 0.28), transparent 29%),
-    radial-gradient(circle at 18% 74%, rgba(142, 212, 198, 0.26), transparent 31%),
-    linear-gradient(145deg, var(--navy) 0%, var(--navy-2) 48%, var(--navy-3) 100%);
-}
-
-.hero::before,
-.hero::after {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  content: "";
-  pointer-events: none;
-}
-
-.hero::before {
-  background-image: url("Assets/brand/isputnik-login-orbit-backdrop.svg");
-  background-position: 10% 30%;
-  background-repeat: no-repeat;
-  background-size: min(1040px, 72vw) auto;
-  opacity: 0.46;
-}
-
-.hero::after {
-  background:
-    linear-gradient(90deg, rgba(15, 34, 56, 0.1), rgba(15, 34, 56, 0.58) 62%, rgba(15, 34, 56, 0.2)),
-    linear-gradient(180deg, rgba(15, 34, 56, 0.05), rgba(15, 34, 56, 0.38));
-}
-
-.hero-scene {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero-content,
-.section-inner {
-  width: min(var(--max), calc(100vw - 40px));
-  margin: 0 auto;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding-bottom: 56px;
-}
-
-/* The product shot sits at the foot of the hero and pokes out of it into the
-   next section, the way a phone does on a launch page. The hero's navy runs on
-   behind the top half; the intro's paper takes over behind the bottom half. */
-.hero-shot {
-  position: relative;
-  z-index: 2;
-  width: min(var(--max), calc(100vw - 40px));
-  margin: 0 auto -1px;
-  padding: 0;
-}
-
-.hero-shot img {
-  display: block;
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-bottom: 0;
-  border-radius: 14px 14px 0 0;
-  box-shadow: 0 -12px 60px rgba(5, 11, 21, 0.45);
-}
-
-.eyebrow {
-  margin: 0 0 12px;
-  color: var(--teal);
-  font-size: 0.78rem;
-  font-weight: 850;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.hero .eyebrow,
-.feat-dark .eyebrow {
-  color: #8ee6d8;
-}
+/* ─── Type ───────────────────────────────────────────────────────────────── */
 
 h1,
 h2,
@@ -214,18 +125,22 @@ li {
   overflow-wrap: anywhere;
 }
 
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 h1 {
   max-width: 760px;
   margin: 0;
   color: var(--ink);
   font-size: 8.8rem;
   line-height: 0.88;
-  letter-spacing: 0;
-}
-
-.hero h1 {
-  color: var(--gold);
-  text-shadow: 0 18px 60px rgba(5, 11, 21, 0.42);
+  letter-spacing: -0.02em;
 }
 
 h2 {
@@ -233,7 +148,7 @@ h2 {
   color: var(--ink);
   font-size: 3rem;
   line-height: 1;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 
 h3 {
@@ -243,10 +158,29 @@ h3 {
   line-height: 1.18;
 }
 
+/* ─── Hero ───────────────────────────────────────────────────────────────── */
+
+.hero {
+  display: grid;
+  grid-template-rows: auto auto;
+  padding: 136px 20px 0;
+  background: var(--canvas);
+}
+
+.hero-content,
+.section-inner {
+  width: min(var(--max), calc(100vw - 40px));
+  margin: 0 auto;
+}
+
+.hero-content {
+  padding-bottom: 56px;
+}
+
 .lede {
   max-width: 610px;
   margin: 28px 0 0;
-  color: #eef5f1;
+  color: var(--ink);
   font-size: 1.32rem;
 }
 
@@ -266,80 +200,55 @@ h3 {
   border: 1px solid transparent;
   border-radius: 7px;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 750;
 }
 
+/* The app's own primary button: black, white type. */
 .button.primary {
-  color: var(--ink);
-  background: var(--amber-soft);
+  color: #ffffff;
+  background: var(--button);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.button.primary:hover {
+  background: var(--button-hover);
 }
 
 .button.secondary {
-  border-color: rgba(255, 255, 255, 0.28);
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--line);
+  color: var(--ink);
+  background: transparent;
 }
 
-.hero-orbit {
-  position: absolute;
-  left: 38%;
-  top: 34%;
-  width: min(78vw, 980px);
-  aspect-ratio: 2.6 / 1;
-  border: 1px solid rgba(248, 232, 176, 0.34);
-  border-radius: 50%;
-  transform: translate(-50%, -48%) rotate(-18deg);
+.button.secondary:hover {
+  background: var(--hover);
 }
 
-.hero-orbit-b {
-  width: min(62vw, 780px);
-  border-color: rgba(134, 228, 216, 0.24);
-  transform: translate(-44%, -54%) rotate(19deg);
+/* The product shot sits at the foot of the hero and pokes out of it into the
+   next section, the way a phone does on a launch page. The hero's canvas runs
+   on behind the top half; the intro's lighter surface takes over behind the
+   bottom half. */
+.hero-shot {
+  width: min(var(--max), calc(100vw - 40px));
+  margin: 0 auto -1px;
+  padding: 0;
 }
 
-.hero-orbit-c {
-  width: min(48vw, 610px);
-  border-color: rgba(255, 255, 255, 0.15);
-  transform: translate(-58%, -38%) rotate(54deg);
-}
-
-.hero-node {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 28px rgba(248, 232, 176, 0.8);
-}
-
-.hero-node-a {
-  top: 18%;
-  right: 40%;
-  width: 16px;
-  height: 16px;
-}
-
-.hero-node-b {
-  left: 13%;
-  top: 44%;
-  width: 10px;
-  height: 10px;
-  background: var(--mint);
-  box-shadow: 0 0 26px rgba(134, 228, 216, 0.78);
-}
-
-.hero-node-c {
-  right: 44%;
-  top: 40%;
-  width: 12px;
-  height: 12px;
-  background: var(--amber);
-  box-shadow: 0 0 28px rgba(245, 159, 90, 0.72);
+.hero-shot img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -10px 50px var(--shadow);
 }
 
 /* ─── Intro ──────────────────────────────────────────────────────────────── */
 
 .intro {
   padding: 96px 20px 24px;
-  background: var(--paper);
+  border-top: 1px solid var(--line-soft);
+  background: var(--surface);
 }
 
 .intro-inner {
@@ -351,7 +260,6 @@ h3 {
 
 .intro h2 {
   font-size: 3.4rem;
-  letter-spacing: -0.01em;
 }
 
 .intro-lede {
@@ -362,28 +270,16 @@ h3 {
 }
 
 /* ─── Feature sections ───────────────────────────────────────────────────── */
+/* Bands alternate between the two greys; nothing else changes between them. */
 
 .feat {
   padding: 96px 20px;
+  border-top: 1px solid var(--line-soft);
+  background: var(--canvas);
 }
 
-.feat-light {
-  background: var(--paper);
-}
-
-.feat-light:nth-of-type(odd) {
-  background: var(--white);
-}
-
-.feat-dark {
-  color: #e6eef0;
-  background:
-    radial-gradient(circle at 80% 10%, rgba(217, 91, 61, 0.14), transparent 34%),
-    linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 60%, #1a3d4d 100%);
-}
-
-.feat-dark h2 {
-  color: var(--gold);
+.feat-alt {
+  background: var(--surface);
 }
 
 .feat-inner {
@@ -404,17 +300,13 @@ h3 {
 .feat-copy h2 {
   font-size: 2.6rem;
   line-height: 1.04;
-  letter-spacing: -0.01em;
 }
 
 .feat-copy p {
   max-width: 480px;
   margin: 20px 0 0;
+  color: var(--muted);
   font-size: 1.08rem;
-}
-
-.feat-dark .feat-copy p {
-  color: #cfdbdf;
 }
 
 .feat-points {
@@ -428,24 +320,19 @@ h3 {
 
 .feat-points li {
   position: relative;
-  padding-left: 22px;
+  padding-left: 24px;
   font-size: 0.98rem;
 }
 
+/* A short rule instead of a bullet — the one ornament the theme allows. */
 .feat-points li::before {
   position: absolute;
   left: 0;
-  top: 0.55em;
-  width: 10px;
-  height: 10px;
+  top: 0.72em;
+  width: 12px;
+  height: 2px;
   content: "";
-  border-radius: 50%;
-  background: var(--teal);
-}
-
-.feat-dark .feat-points li::before {
-  background: var(--mint);
-  box-shadow: 0 0 12px rgba(142, 212, 198, 0.6);
+  background: var(--ink);
 }
 
 .feat-media {
@@ -457,15 +344,9 @@ h3 {
   display: block;
   width: 100%;
   border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: 0 30px 70px rgba(16, 24, 32, 0.16), 0 6px 18px rgba(16, 24, 32, 0.08);
-  background: var(--white);
-}
-
-.feat-dark .feat-media img {
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 30px 80px rgba(2, 8, 16, 0.6), 0 6px 18px rgba(2, 8, 16, 0.4);
-  background: var(--navy);
+  border-radius: 10px;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: var(--raised);
 }
 
 /* A short-and-wide image (the People row, the duplicate card) is happier
@@ -484,6 +365,7 @@ h3 {
 
 .section {
   padding: 78px 20px;
+  border-top: 1px solid var(--line-soft);
 }
 
 .section-heading {
@@ -492,7 +374,7 @@ h3 {
 }
 
 .more-band {
-  background: var(--white);
+  background: var(--canvas);
 }
 
 .more-grid {
@@ -504,8 +386,8 @@ h3 {
 .more-card {
   padding: 26px;
   border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--paper);
+  border-radius: 8px;
+  background: var(--raised);
 }
 
 .more-card p {
@@ -516,7 +398,7 @@ h3 {
 /* ─── Status, links ──────────────────────────────────────────────────────── */
 
 .status-band {
-  background: var(--teal-soft);
+  background: var(--surface);
 }
 
 .status-layout,
@@ -542,18 +424,19 @@ h3 {
   align-items: center;
   min-height: 58px;
   padding: 12px 14px;
-  border: 1px solid rgba(15, 118, 110, 0.2);
+  border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.56);
+  color: var(--muted);
+  background: var(--raised);
 }
 
 .status-list span {
-  color: var(--plum);
-  font-weight: 850;
+  color: var(--ink);
+  font-weight: 800;
 }
 
 .links-band {
-  background: var(--white);
+  background: var(--canvas);
 }
 
 .links-note {
@@ -572,7 +455,11 @@ h3 {
   padding: 14px 16px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--paper);
+  background: var(--raised);
+}
+
+.link-list a:hover {
+  background: var(--hover);
 }
 
 /* ─── Reveal on scroll ───────────────────────────────────────────────────── */
@@ -617,11 +504,6 @@ h3 {
   .more-grid {
     grid-template-columns: 1fr;
   }
-
-  .hero::before {
-    background-position: 32% 40%;
-    background-size: 780px auto;
-  }
 }
 
 @media (max-width: 760px) {
@@ -644,11 +526,6 @@ h3 {
 
   .hero {
     padding-top: 150px;
-  }
-
-  .hero-orbit {
-    left: 48%;
-    width: min(132vw, 820px);
   }
 
   h1 {
@@ -712,30 +589,5 @@ h3 {
   .intro h2,
   .feat-copy h2 {
     font-size: 1.85rem;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero-node-a {
-    animation: hero-drift 7s ease-in-out infinite;
-  }
-
-  .hero-node-b {
-    animation: hero-drift 9s ease-in-out infinite reverse;
-  }
-
-  .hero-node-c {
-    animation: hero-drift 8s ease-in-out infinite;
-  }
-}
-
-@keyframes hero-drift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  50% {
-    transform: translate3d(12px, -10px, 0);
   }
 }
