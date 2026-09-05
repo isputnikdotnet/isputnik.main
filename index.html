@@ -245,29 +245,45 @@
         </div>
         <div class="picker section-inner">
           <div class="picker-swatches" role="group" aria-label="Choose a theme">
-            <button type="button" class="swatch" aria-pressed="true"
-              data-label="Minimalist"
-              data-src="Assets/screenshots/hero-home-light-1080.webp"
-              data-srcset="Assets/screenshots/hero-home-light-720.webp 720w, Assets/screenshots/hero-home-light-1080.webp 1080w, Assets/screenshots/hero-home-light-1440.webp 1440w">
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-system"
+              data-label="System" data-note="Follows the device: Plain Light by day, Plain Dark at night.">
+              <span class="swatch-chip" style="--a: #f3f6fb; --b: #04080c"></span>
+              <span class="swatch-name">System</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-plain-light"
+              data-label="Plain Light" data-note="White, blue accents, nothing in the background.">
+              <span class="swatch-chip" style="--a: #f3f6fb; --b: #2563eb"></span>
+              <span class="swatch-name">Plain Light</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-plain-dark"
+              data-label="Plain Dark" data-note="The same, on near-black.">
+              <span class="swatch-chip" style="--a: #04080c; --b: #45bed2"></span>
+              <span class="swatch-name">Plain Dark</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="true" data-shot="theme-minimalist"
+              data-label="Minimalist" data-note="The default. Platinum grey and black ink, like a certain beige computer.">
               <span class="swatch-chip" style="--a: #e2e2df; --b: #1d1d1f"></span>
               <span class="swatch-name">Minimalist</span>
             </button>
-            <button type="button" class="swatch" aria-pressed="false"
-              data-label="iSputnik Night"
-              data-src="Assets/screenshots/hero-home-dark-1080.webp"
-              data-srcset="Assets/screenshots/hero-home-dark-720.webp 720w, Assets/screenshots/hero-home-dark-1080.webp 1080w, Assets/screenshots/hero-home-dark-1440.webp 1440w">
-              <span class="swatch-chip" style="--a: #0b1117; --b: #e0b15a"></span>
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-light"
+              data-label="iSputnik Light" data-note="Cream paper, brass and teal, a faint orbit behind the page.">
+              <span class="swatch-chip" style="--a: #eef1e7; --b: #3f716a"></span>
+              <span class="swatch-name">iSputnik Light</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-dark"
+              data-label="iSputnik Night" data-note="Sputnik over Earth, amber type, the one this page's hero is painted in.">
+              <span class="swatch-chip" style="--a: #020b0e; --b: #d14b2d"></span>
               <span class="swatch-name">iSputnik Night</span>
             </button>
           </div>
-          <p class="picker-selection">Selection: <strong>Minimalist</strong></p>
+          <p class="picker-selection">Selection: <strong>Minimalist</strong> <span>The default. Platinum grey and black ink, like a certain beige computer.</span></p>
           <figure class="picker-stage">
             <img
-              src="Assets/screenshots/hero-home-light-1080.webp"
-              srcset="Assets/screenshots/hero-home-light-720.webp 720w, Assets/screenshots/hero-home-light-1080.webp 1080w, Assets/screenshots/hero-home-light-1440.webp 1440w"
+              src="Assets/screenshots/theme-minimalist-1080.webp"
+              srcset="Assets/screenshots/theme-minimalist-720.webp 720w, Assets/screenshots/theme-minimalist-1080.webp 1080w, Assets/screenshots/theme-minimalist-1440.webp 1440w"
               sizes="(min-width: 1180px) 1120px, calc(100vw - 40px)"
               width="1440" height="900" loading="lazy" decoding="async"
-              alt="The isputnik.home home page in the selected theme"
+              alt="The isputnik.home home page in the Minimalist theme"
             >
           </figure>
         </div>
@@ -339,17 +355,23 @@
         update();
       }
 
-      // The theme picker: a swatch swaps the stage image and the caption.
+      // The theme picker: a swatch swaps the stage image and the caption. Each
+      // swatch names its capture; the three widths follow from that name.
       const picker = document.querySelector(".picker");
       if (picker) {
         const stage = picker.querySelector(".picker-stage img");
         const label = picker.querySelector(".picker-selection strong");
+        const note = picker.querySelector(".picker-selection span");
+        const file = (shot, w) => `Assets/screenshots/${shot}-${w}.webp`;
         for (const swatch of picker.querySelectorAll(".swatch")) {
           swatch.addEventListener("click", () => {
             for (const s of picker.querySelectorAll(".swatch")) s.setAttribute("aria-pressed", String(s === swatch));
-            stage.srcset = swatch.dataset.srcset;
-            stage.src = swatch.dataset.src;
+            const shot = swatch.dataset.shot;
+            stage.srcset = [720, 1080, 1440].map((w) => `${file(shot, w)} ${w}w`).join(", ");
+            stage.src = file(shot, 1080);
+            stage.alt = `The isputnik.home home page in the ${swatch.dataset.label} theme`;
             label.textContent = swatch.dataset.label;
+            note.textContent = swatch.dataset.note;
           });
         }
       }

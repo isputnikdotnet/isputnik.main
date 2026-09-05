@@ -34,6 +34,10 @@ face-recognition shot are astronauts, under their own names.
 page serves through `srcset`. Both are committed, so a new width can be cut
 without the demo server running.
 
+The Appearance picker shows the Home page in each theme (`theme-*.png`). Five
+are captured; `theme-system.png` is composed by the optimise script from the
+two Plain captures, because System is whichever of those the device asks for.
+
 They are produced by two scripts that live with the demo content rather than
 here (they need the app's dependencies and a running server):
 
