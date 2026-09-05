@@ -13,6 +13,9 @@
   --amber: #d97706;
   --amber-soft: #fff0d7;
   --plum: #6d3a77;
+  --navy: #0f2238;
+  --navy-2: #183a54;
+  --navy-3: #24545f;
   --max: 1120px;
 }
 
@@ -36,6 +39,19 @@ body {
 a {
   color: inherit;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* The header is fixed, so a nav jump would otherwise land a section's first
+   line underneath it. */
+section[id] {
+  scroll-margin-top: 92px;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
 
 .site-header {
   position: fixed;
@@ -67,8 +83,7 @@ a {
   font-weight: 800;
 }
 
-.brand img,
-.project-card img {
+.brand img {
   flex: 0 0 auto;
   border-radius: 8px;
 }
@@ -98,18 +113,20 @@ a {
   background: rgba(15, 118, 110, 0.1);
 }
 
+/* ─── Hero ───────────────────────────────────────────────────────────────── */
+
 .hero {
   position: relative;
   display: grid;
-  min-height: min(86vh, 900px);
-  padding: 136px 20px 70px;
+  grid-template-rows: auto auto;
+  padding: 136px 20px 0;
   overflow: hidden;
   color: var(--white);
   isolation: isolate;
   background:
     radial-gradient(circle at 78% 20%, rgba(217, 91, 61, 0.28), transparent 29%),
     radial-gradient(circle at 18% 74%, rgba(142, 212, 198, 0.26), transparent 31%),
-    linear-gradient(145deg, #0f2238 0%, #183a54 48%, #24545f 100%);
+    linear-gradient(145deg, var(--navy) 0%, var(--navy-2) 48%, var(--navy-3) 100%);
 }
 
 .hero::before,
@@ -123,7 +140,7 @@ a {
 
 .hero::before {
   background-image: url("Assets/brand/isputnik-login-orbit-backdrop.svg");
-  background-position: 10% 50%;
+  background-position: 10% 30%;
   background-repeat: no-repeat;
   background-size: min(1040px, 72vw) auto;
   opacity: 0.46;
@@ -131,7 +148,6 @@ a {
 
 .hero::after {
   background:
-    linear-gradient(to bottom, transparent, transparent calc(100% - 124px), rgba(16, 34, 56, 0.9)),
     linear-gradient(90deg, rgba(15, 34, 56, 0.1), rgba(15, 34, 56, 0.58) 62%, rgba(15, 34, 56, 0.2)),
     linear-gradient(180deg, rgba(15, 34, 56, 0.05), rgba(15, 34, 56, 0.38));
 }
@@ -152,7 +168,27 @@ a {
 .hero-content {
   position: relative;
   z-index: 2;
-  align-self: center;
+  padding-bottom: 56px;
+}
+
+/* The product shot sits at the foot of the hero and pokes out of it into the
+   next section, the way a phone does on a launch page. The hero's navy runs on
+   behind the top half; the intro's paper takes over behind the bottom half. */
+.hero-shot {
+  position: relative;
+  z-index: 2;
+  width: min(var(--max), calc(100vw - 40px));
+  margin: 0 auto -1px;
+  padding: 0;
+}
+
+.hero-shot img {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 0;
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 -12px 60px rgba(5, 11, 21, 0.45);
 }
 
 .eyebrow {
@@ -164,7 +200,8 @@ a {
   text-transform: uppercase;
 }
 
-.hero .eyebrow {
+.hero .eyebrow,
+.feat-dark .eyebrow {
   color: #8ee6d8;
 }
 
@@ -246,7 +283,7 @@ h3 {
 .hero-orbit {
   position: absolute;
   left: 38%;
-  top: 50%;
+  top: 34%;
   width: min(78vw, 980px);
   aspect-ratio: 2.6 / 1;
   border: 1px solid rgba(248, 232, 176, 0.34);
@@ -274,7 +311,7 @@ h3 {
 }
 
 .hero-node-a {
-  top: 25%;
+  top: 18%;
   right: 40%;
   width: 16px;
   height: 16px;
@@ -282,7 +319,7 @@ h3 {
 
 .hero-node-b {
   left: 13%;
-  bottom: 23%;
+  top: 44%;
   width: 10px;
   height: 10px;
   background: var(--mint);
@@ -291,12 +328,159 @@ h3 {
 
 .hero-node-c {
   right: 44%;
-  bottom: 17%;
+  top: 40%;
   width: 12px;
   height: 12px;
   background: var(--amber);
   box-shadow: 0 0 28px rgba(245, 159, 90, 0.72);
 }
+
+/* ─── Intro ──────────────────────────────────────────────────────────────── */
+
+.intro {
+  padding: 96px 20px 24px;
+  background: var(--paper);
+}
+
+.intro-inner {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 3.4rem;
+  letter-spacing: -0.01em;
+}
+
+.intro-lede {
+  max-width: 640px;
+  margin: 22px auto 0;
+  color: var(--muted);
+  font-size: 1.22rem;
+}
+
+/* ─── Feature sections ───────────────────────────────────────────────────── */
+
+.feat {
+  padding: 96px 20px;
+}
+
+.feat-light {
+  background: var(--paper);
+}
+
+.feat-light:nth-of-type(odd) {
+  background: var(--white);
+}
+
+.feat-dark {
+  color: #e6eef0;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(217, 91, 61, 0.14), transparent 34%),
+    linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 60%, #1a3d4d 100%);
+}
+
+.feat-dark h2 {
+  color: var(--gold);
+}
+
+.feat-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+
+.feat-flip .feat-inner {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+}
+
+.feat-flip .feat-copy {
+  order: 2;
+}
+
+.feat-copy h2 {
+  font-size: 2.6rem;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+}
+
+.feat-copy p {
+  max-width: 480px;
+  margin: 20px 0 0;
+  font-size: 1.08rem;
+}
+
+.feat-dark .feat-copy p {
+  color: #cfdbdf;
+}
+
+.feat-points {
+  display: grid;
+  gap: 10px;
+  max-width: 480px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feat-points li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.98rem;
+}
+
+.feat-points li::before {
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 10px;
+  height: 10px;
+  content: "";
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.feat-dark .feat-points li::before {
+  background: var(--mint);
+  box-shadow: 0 0 12px rgba(142, 212, 198, 0.6);
+}
+
+.feat-media {
+  margin: 0;
+  min-width: 0;
+}
+
+.feat-media img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 30px 70px rgba(16, 24, 32, 0.16), 0 6px 18px rgba(16, 24, 32, 0.08);
+  background: var(--white);
+}
+
+.feat-dark .feat-media img {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(2, 8, 16, 0.6), 0 6px 18px rgba(2, 8, 16, 0.4);
+  background: var(--navy);
+}
+
+/* A short-and-wide image (the People row, the duplicate card) is happier
+   spanning the whole width than squeezed into a column. */
+.feat-media-wide,
+.feat-media-card {
+  grid-column: 1 / -1;
+}
+
+.feat-media-card img {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ─── The rest ───────────────────────────────────────────────────────────── */
 
 .section {
   padding: 78px 20px;
@@ -307,162 +491,29 @@ h3 {
   margin-bottom: 26px;
 }
 
-.project-band {
-  background: var(--paper);
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.project-card {
-  display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
-  gap: 18px;
-  min-height: 340px;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--white);
-  box-shadow: 0 16px 30px rgba(16, 24, 32, 0.07);
-}
-
-.project-card img {
-  width: 64px;
-  height: 64px;
-}
-
-.project-copy {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-}
-
-.project-kicker {
-  margin: 0 0 8px;
-  color: var(--teal);
-  font-size: 0.77rem;
-  font-weight: 850;
-  text-transform: uppercase;
-}
-
-.project-card-featured {
-  grid-column: span 2;
-  background: linear-gradient(135deg, var(--white) 58%, var(--teal-soft));
-}
-
-.project-copy p:not(.project-kicker) {
-  margin: 12px 0 18px;
-  color: var(--muted);
-}
-
-.project-points {
-  display: grid;
-  gap: 7px;
-  margin: 0 0 18px;
-  padding: 0;
-  color: var(--muted);
-  list-style: none;
-}
-
-.project-points li {
-  position: relative;
-  padding-left: 16px;
-}
-
-.project-points li::before {
-  content: "";
-  position: absolute;
-  top: 0.72em;
-  left: 0;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--amber);
-}
-
-.project-copy a,
-.link-list a {
-  color: var(--teal);
-  font-weight: 800;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-}
-
-.project-copy a {
-  margin-top: auto;
-}
-
-.features-band {
+.more-band {
   background: var(--white);
 }
 
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.feature-card {
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--paper);
-}
-
-.feature-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  margin-bottom: 14px;
-  border-radius: 10px;
-  background: var(--teal-soft);
-  font-size: 1.3rem;
-}
-
-.feature-card h3 {
-  margin-bottom: 8px;
-}
-
-.feature-card p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.spotlight-band {
-  background: var(--paper);
-}
-
-.spotlight-grid {
+.more-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
-.spotlight-card {
+.more-card {
   padding: 26px;
   border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--white);
-  box-shadow: 0 16px 30px rgba(16, 24, 32, 0.07);
+  border-radius: 10px;
+  background: var(--paper);
 }
 
-.spotlight-card h3 {
-  margin-bottom: 10px;
-}
-
-.spotlight-card p {
-  margin: 0 0 16px;
+.more-card p {
+  margin: 10px 0 0;
   color: var(--muted);
 }
 
-.spotlight-card .project-points {
-  margin-bottom: 0;
-}
+/* ─── Status, links ──────────────────────────────────────────────────────── */
 
 .status-band {
   background: var(--teal-soft);
@@ -505,6 +556,12 @@ h3 {
   background: var(--white);
 }
 
+.links-note {
+  max-width: 380px;
+  margin: 14px 0 0;
+  color: var(--muted);
+}
+
 .link-list {
   display: grid;
   gap: 12px;
@@ -518,27 +575,51 @@ h3 {
   background: var(--paper);
 }
 
-@media (max-width: 880px) {
-  .project-grid,
-  .status-layout,
-  .links-layout {
+/* ─── Reveal on scroll ───────────────────────────────────────────────────── */
+/* Applied only once the script has confirmed motion is welcome; without it
+   nothing is ever hidden. */
+
+.reveal-ready .feat,
+.reveal-ready .more-card,
+.reveal-ready .intro-inner {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-ready .feat.in,
+.reveal-ready .more-card.in,
+.reveal-ready .intro-inner.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .feat-inner,
+  .feat-flip .feat-inner {
     grid-template-columns: 1fr;
+    gap: 36px;
   }
 
-  .project-card-featured {
-    grid-column: auto;
+  .feat-flip .feat-copy {
+    order: 0;
   }
 
-  .feature-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .feat-copy p,
+  .feat-points {
+    max-width: none;
   }
 
-  .spotlight-grid {
+  .status-layout,
+  .links-layout,
+  .more-grid {
     grid-template-columns: 1fr;
   }
 
   .hero::before {
-    background-position: 32% 62%;
+    background-position: 32% 40%;
     background-size: 780px auto;
   }
 }
@@ -562,7 +643,6 @@ h3 {
   }
 
   .hero {
-    min-height: min(82vh, 760px);
     padding-top: 150px;
   }
 
@@ -575,11 +655,17 @@ h3 {
     font-size: 4.6rem;
   }
 
-  h2 {
+  h2,
+  .intro h2 {
     font-size: 2.2rem;
   }
 
-  .lede {
+  .feat-copy h2 {
+    font-size: 2rem;
+  }
+
+  .lede,
+  .intro-lede {
     font-size: 1.12rem;
   }
 
@@ -591,15 +677,8 @@ h3 {
     width: 100%;
   }
 
-  .project-card {
-    grid-template-columns: 56px minmax(0, 1fr);
-    min-height: auto;
-    padding: 18px;
-  }
-
-  .project-card img {
-    width: 56px;
-    height: 56px;
+  .feat {
+    padding: 64px 20px;
   }
 
   .status-list li {
@@ -614,20 +693,13 @@ h3 {
   }
 
   .hero-content,
+  .hero-shot,
   .section-inner {
     width: min(350px, calc(100vw - 40px));
   }
 
   .nav {
     display: none;
-  }
-
-  .project-card {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-grid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -636,10 +708,11 @@ h3 {
     font-size: 3.5rem;
   }
 
-  h2 {
-    font-size: 1.9rem;
+  h2,
+  .intro h2,
+  .feat-copy h2 {
+    font-size: 1.85rem;
   }
-
 }
 
 @media (prefers-reduced-motion: no-preference) {

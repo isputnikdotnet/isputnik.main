@@ -9,6 +9,7 @@
       content="isputnik is an open source, self-hosted family media library: audiobooks, ebooks, photos, and videos on your own server, under your own roof."
     >
     <link rel="icon" href="Assets/brand/isputnik-logo-sputnik-earth-mark.svg" type="image/svg+xml">
+    <link rel="preload" as="image" href="Assets/screenshots/hero-home-dark-1080.webp" imagesrcset="Assets/screenshots/hero-home-dark-720.webp 720w, Assets/screenshots/hero-home-dark-1080.webp 1080w, Assets/screenshots/hero-home-dark-1440.webp 1440w" imagesizes="(min-width: 1180px) 1120px, calc(100vw - 40px)">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -18,8 +19,9 @@
         <span>isputnik</span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#projects">Projects</a>
-        <a href="#features">Features</a>
+        <a href="#shelf">Shelf</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#stories">Stories</a>
         <a href="#status">Status</a>
         <a href="#links">GitHub</a>
       </nav>
@@ -43,159 +45,306 @@
             photos, and videos — served from your home, for the people you trust.
           </p>
           <div class="hero-actions" aria-label="Repository links">
-            <a class="button primary" href="https://github.com/isputnikdotnet/isputnik.home">isputnik.home</a>
-            <a class="button secondary" href="https://github.com/isputnikdotnet/isputnik.main">isputnik.main</a>
+            <a class="button primary" href="https://github.com/isputnikdotnet/isputnik.home">Get isputnik.home</a>
+            <a class="button secondary" href="#shelf">See what's inside</a>
           </div>
+        </div>
+        <figure class="hero-shot">
+          <img
+            src="Assets/screenshots/hero-home-dark-1080.webp"
+            srcset="Assets/screenshots/hero-home-dark-720.webp 720w, Assets/screenshots/hero-home-dark-1080.webp 1080w, Assets/screenshots/hero-home-dark-1440.webp 1440w"
+            sizes="(min-width: 1180px) 1120px, calc(100vw - 40px)"
+            width="1440" height="900"
+            fetchpriority="high" decoding="async"
+            alt="The isputnik.home home page in its dark theme: a quote of the day, photos from this day in earlier years, and the newest stories"
+          >
+        </figure>
+      </section>
+
+      <section class="intro" aria-labelledby="intro-title">
+        <div class="section-inner intro-inner">
+          <p class="eyebrow">Inside isputnik.home</p>
+          <h2 id="intro-title">One server, the whole shelf.</h2>
+          <p class="intro-lede">
+            Everything a household keeps — the books it listens to, the books it reads, the
+            photographs it can't throw away, the people in them — in one place that belongs to you.
+            No subscription. No cloud. Nothing leaves the building unless you send it.
+          </p>
         </div>
       </section>
 
-      <section class="section project-band" id="projects" aria-labelledby="projects-title">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="eyebrow">Projects</p>
-            <h2 id="projects-title">Current repositories</h2>
+      <!-- ─── Audiobooks ─────────────────────────────────────────────────────── -->
+      <section class="feat feat-dark" id="shelf" aria-labelledby="f-audio">
+        <div class="section-inner feat-inner">
+          <div class="feat-copy">
+            <p class="eyebrow">Audiobooks</p>
+            <h2 id="f-audio">Every chapter. Every narrator. Your place, kept.</h2>
+            <p>
+              A folder of files becomes a book with chapters, a cover, the reader who
+              recorded it, and its place in the series. Stop on your phone, pick up on the
+              laptop, come back a year later — the bookmark is still there.
+            </p>
+            <ul class="feat-points">
+              <li>Chapters, bookmarks, playback speed, and a sleep timer</li>
+              <li>Series in order, narrators as first-class people you can browse</li>
+              <li>Download to the phone and keep listening where the server can't follow</li>
+            </ul>
           </div>
-          <div class="project-grid">
-            <article class="project-card project-card-featured">
-              <img src="Assets/brand/isputnik-app-icon.svg" alt="" width="64" height="64">
-              <div class="project-copy">
-                <p class="project-kicker">Self-hosted family media library</p>
-                <h3>isputnik.home</h3>
-                <p>
-                  An open source home server that keeps your family's audiobooks, ebooks,
-                  photos, and videos in one place — organized, searchable, and shared only
-                  with the people you choose.
-                </p>
-                <ul class="project-points">
-                  <li>Runs on your own machine — Docker image and Unraid template included</li>
-                  <li>Family accounts with per-user progress, permissions, and profiles</li>
-                  <li>Installable as a mobile app (PWA) with offline listening</li>
-                  <li>Your media, metadata, and backups never leave your control</li>
-                </ul>
-                <a href="https://github.com/isputnikdotnet/isputnik.home">GitHub repository</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="Assets/brand/isputnik-logo-sputnik-earth-mark.svg" alt="" width="64" height="64">
-              <div class="project-copy">
-                <p class="project-kicker">Project index</p>
-                <h3>isputnik.main</h3>
-                <p>This small landing page and shared project overview for the isputnik repositories.</p>
-                <a href="https://github.com/isputnikdotnet/isputnik.main">GitHub repository</a>
-              </div>
-            </article>
-          </div>
+          <figure class="feat-media">
+            <img
+              src="Assets/screenshots/audiobooks-grid-dark-1076.webp"
+              srcset="Assets/screenshots/audiobooks-grid-dark-720.webp 720w, Assets/screenshots/audiobooks-grid-dark-1076.webp 1076w"
+              sizes="(min-width: 960px) 56vw, 100vw"
+              width="1076" height="1000" loading="lazy" decoding="async"
+              alt="An audiobook shelf in the dark theme: a grid of covers with running time and series position under each"
+            >
+          </figure>
         </div>
       </section>
 
-      <section class="section features-band" id="features" aria-labelledby="features-title">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="eyebrow">Inside isputnik.home</p>
-            <h2 id="features-title">One server, the whole shelf</h2>
+      <!-- ─── Ebooks ─────────────────────────────────────────────────────────── -->
+      <section class="feat feat-light feat-flip" aria-labelledby="f-books">
+        <div class="section-inner feat-inner">
+          <div class="feat-copy">
+            <p class="eyebrow">Ebooks</p>
+            <h2 id="f-books">Read it here. Or send it to the Kindle.</h2>
+            <p>
+              EPUB and FB2 open in a reader built in; PDF opens as itself. The same title
+              in three formats is one book, not three. A second translation, another
+              publisher's text, the audiobook of a book you also own — those are
+              <em>editions</em>, grouped on one page with the one you're reading marked.
+            </p>
+            <ul class="feat-points">
+              <li>Highlight a passage and keep it as a quote — it remembers the page</li>
+              <li>OPDS feeds, so your own e-reader app can browse the shelf</li>
+              <li>Send a book straight to a Kindle or Kobo from its page</li>
+            </ul>
           </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <span class="feature-icon" aria-hidden="true">🎧</span>
-              <h3>Audiobooks</h3>
-              <p>A full player with chapters, bookmarks, playback speed, and progress that follows you across devices.</p>
-            </article>
-            <article class="feature-card">
-              <span class="feature-icon" aria-hidden="true">📖</span>
-              <h3>Ebooks &amp; reading</h3>
-              <p>An in-browser reader for EPUB and FB2, PDF support, multi-format editions, OPDS feeds, and highlights you can keep as quotes.</p>
-            </article>
-            <article class="feature-card">
-              <span class="feature-icon" aria-hidden="true">📷</span>
-              <h3>Photos &amp; videos</h3>
-              <p>A gallery with timeline and folder views, slideshows, face recognition that groups people, and duplicate cleanup tools.</p>
-            </article>
-            <article class="feature-card">
-              <span class="feature-icon" aria-hidden="true">🌳</span>
-              <h3>People &amp; family tree</h3>
-              <p>Faces from the gallery become people, and people take their place on an interactive family tree.</p>
-            </article>
-            <article class="feature-card">
-              <span class="feature-icon" aria-hidden="true">🗂️</span>
-              <h3>Organized your way</h3>
-              <p>Libraries, collections, series, categories, tags, favorites, and an A–Z index — with search and filters everywhere.</p>
-            </article>
-            <article class="feature-card">
-              <span class="feature-icon" aria-hidden="true">🔐</span>
-              <h3>Safe to expose</h3>
-              <p>Two-factor sign-in, account lockout, rate limits, trusted zones, and admin alerts — hardened for life beyond the home network.</p>
-            </article>
-          </div>
+          <figure class="feat-media">
+            <img
+              src="Assets/screenshots/ebooks-grid-1076.webp"
+              srcset="Assets/screenshots/ebooks-grid-720.webp 720w, Assets/screenshots/ebooks-grid-1076.webp 1076w"
+              sizes="(min-width: 960px) 56vw, 100vw"
+              width="1076" height="1000" loading="lazy" decoding="async"
+              alt="An ebook shelf: cover grid with author under each, a small badge marking books that have more than one edition"
+            >
+          </figure>
         </div>
       </section>
 
-      <section class="section spotlight-band" id="details" aria-labelledby="details-title">
+      <!-- ─── Gallery ────────────────────────────────────────────────────────── -->
+      <section class="feat feat-dark" id="gallery" aria-labelledby="f-gallery">
+        <div class="section-inner feat-inner">
+          <div class="feat-copy">
+            <p class="eyebrow">Photos &amp; videos</p>
+            <h2 id="f-gallery">Every photo, sorted by itself.</h2>
+            <p>
+              Point it at the folders you already have. Photos land on a timeline by the
+              day they were taken, the same day in earlier years surfaces on its own, and
+              nothing is copied or moved — your files stay exactly where they were.
+            </p>
+            <ul class="feat-points">
+              <li>Timeline, folders, albums, slideshows, people and a map — all views of one library</li>
+              <li>"Around this day" on the home page, every morning</li>
+              <li>Fix a wrong date or a missing place for a hundred photos at once</li>
+            </ul>
+          </div>
+          <figure class="feat-media">
+            <img
+              src="Assets/screenshots/gallery-timeline-dark-1076.webp"
+              srcset="Assets/screenshots/gallery-timeline-dark-720.webp 720w, Assets/screenshots/gallery-timeline-dark-1076.webp 1076w"
+              sizes="(min-width: 960px) 56vw, 100vw"
+              width="1076" height="1000" loading="lazy" decoding="async"
+              alt="The gallery timeline in the dark theme: an Around-this-day card, then photos grouped under their dates"
+            >
+          </figure>
+        </div>
+      </section>
+
+      <!-- ─── People ─────────────────────────────────────────────────────────── -->
+      <section class="feat feat-light feat-flip" aria-labelledby="f-people">
+        <div class="section-inner feat-inner">
+          <div class="feat-copy">
+            <p class="eyebrow">Face recognition</p>
+            <h2 id="f-people">Faces become people. On your machine.</h2>
+            <p>
+              Turn it on for a library and a background job finds faces and gathers them
+              into people. Name the ones who matter and the name sticks. The models ship
+              with the app; not one pixel is sent anywhere to do it.
+            </p>
+            <ul class="feat-points">
+              <li>Merge two groups that are one person, or move a stranger out of a group</li>
+              <li>A person's photos become a filter, an album, a slideshow suggestion</li>
+              <li>Entirely local, entirely optional, off by default</li>
+            </ul>
+          </div>
+          <figure class="feat-media feat-media-wide">
+            <img
+              src="Assets/screenshots/gallery-people-1092.webp"
+              srcset="Assets/screenshots/gallery-people-720.webp 720w, Assets/screenshots/gallery-people-1080.webp 1080w, Assets/screenshots/gallery-people-1092.webp 1092w"
+              sizes="(min-width: 960px) 56vw, 100vw"
+              width="1092" height="365" loading="lazy" decoding="async"
+              alt="The People page: a row of named people, each with a face crop and how many photos they appear in"
+            >
+          </figure>
+        </div>
+      </section>
+
+      <!-- ─── Map ────────────────────────────────────────────────────────────── -->
+      <section class="feat feat-dark" aria-labelledby="f-map">
+        <div class="section-inner feat-inner">
+          <div class="feat-copy">
+            <p class="eyebrow">Map</p>
+            <h2 id="f-map">Where it happened.</h2>
+            <p>
+              Anything with a location joins the map, gathered into clusters until you
+              zoom close enough to tell them apart. Photos without one can be placed by
+              hand — search for the town, drop a pin, done for the whole batch.
+            </p>
+          </div>
+          <figure class="feat-media">
+            <img
+              src="Assets/screenshots/gallery-map-dark-1076.webp"
+              srcset="Assets/screenshots/gallery-map-dark-720.webp 720w, Assets/screenshots/gallery-map-dark-1076.webp 1076w"
+              sizes="(min-width: 960px) 56vw, 100vw"
+              width="1076" height="650" loading="lazy" decoding="async"
+              alt="A world map with numbered clusters over Europe and North America showing how many photos were taken there"
+            >
+          </figure>
+        </div>
+      </section>
+
+      <!-- ─── Stories ────────────────────────────────────────────────────────── -->
+      <section class="feat feat-light feat-flip" id="stories" aria-labelledby="f-stories">
+        <div class="section-inner feat-inner">
+          <div class="feat-copy">
+            <p class="eyebrow">Stories</p>
+            <h2 id="f-stories">The trip, told properly.</h2>
+            <p>
+              A story is a page you write yourself — your words, with the photos, the
+              album, the map of the route, a person from the family tree, a quote, the
+              book you were reading — placed where they belong in the telling. One
+              scrollable page, or a chapter per day.
+            </p>
+            <ul class="feat-points">
+              <li>Points at what's already in the house; never copies it</li>
+              <li>A map block with stops draws the route between them — on foot, by car, by plane</li>
+              <li>Send it to family, or share a link with anyone</li>
+            </ul>
+          </div>
+          <figure class="feat-media">
+            <img
+              src="Assets/screenshots/story-hero-1016.webp"
+              srcset="Assets/screenshots/story-hero-720.webp 720w, Assets/screenshots/story-hero-1016.webp 1016w"
+              sizes="(min-width: 960px) 56vw, 100vw"
+              width="1016" height="1000" loading="lazy" decoding="async"
+              alt="A story titled Alps in summer: a mountain photo across the top, four chapters listed beside it, and a map of where it happened"
+            >
+          </figure>
+        </div>
+      </section>
+
+      <!-- ─── Family tree ────────────────────────────────────────────────────── -->
+      <section class="feat feat-dark" id="family" aria-labelledby="f-family">
+        <div class="section-inner feat-inner">
+          <div class="feat-copy">
+            <p class="eyebrow">Family tree</p>
+            <h2 id="f-family">Who they were to each other.</h2>
+            <p>
+              Parents above, children below, partners alongside. Every person has a
+              profile — their timeline, their photos, the things they said — and the
+              people found in the gallery can be linked straight to their place on the tree.
+            </p>
+            <ul class="feat-points">
+              <li>Second marriages, adoptions and half-siblings drawn the way they were</li>
+              <li>Let a relative maintain their own branch without touching the rest</li>
+              <li>GEDCOM in and out, so nothing is locked in</li>
+            </ul>
+          </div>
+          <figure class="feat-media">
+            <img
+              src="Assets/screenshots/family-tree-dark-1074.webp"
+              srcset="Assets/screenshots/family-tree-dark-720.webp 720w, Assets/screenshots/family-tree-dark-1074.webp 1074w"
+              sizes="(min-width: 960px) 56vw, 100vw"
+              width="1074" height="742" loading="lazy" decoding="async"
+              alt="A family tree chart across four generations, with partners side by side and children beneath them"
+            >
+          </figure>
+        </div>
+      </section>
+
+      <!-- ─── Duplicates ─────────────────────────────────────────────────────── -->
+      <section class="feat feat-light feat-flip" aria-labelledby="f-dupes">
+        <div class="section-inner feat-inner">
+          <div class="feat-copy">
+            <p class="eyebrow">Duplicate cleanup</p>
+            <h2 id="f-dupes">Phone backups run twice. This notices.</h2>
+            <p>
+              Libraries collect copies — a card imported into two places, a folder synced
+              into itself. A cleanup finds them, says which copy it would keep and why,
+              and lets you work through the list at your own pace. Close the browser,
+              come back next week; your decisions are kept.
+            </p>
+            <ul class="feat-points">
+              <li>Byte-identical copies and re-saved near-copies, told apart</li>
+              <li>Tags, albums and tagged people move to the copy that survives</li>
+              <li>Everything removed goes to the Recycle Bin, not to oblivion</li>
+            </ul>
+          </div>
+          <figure class="feat-media feat-media-card">
+            <img
+              src="Assets/screenshots/duplicate-card-984.webp"
+              srcset="Assets/screenshots/duplicate-card-720.webp 720w, Assets/screenshots/duplicate-card-984.webp 984w"
+              sizes="(min-width: 960px) 56vw, 100vw"
+              width="984" height="437" loading="lazy" decoding="async"
+              alt="A duplicate-cleanup card: two copies of one photo, one marked keep and one marked delete, with the reason and the buttons to act"
+            >
+          </figure>
+        </div>
+      </section>
+
+      <!-- ─── The rest ───────────────────────────────────────────────────────── -->
+      <section class="section more-band" id="more" aria-labelledby="more-title">
         <div class="section-inner">
           <div class="section-heading">
-            <p class="eyebrow">In depth</p>
-            <h2 id="details-title">A closer look</h2>
+            <p class="eyebrow">And</p>
+            <h2 id="more-title">The parts that don't photograph.</h2>
           </div>
-          <div class="spotlight-grid">
-            <article class="spotlight-card">
-              <span class="feature-icon" aria-hidden="true">🎬</span>
+          <div class="more-grid">
+            <article class="more-card">
               <h3>Slideshows that become movies</h3>
               <p>
-                Pick photos and videos, choose a transition — crossfade, slide, Ken Burns,
-                dip to black — set the pace, and lay your own music underneath. The server
-                even suggests slideshows on its own, clustering moments from dates, places,
-                and the people in them, with burst shots collapsed to one photo.
+                Pick photos, choose a transition, lay your own music under it. Render it
+                to a real 1080p MP4 as a background job — the finished movie files itself
+                back into the gallery. The server suggests slideshows on its own, too:
+                a day with a lot of photos, or everything with one person in it.
               </p>
-              <ul class="project-points">
-                <li>Render to a real MP4 movie (1080p) as a background job, with live progress</li>
-                <li>Title card options: plain black, a photo, a blurred photo, or a collage</li>
-                <li>Finished movies file themselves into a gallery library — re-renders replace, never pile up</li>
-              </ul>
             </article>
-
-            <article class="spotlight-card">
-              <span class="feature-icon" aria-hidden="true">🧹</span>
-              <h3>Duplicate photo cleanup</h3>
+            <article class="more-card">
+              <h3>Safe to put on the internet</h3>
               <p>
-                Phone backups run twice, cards get imported into two places — libraries
-                collect copies. A four-step wizard scans the libraries you pick, groups the
-                copies, and lets you work through them a job at a time, at your own pace.
+                Two-factor sign-in with an authenticator app or emailed codes. Passkeys.
+                Account lockout, IP blocking, trusted home networks, rate limits, a strict
+                Content Security Policy, and email to the admin when something looks wrong.
+                A security page scores how you're doing.
               </p>
-              <ul class="project-points">
-                <li>Resumable: close the browser, come back next week, your decisions are kept</li>
-                <li>Folder instructions — mark a folder's copies as the keepers, or as safe to clear</li>
-                <li>Everything removed lands in the Recycle Bin until you empty it deliberately</li>
-              </ul>
             </article>
-
-            <article class="spotlight-card">
-              <span class="feature-icon" aria-hidden="true">🛡️</span>
-              <h3>Security, taken seriously</h3>
+            <article class="more-card">
+              <h3>Offline, on the phone</h3>
               <p>
-                Built for a home network, hardened for the internet. Two-factor sign-in
-                works with an authenticator app or emailed codes, with backup codes for
-                when the phone is gone — and the server watches its own front door.
+                Install it from the browser like an app. Download audiobooks to the device
+                and keep listening on the plane. Progress made offline syncs back when you
+                reconnect; caches are wiped on sign-out, so a shared phone shares nothing.
               </p>
-              <ul class="project-points">
-                <li>Account lockout, IP blocking, and trusted zones for your home network</li>
-                <li>Rate limiting, a strict Content Security Policy, and HTTPS support with HSTS</li>
-                <li>Email alerts to admins, a full activity log, and a step-by-step exposure guide</li>
-              </ul>
             </article>
-
-            <article class="spotlight-card">
-              <span class="feature-icon" aria-hidden="true">📴</span>
-              <h3>Offline, on your phone</h3>
+            <article class="more-card">
+              <h3>Yours. Really.</h3>
               <p>
-                Install it from the browser like an app — phone-style bottom navigation
-                included. Download audiobooks to the device and keep listening on the
-                plane, in the woods, or wherever the server can't follow.
+                One SQLite database, your files where you put them, backups you can
+                download and restore anywhere. Nightly backup schedule, a Recycle Bin for
+                everything deleted, and a full activity log. Runs in Docker or from the
+                Unraid app store.
               </p>
-              <ul class="project-points">
-                <li>Downloaded books keep their details and player working fully offline</li>
-                <li>Progress made offline syncs back when you reconnect</li>
-                <li>Private caches are wiped on logout, so a shared phone shares nothing</li>
-              </ul>
             </article>
           </div>
         </div>
@@ -208,7 +357,7 @@
             <h2 id="status-title">Actively developed</h2>
           </div>
           <ul class="status-list">
-            <li><span>Shipped</span> Audiobook and ebook libraries, the photo and video gallery, family tree, collections, quotes, backups, and an activity dashboard — with regular 3.x releases.</li>
+            <li><span>Shipped</span> Audiobook and ebook libraries, the photo and video gallery, stories, family tree, collections, quotes, backups, and an activity dashboard — with regular 3.x releases.</li>
             <li><span>Deploy</span> Docker images published on every release, plus an Unraid Community Applications template for one-click install.</li>
             <li><span>Next</span> Smarter duplicate detection, deeper mobile pages, and new home-hub modules beyond the media library.</li>
           </ul>
@@ -220,6 +369,10 @@
           <div>
             <p class="eyebrow">GitHub</p>
             <h2 id="links-title">Source links</h2>
+            <p class="links-note">
+              <strong>isputnik.home</strong> is the server. <strong>isputnik.main</strong> is this page.
+              Both are open source under the AGPL.
+            </p>
           </div>
           <div class="link-list">
             <a href="https://github.com/isputnikdotnet/isputnik.home">github.com/isputnikdotnet/isputnik.home</a>
@@ -228,5 +381,17 @@
         </div>
       </section>
     </main>
+
+    <script>
+      // Feature sections ease in as they arrive. Purely decorative: without JS, or
+      // for anyone who has asked for reduced motion, everything is simply visible.
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+        document.documentElement.classList.add("reveal-ready");
+        const seen = new IntersectionObserver((entries) => {
+          for (const e of entries) if (e.isIntersecting) { e.target.classList.add("in"); seen.unobserve(e.target); }
+        }, { rootMargin: "0px 0px -12% 0px", threshold: 0.12 });
+        document.querySelectorAll(".feat, .more-card, .intro-inner").forEach((el) => seen.observe(el));
+      }
+    </script>
   </body>
 </html>
