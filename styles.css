@@ -492,24 +492,47 @@ h3 {
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* ─── Plain grids (Security) ─────────────────────────────────────────────── */
+/* ─── Split (Security): a picture beside a list ──────────────────────────── */
 
-.plain-grid {
+.split {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
-  margin: 0 auto;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.split-media {
+  margin: 0;
+}
+
+.split-media img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--raised);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.split-copy .group-lede {
+  margin-top: 0;
+}
+
+.plain-list {
+  display: grid;
+  gap: 18px;
+  margin: 28px 0 0;
   padding: 0;
   list-style: none;
 }
 
-.plain-grid li {
-  padding-top: 16px;
+.plain-list li {
+  padding-top: 14px;
   border-top: 2px solid var(--ink);
 }
 
-.plain-grid p {
-  margin: 8px 0 0;
+.plain-list p {
+  margin: 6px 0 0;
   color: var(--muted);
   font-size: 0.95rem;
 }
@@ -551,12 +574,12 @@ h3 {
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
 
 @media (max-width: 960px) {
-  .stats-list,
-  .plain-grid {
+  .stats-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .band-inner {
+  .band-inner,
+  .split {
     grid-template-columns: 1fr;
   }
 
@@ -605,10 +628,6 @@ h3 {
 @media (max-width: 520px) {
   .product-actions .secondary {
     display: none;
-  }
-
-  .plain-grid {
-    grid-template-columns: 1fr;
   }
 }
 

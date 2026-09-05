@@ -294,17 +294,32 @@
         <div class="group-head">
           <p class="eyebrow">Security</p>
           <h2 id="g-security">Safe to put on the internet.</h2>
-          <p class="group-lede">
-            A security page scores the install and says what would raise the score.
-            The pieces behind it are the ones a bank uses, sized for a household.
-          </p>
         </div>
-        <ul class="plain-grid section-inner">
-          <li><h3>Two-factor sign-in</h3><p>An authenticator app or an emailed code, and passkeys for the people who have them.</p></li>
-          <li><h3>Lockout and blocking</h3><p>Repeated failures lock the account and, if they keep coming, block the address.</p></li>
-          <li><h3>Trusted zones</h3><p>Your own network is known; anything from outside it is held to a stricter standard.</p></li>
-          <li><h3>Someone is told</h3><p>An email to the admin when a sign-in looks wrong, and a full activity log to check.</p></li>
-        </ul>
+        <div class="section-inner split">
+          <figure class="split-media">
+            <img
+              src="Assets/screenshots/security-overview-952.webp"
+              srcset="Assets/screenshots/security-overview-720.webp 720w, Assets/screenshots/security-overview-952.webp 952w"
+              sizes="(min-width: 960px) 640px, calc(100vw - 40px)"
+              width="952" height="869" loading="lazy" decoding="async"
+              alt="The Security overview: a protection score of 50 out of 100 marked Fair, and a list of policies with each one graded Strong, Medium or Weak"
+            >
+          </figure>
+          <div class="split-copy">
+            <p class="group-lede">
+              One page scores the whole install out of 100 and grades every policy
+              behind the number. Each row opens the setting that owns it, so raising the
+              score is a matter of working down the list. The pieces are the ones a bank
+              uses, sized for a household.
+            </p>
+            <ul class="plain-list">
+              <li><h3>Two-factor sign-in</h3><p>An authenticator app or an emailed code, and passkeys for the people who have them. It can be required only from outside the house.</p></li>
+              <li><h3>Lockout and blocking</h3><p>Repeated failures lock the account and, if they keep coming, block the address. Rate limits and a strict Content Security Policy sit underneath.</p></li>
+              <li><h3>Trusted networks</h3><p>Your own network is known. Anything from outside it is held to a stricter standard, and deleting can be limited to home.</p></li>
+              <li><h3>Someone is told</h3><p>An email to the admin when a sign-in comes from somewhere new, and a full activity log to check afterwards.</p></li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <!-- ─── Reassurance ──────────────────────────────────────────────────────── -->
