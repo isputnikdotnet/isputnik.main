@@ -81,241 +81,344 @@
       <section class="stats" aria-label="At a glance">
         <ul class="stats-list">
           <li><strong>4</strong><span>kinds of media: audiobooks, ebooks, photos, video</span></li>
-          <li><strong>6</strong><span>themes, from platinum grey to Sputnik over Earth</span></li>
+          <li><strong>0</strong><span>subscriptions. No cloud, no account with anyone but you</span></li>
           <li><strong>2</strong><span>interface languages, English and Russian</span></li>
           <li><strong>1</strong><span>database file. Back it up, restore it anywhere</span></li>
         </ul>
       </section>
 
-      <!-- ─── Library ─────────────────────────────────────────────────────────────── -->
+      <!-- ─── Library─────────────────────────────────────────────────────────────── -->
       <section class="group" id="library" aria-labelledby="g-library">
         <div class="group-head">
           <p class="eyebrow">Library</p>
           <h2 id="g-library">Every book you own, on one shelf.</h2>
         </div>
-        <div class="rail-wrap">
-          <ul class="rail" aria-label="Library features">
-            <li class="card">
-              <img
-                src="Assets/screenshots/audiobooks-grid-720.webp"
-                srcset="Assets/screenshots/audiobooks-grid-720.webp 720w, Assets/screenshots/audiobooks-grid-1076.webp 1076w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1076" height="807" loading="lazy" decoding="async"
-                alt="An audiobook shelf: a grid of covers with running time and series position under each"
-              >
-              <h3>Audiobooks</h3>
-              <p>
-                A folder of files becomes a book with chapters, a cover, the reader who recorded it, and its place in the series. Stop on your phone, pick up on the laptop, come back a year later — the bookmark is still there.
-              </p>
+        <div class="section-inner viewer">
+          <ul class="viewer-items">
+            <li class="viewer-item is-active" id="library-1" role="tabpanel" aria-labelledby="library-tab-1">
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/audiobooks-grid-720.webp"
+                  srcset="Assets/screenshots/audiobooks-grid-720.webp 720w, Assets/screenshots/audiobooks-grid-1076.webp 1076w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1076" height="807" loading="lazy" decoding="async"
+                  alt="An audiobook shelf: a grid of covers with running time and series position under each"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Audiobooks</h3>
+                <p>
+                  A folder of files becomes a book with chapters, a cover, the reader who recorded it, and its place in the series. Stop on your phone, pick up on the laptop, come back a year later — the bookmark is still there.
+                </p>
+              </div>
             </li>
-            <li class="card">
-              <img
-                src="Assets/screenshots/audiobook-detail-720.webp"
-                srcset="Assets/screenshots/audiobook-detail-720.webp 720w, Assets/screenshots/audiobook-detail-1076.webp 1076w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1076" height="807" loading="lazy" decoding="async"
-                alt="A book page for The Hound of the Baskervilles: cover, narrator, series position, a Start listening button and the editions it belongs to"
-              >
-              <h3>A page per book</h3>
-              <p>
-                Cover, description, narrator, series position, the chapters, and how far along you are. Send it to a phone for the plane; it comes back with the progress made offline.
-              </p>
+            <li class="viewer-item" id="library-2" role="tabpanel" aria-labelledby="library-tab-2" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/audiobook-detail-720.webp"
+                  srcset="Assets/screenshots/audiobook-detail-720.webp 720w, Assets/screenshots/audiobook-detail-1076.webp 1076w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1076" height="807" loading="lazy" decoding="async"
+                  alt="A book page for The Hound of the Baskervilles: cover, narrator, series position, a Start listening button and the editions it belongs to"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>A page per book</h3>
+                <p>
+                  Cover, description, narrator, series position, the chapters, and how far along you are. Send it to a phone for the plane; it comes back with the progress made offline.
+                </p>
+              </div>
             </li>
-            <li class="card">
-              <img
-                src="Assets/screenshots/ebooks-grid-720.webp"
-                srcset="Assets/screenshots/ebooks-grid-720.webp 720w, Assets/screenshots/ebooks-grid-1076.webp 1076w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1076" height="807" loading="lazy" decoding="async"
-                alt="An ebook shelf: cover grid with author under each, a small badge marking books that have more than one edition"
-              >
-              <h3>Ebooks</h3>
-              <p>
-                EPUB and FB2 open in a reader built in; PDF opens as itself. The same title in three formats is one book, not three. OPDS feeds let your own e-reader app browse the shelf.
-              </p>
+            <li class="viewer-item" id="library-3" role="tabpanel" aria-labelledby="library-tab-3" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/ebooks-grid-720.webp"
+                  srcset="Assets/screenshots/ebooks-grid-720.webp 720w, Assets/screenshots/ebooks-grid-1076.webp 1076w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1076" height="807" loading="lazy" decoding="async"
+                  alt="An ebook shelf: cover grid with author under each, a small badge marking books that have more than one edition"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Ebooks</h3>
+                <p>
+                  EPUB and FB2 open in a reader built in; PDF opens as itself. The same title in three formats is one book, not three. OPDS feeds let your own e-reader app browse the shelf.
+                </p>
+              </div>
             </li>
-            <li class="card">
-              <img
-                src="Assets/screenshots/book-editions-720.webp"
-                srcset="Assets/screenshots/book-editions-720.webp 720w, Assets/screenshots/book-editions-1020.webp 1020w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1020" height="765" loading="lazy" decoding="async"
-                alt="The Editions block on a book page: three editions of Alice's Adventures in Wonderland, one marked primary"
-              >
-              <h3>Editions</h3>
-              <p>
-                A second translation, another publisher's text, the audiobook of a book you also own — those are editions, grouped on one page with the one you're reading marked.
-              </p>
+            <li class="viewer-item" id="library-4" role="tabpanel" aria-labelledby="library-tab-4" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/book-editions-720.webp"
+                  srcset="Assets/screenshots/book-editions-720.webp 720w, Assets/screenshots/book-editions-1020.webp 1020w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1020" height="765" loading="lazy" decoding="async"
+                  alt="The Editions block on a book page: three editions of Alice's Adventures in Wonderland, one marked primary"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Editions</h3>
+                <p>
+                  A second translation, another publisher's text, the audiobook of a book you also own — those are editions, grouped on one page with the one you're reading marked.
+                </p>
+              </div>
             </li>
-            <li class="card">
-              <img
-                src="Assets/screenshots/ebook-reader-720.webp"
-                srcset="Assets/screenshots/ebook-reader-720.webp 720w, Assets/screenshots/ebook-reader-1080.webp 1080w, Assets/screenshots/ebook-reader-1440.webp 1440w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1440" height="1080" loading="lazy" decoding="async"
-                alt="The built-in reader open on the first chapter of Alice's Adventures in Wonderland"
-              >
-              <h3>The reader</h3>
-              <p>
-                Paged or scrolled, day or night, your typeface. Highlight a passage and keep it as a quote — it remembers the page. Or send the book straight to a Kindle from its page.
-              </p>
+            <li class="viewer-item" id="library-5" role="tabpanel" aria-labelledby="library-tab-5" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/ebook-reader-720.webp"
+                  srcset="Assets/screenshots/ebook-reader-720.webp 720w, Assets/screenshots/ebook-reader-1080.webp 1080w, Assets/screenshots/ebook-reader-1440.webp 1440w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1440" height="1080" loading="lazy" decoding="async"
+                  alt="The built-in reader open on the first chapter of Alice's Adventures in Wonderland"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>The reader</h3>
+                <p>
+                  Paged or scrolled, day or night, your typeface. Highlight a passage and keep it as a quote — it remembers the page. Or send the book straight to a Kindle from its page.
+                </p>
+              </div>
             </li>
           </ul>
-          <div class="rail-controls">
-            <span class="rail-count" aria-live="polite">1 / 5</span>
-            <button type="button" class="rail-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
-            <button type="button" class="rail-btn" data-dir="1" aria-label="Next">&#8594;</button>
+          <div class="viewer-thumbs" role="tablist" aria-label="Library features">
+            <button type="button" class="viewer-thumb" role="tab" id="library-tab-1" aria-controls="library-1" aria-selected="true">
+              <img src="Assets/screenshots/audiobooks-grid-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
+              <span>Audiobooks</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="library-tab-2" aria-controls="library-2" aria-selected="false">
+              <img src="Assets/screenshots/audiobook-detail-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
+              <span>A page per book</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="library-tab-3" aria-controls="library-3" aria-selected="false">
+              <img src="Assets/screenshots/ebooks-grid-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
+              <span>Ebooks</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="library-tab-4" aria-controls="library-4" aria-selected="false">
+              <img src="Assets/screenshots/book-editions-720.webp" width="1020" height="765" loading="lazy" decoding="async" alt="">
+              <span>Editions</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="library-tab-5" aria-controls="library-5" aria-selected="false">
+              <img src="Assets/screenshots/ebook-reader-720.webp" width="1440" height="1080" loading="lazy" decoding="async" alt="">
+              <span>The reader</span>
+            </button>
           </div>
         </div>
       </section>
 
-      <!-- ─── Photos & videos ─────────────────────────────────────────────────────── -->
+      <!-- ─── Photos & videos─────────────────────────────────────────────────────── -->
       <section class="group group-alt" id="gallery" aria-labelledby="g-gallery">
         <div class="group-head">
           <p class="eyebrow">Photos &amp; videos</p>
           <h2 id="g-gallery">Every photo, sorted by itself.</h2>
         </div>
-        <div class="rail-wrap">
-          <ul class="rail" aria-label="Gallery features">
-            <li class="card">
-              <img
-                src="Assets/screenshots/gallery-timeline-dark-720.webp"
-                srcset="Assets/screenshots/gallery-timeline-dark-720.webp 720w, Assets/screenshots/gallery-timeline-dark-1076.webp 1076w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1076" height="807" loading="lazy" decoding="async"
-                alt="The gallery timeline in the dark theme: an Around-this-day card, then photos grouped under their dates"
-              >
-              <h3>Timeline</h3>
-              <p>
-                Point it at the folders you already have. Photos land on a timeline by the day they were taken, the same day in earlier years surfaces on its own, and nothing is copied or moved.
-              </p>
+        <div class="section-inner viewer">
+          <ul class="viewer-items">
+            <li class="viewer-item is-active" id="gallery-1" role="tabpanel" aria-labelledby="gallery-tab-1">
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/gallery-timeline-dark-720.webp"
+                  srcset="Assets/screenshots/gallery-timeline-dark-720.webp 720w, Assets/screenshots/gallery-timeline-dark-1076.webp 1076w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1076" height="807" loading="lazy" decoding="async"
+                  alt="The gallery timeline in the dark theme: an Around-this-day card, then photos grouped under their dates"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Timeline</h3>
+                <p>
+                  Point it at the folders you already have. Photos land on a timeline by the day they were taken, the same day in earlier years surfaces on its own, and nothing is copied or moved.
+                </p>
+              </div>
             </li>
-            <li class="card">
-              <img
-                src="Assets/screenshots/gallery-people-720.webp"
-                srcset="Assets/screenshots/gallery-people-720.webp 720w, Assets/screenshots/gallery-people-1076.webp 1076w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1076" height="807" loading="lazy" decoding="async"
-                alt="The People page: named people in a row, each with a face crop and a photo count, then the unnamed groups"
-              >
-              <h3>People</h3>
-              <p>
-                Turn it on for a library and a background job finds faces and gathers them into people. Name the ones who matter and the name sticks. The models ship with the app; not one pixel is sent anywhere.
-              </p>
+            <li class="viewer-item" id="gallery-2" role="tabpanel" aria-labelledby="gallery-tab-2" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/gallery-people-720.webp"
+                  srcset="Assets/screenshots/gallery-people-720.webp 720w, Assets/screenshots/gallery-people-1076.webp 1076w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1076" height="807" loading="lazy" decoding="async"
+                  alt="The People page: named people in a row, each with a face crop and a photo count, then the unnamed groups"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>People</h3>
+                <p>
+                  Turn it on for a library and a background job finds faces and gathers them into people. Name the ones who matter and the name sticks. The models ship with the app; not one pixel is sent anywhere.
+                </p>
+              </div>
             </li>
-            <li class="card">
-              <img
-                src="Assets/screenshots/gallery-map-dark-720.webp"
-                srcset="Assets/screenshots/gallery-map-dark-720.webp 720w, Assets/screenshots/gallery-map-dark-1076.webp 1076w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1076" height="807" loading="lazy" decoding="async"
-                alt="A world map with numbered clusters showing how many photos were taken in each place"
-              >
-              <h3>Map</h3>
-              <p>
-                Anything with a location joins the map, gathered into clusters until you zoom close enough to tell them apart. Photos without one can be placed by hand — search for the town, drop a pin, done for the whole batch.
-              </p>
+            <li class="viewer-item" id="gallery-3" role="tabpanel" aria-labelledby="gallery-tab-3" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/gallery-map-dark-720.webp"
+                  srcset="Assets/screenshots/gallery-map-dark-720.webp 720w, Assets/screenshots/gallery-map-dark-1076.webp 1076w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1076" height="807" loading="lazy" decoding="async"
+                  alt="A world map with numbered clusters showing how many photos were taken in each place"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Map</h3>
+                <p>
+                  Anything with a location joins the map, gathered into clusters until you zoom close enough to tell them apart. Photos without one can be placed by hand — search for the town, drop a pin, done for the whole batch.
+                </p>
+              </div>
             </li>
-            <li class="card">
-              <img
-                src="Assets/screenshots/gallery-album-720.webp"
-                srcset="Assets/screenshots/gallery-album-720.webp 720w, Assets/screenshots/gallery-album-1076.webp 1076w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1076" height="807" loading="lazy" decoding="async"
-                alt="An album called Sunday dinner, June 2025: a grid of photographs of food and the table"
-              >
-              <h3>Albums and slideshows</h3>
-              <p>
-                An album is a set you choose; a slideshow is an album with a transition and your music under it. Render it to a real 1080p movie in the background — the file lands back in the gallery.
-              </p>
+            <li class="viewer-item" id="gallery-4" role="tabpanel" aria-labelledby="gallery-tab-4" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/gallery-album-720.webp"
+                  srcset="Assets/screenshots/gallery-album-720.webp 720w, Assets/screenshots/gallery-album-1076.webp 1076w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1076" height="807" loading="lazy" decoding="async"
+                  alt="An album called Sunday dinner, June 2025: a grid of photographs of food and the table"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Albums and slideshows</h3>
+                <p>
+                  An album is a set you choose; a slideshow is an album with a transition and your music under it. Render it to a real 1080p movie in the background — the file lands back in the gallery.
+                </p>
+              </div>
             </li>
-            <li class="card">
-              <img
-                src="Assets/screenshots/duplicate-card-720.webp"
-                srcset="Assets/screenshots/duplicate-card-720.webp 720w, Assets/screenshots/duplicate-card-952.webp 952w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="952" height="714" loading="lazy" decoding="async"
-                alt="Duplicate sets: two copies of a photo side by side, one marked keep and one marked delete, with the reason"
-              >
-              <h3>Duplicate cleanup</h3>
-              <p>
-                Phone backups run twice. A cleanup finds the copies, says which one it would keep and why, and lets you work through the list at your own pace. Everything removed goes to the Recycle Bin, not to oblivion.
-              </p>
+            <li class="viewer-item" id="gallery-5" role="tabpanel" aria-labelledby="gallery-tab-5" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/duplicate-card-720.webp"
+                  srcset="Assets/screenshots/duplicate-card-720.webp 720w, Assets/screenshots/duplicate-card-952.webp 952w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="952" height="714" loading="lazy" decoding="async"
+                  alt="Duplicate sets: two copies of a photo side by side, one marked keep and one marked delete, with the reason"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Duplicate cleanup</h3>
+                <p>
+                  Phone backups run twice. A cleanup finds the copies, says which one it would keep and why, and lets you work through the list at your own pace. Everything removed goes to the Recycle Bin, not to oblivion.
+                </p>
+              </div>
             </li>
           </ul>
-          <div class="rail-controls">
-            <span class="rail-count" aria-live="polite">1 / 5</span>
-            <button type="button" class="rail-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
-            <button type="button" class="rail-btn" data-dir="1" aria-label="Next">&#8594;</button>
+          <div class="viewer-thumbs" role="tablist" aria-label="Gallery features">
+            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-1" aria-controls="gallery-1" aria-selected="true">
+              <img src="Assets/screenshots/gallery-timeline-dark-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
+              <span>Timeline</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-2" aria-controls="gallery-2" aria-selected="false">
+              <img src="Assets/screenshots/gallery-people-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
+              <span>People</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-3" aria-controls="gallery-3" aria-selected="false">
+              <img src="Assets/screenshots/gallery-map-dark-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
+              <span>Map</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-4" aria-controls="gallery-4" aria-selected="false">
+              <img src="Assets/screenshots/gallery-album-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
+              <span>Albums and slideshows</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-5" aria-controls="gallery-5" aria-selected="false">
+              <img src="Assets/screenshots/duplicate-card-720.webp" width="952" height="714" loading="lazy" decoding="async" alt="">
+              <span>Duplicate cleanup</span>
+            </button>
           </div>
         </div>
       </section>
 
-      <!-- ─── Stories & family ────────────────────────────────────────────────────── -->
+      <!-- ─── Stories & family────────────────────────────────────────────────────── -->
       <section class="group" id="stories" aria-labelledby="g-stories">
         <div class="group-head">
           <p class="eyebrow">Stories &amp; family</p>
           <h2 id="g-stories">The trip, told properly. The people, kept.</h2>
         </div>
-        <div class="rail-wrap">
-          <ul class="rail" aria-label="Stories and family features">
-            <li class="card">
-              <img
-                src="Assets/screenshots/story-hero-720.webp"
-                srcset="Assets/screenshots/story-hero-720.webp 720w, Assets/screenshots/story-hero-1016.webp 1016w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1016" height="762" loading="lazy" decoding="async"
-                alt="A story titled Alps in summer: a mountain photo across the top, the opening paragraph, and a map of where it happened"
-              >
-              <h3>Stories</h3>
-              <p>
-                A page you write yourself — your words, with the photos, the album, the map of the route, a person from the family tree, a quote — placed where they belong in the telling. One scrollable page, or a chapter per day.
-              </p>
+        <div class="section-inner viewer">
+          <ul class="viewer-items">
+            <li class="viewer-item is-active" id="stories-1" role="tabpanel" aria-labelledby="stories-tab-1">
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/story-hero-720.webp"
+                  srcset="Assets/screenshots/story-hero-720.webp 720w, Assets/screenshots/story-hero-1016.webp 1016w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1016" height="762" loading="lazy" decoding="async"
+                  alt="A story titled Alps in summer: a mountain photo across the top, the opening paragraph, and a map of where it happened"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Stories</h3>
+                <p>
+                  A page you write yourself — your words, with the photos, the album, the map of the route, a person from the family tree, a quote — placed where they belong in the telling. One scrollable page, or a chapter per day.
+                </p>
+              </div>
             </li>
-            <li class="card">
-              <img
-                src="Assets/screenshots/family-tree-dark-720.webp"
-                srcset="Assets/screenshots/family-tree-dark-720.webp 720w, Assets/screenshots/family-tree-dark-1076.webp 1076w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1076" height="807" loading="lazy" decoding="async"
-                alt="A family tree chart across four generations, with partners side by side and children beneath them"
-              >
-              <h3>Family tree</h3>
-              <p>
-                Parents above, children below, partners alongside. Second marriages, adoptions and half-siblings drawn the way they were. GEDCOM in and out, so nothing is locked in.
-              </p>
+            <li class="viewer-item" id="stories-2" role="tabpanel" aria-labelledby="stories-tab-2" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/family-tree-dark-720.webp"
+                  srcset="Assets/screenshots/family-tree-dark-720.webp 720w, Assets/screenshots/family-tree-dark-1076.webp 1076w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1076" height="807" loading="lazy" decoding="async"
+                  alt="A family tree chart across four generations, with partners side by side and children beneath them"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Family tree</h3>
+                <p>
+                  Parents above, children below, partners alongside. Second marriages, adoptions and half-siblings drawn the way they were. GEDCOM in and out, so nothing is locked in.
+                </p>
+              </div>
             </li>
-            <li class="card">
-              <img
-                src="Assets/screenshots/family-person-720.webp"
-                srcset="Assets/screenshots/family-person-720.webp 720w, Assets/screenshots/family-person-1076.webp 1076w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1076" height="807" loading="lazy" decoding="async"
-                alt="The profile of Margaret Ellis: born 1931, her parents, husband and children laid out as relationships"
-              >
-              <h3>A profile for everyone</h3>
-              <p>
-                Every person has a page: their relationships, a timeline, their photos, the things they said. The people the gallery found can be linked straight to their place on the tree.
-              </p>
+            <li class="viewer-item" id="stories-3" role="tabpanel" aria-labelledby="stories-tab-3" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/family-person-720.webp"
+                  srcset="Assets/screenshots/family-person-720.webp 720w, Assets/screenshots/family-person-1076.webp 1076w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1076" height="807" loading="lazy" decoding="async"
+                  alt="The profile of Margaret Ellis: born 1931, her parents, husband and children laid out as relationships"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>A profile for everyone</h3>
+                <p>
+                  Every person has a page: their relationships, a timeline, their photos, the things they said. The people the gallery found can be linked straight to their place on the tree.
+                </p>
+              </div>
             </li>
-            <li class="card">
-              <img
-                src="Assets/screenshots/quotes-720.webp"
-                srcset="Assets/screenshots/quotes-720.webp 720w, Assets/screenshots/quotes-1076.webp 1076w"
-                sizes="(min-width: 760px) 440px, 82vw"
-                width="1076" height="807" loading="lazy" decoding="async"
-                alt="The Quotes page: a search box, filters, and quotes by Jane Austen with their tags"
-              >
-              <h3>Quotes</h3>
-              <p>
-                Something worth keeping from a book, a person, or anywhere. Captured from the reader with the page remembered, or typed in by hand. One comes back each morning on the home page.
-              </p>
+            <li class="viewer-item" id="stories-4" role="tabpanel" aria-labelledby="stories-tab-4" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/quotes-720.webp"
+                  srcset="Assets/screenshots/quotes-720.webp 720w, Assets/screenshots/quotes-1076.webp 1076w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1076" height="807" loading="lazy" decoding="async"
+                  alt="The Quotes page: a search box, filters, and quotes by Jane Austen with their tags"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Quotes</h3>
+                <p>
+                  Something worth keeping from a book, a person, or anywhere. Captured from the reader with the page remembered, or typed in by hand. One comes back each morning on the home page.
+                </p>
+              </div>
             </li>
           </ul>
-          <div class="rail-controls">
-            <span class="rail-count" aria-live="polite">1 / 4</span>
-            <button type="button" class="rail-btn" data-dir="-1" aria-label="Previous">&#8592;</button>
-            <button type="button" class="rail-btn" data-dir="1" aria-label="Next">&#8594;</button>
+          <div class="viewer-thumbs" role="tablist" aria-label="Stories and family features">
+            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-1" aria-controls="stories-1" aria-selected="true">
+              <img src="Assets/screenshots/story-hero-720.webp" width="1016" height="762" loading="lazy" decoding="async" alt="">
+              <span>Stories</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-2" aria-controls="stories-2" aria-selected="false">
+              <img src="Assets/screenshots/family-tree-dark-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
+              <span>Family tree</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-3" aria-controls="stories-3" aria-selected="false">
+              <img src="Assets/screenshots/family-person-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
+              <span>A profile for everyone</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-4" aria-controls="stories-4" aria-selected="false">
+              <img src="Assets/screenshots/quotes-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
+              <span>Quotes</span>
+            </button>
           </div>
         </div>
       </section>
@@ -323,8 +426,8 @@
       <!-- ─── Appearance (the paint picker) ────────────────────────────────────── -->
       <section class="group group-alt" id="appearance" aria-labelledby="g-appearance">
         <div class="group-head">
-          <p class="eyebrow">Appearance</p>
-          <h2 id="g-appearance">Six ways to look at it.</h2>
+          <p class="eyebrow">Themes</p>
+          <h2 id="g-appearance">Appearance.</h2>
         </div>
         <div class="picker section-inner">
           <div class="picker-swatches" role="group" aria-label="Choose a theme">
@@ -430,30 +533,25 @@
     </footer>
 
     <script>
-      // Carousels: the rail scrolls natively with snap points; the script only
-      // keeps the "n / m" counter honest and gives the arrows something to do.
-      for (const wrap of document.querySelectorAll(".rail-wrap")) {
-        const rail = wrap.querySelector(".rail");
-        const cards = [...rail.children];
-        const count = wrap.querySelector(".rail-count");
-        const current = () => {
-          const left = rail.scrollLeft;
-          // The rail stops scrolling once the last card is in view, so the
-          // nearest-card rule alone would never reach n / n.
-          if (left + rail.clientWidth >= rail.scrollWidth - 2) return cards.length - 1;
-          let best = 0;
-          cards.forEach((c, i) => { if (Math.abs(c.offsetLeft - left) < Math.abs(cards[best].offsetLeft - left)) best = i; });
-          return best;
+      // Viewers: one big picture at a time; the thumbnails under it are tabs.
+      // Arrow keys move between them as they do between tabs anywhere else.
+      for (const viewer of document.querySelectorAll(".viewer")) {
+        const items = [...viewer.querySelectorAll(".viewer-item")];
+        const tabs = [...viewer.querySelectorAll(".viewer-thumb")];
+        const show = (n, focus = false) => {
+          items.forEach((it, i) => { it.classList.toggle("is-active", i === n); it.hidden = i !== n; });
+          tabs.forEach((tab, i) => { tab.setAttribute("aria-selected", String(i === n)); tab.tabIndex = i === n ? 0 : -1; });
+          if (focus) tabs[n].focus();
+          tabs[n].scrollIntoView({ block: "nearest", inline: "nearest" });
         };
-        const update = () => { count.textContent = `${current() + 1} / ${cards.length}`; };
-        rail.addEventListener("scroll", update, { passive: true });
-        for (const btn of wrap.querySelectorAll(".rail-btn")) {
-          btn.addEventListener("click", () => {
-            const next = Math.min(cards.length - 1, Math.max(0, current() + Number(btn.dataset.dir)));
-            rail.scrollTo({ left: cards[next].offsetLeft, behavior: "smooth" });
+        tabs.forEach((tab, i) => {
+          tab.addEventListener("click", () => show(i));
+          tab.addEventListener("keydown", (e) => {
+            const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+            if (step) { e.preventDefault(); show((i + step + tabs.length) % tabs.length, true); }
           });
-        }
-        update();
+        });
+        show(0);
       }
 
       // The theme picker: a swatch swaps the stage image and the caption. Each

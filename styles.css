@@ -2,8 +2,8 @@
    from apps/web/src/styles/tokens.css in isputnik.home verbatim: warm platinum
    canvas, black ink, no accent colour beyond the ink itself. Its shape is a
    car-maker's model page: one full-bleed hero, a product bar that sticks, a row
-   of headline numbers, then feature groups that each scroll sideways through
-   cards, a picker for the finish, and reassurance at the end. */
+   of headline numbers, then feature groups shown one picture at a time with
+   thumbnails to switch, a picker for the finish, and reassurance at the end. */
 :root {
   color-scheme: light;
   --ink: #1d1d1f;
@@ -19,11 +19,7 @@
   --button-hover: #3a3a3e;
   --shadow: rgba(0, 0, 0, 0.22);
   --max: 1120px;
-  --card-w: 440px;
   --bar-h: 64px;
-  /* The first card in a rail lines up with the content column; the rail
-     itself bleeds off the right edge. */
-  --gutter: max(20px, calc((100vw - var(--max)) / 2));
 }
 
 * {
@@ -378,79 +374,115 @@ h3 {
   font-size: 1.08rem;
 }
 
-/* The rail: native horizontal scrolling with snap points. */
-.rail {
-  display: flex;
-  gap: 20px;
+/* The viewer: one picture at a time, big, with its title and text beside it,
+   and a strip of labelled thumbnails underneath to switch. */
+.viewer-items {
   margin: 0;
-  padding: 8px var(--gutter) 24px;
+  padding: 0;
   list-style: none;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-padding-inline: var(--gutter);
-  scrollbar-width: none;
 }
 
-.rail::-webkit-scrollbar {
+.viewer-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.viewer-item[hidden] {
   display: none;
 }
 
-.card {
-  flex: 0 0 var(--card-w);
-  scroll-snap-align: start;
+.viewer-stage {
+  margin: 0;
 }
 
-.card img {
+.viewer-stage img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--raised);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.viewer-copy {
+  padding-top: 8px;
+}
+
+.viewer-copy h3 {
+  font-size: 1.6rem;
+}
+
+.viewer-copy p {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.viewer-thumbs {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 4px 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.viewer-thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+.viewer-thumb {
+  flex: 0 0 auto;
+  width: 132px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.viewer-thumb img {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: top;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 6px;
   background: var(--raised);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14), 0 3px 8px rgba(0, 0, 0, 0.06);
+  opacity: 0.75;
+  transition: opacity 0.15s ease;
 }
 
-.card h3 {
-  margin-top: 20px;
+.viewer-thumb span {
+  display: block;
+  margin-top: 8px;
 }
 
-.card p {
-  margin: 8px 0 0;
-  color: var(--muted);
-  font-size: 0.98rem;
+.viewer-thumb:hover img {
+  opacity: 1;
 }
 
-.rail-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: min(var(--max), calc(100vw - 40px));
-  margin: 0 auto;
-}
-
-.rail-count {
-  margin-right: auto;
-  color: var(--muted);
-  font-size: 0.9rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.rail-btn {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
+.viewer-thumb[aria-selected="true"] {
   color: var(--ink);
-  background: transparent;
-  font: inherit;
-  font-size: 1.1rem;
-  cursor: pointer;
 }
 
-.rail-btn:hover {
-  background: var(--hover);
+.viewer-thumb[aria-selected="true"] img {
+  opacity: 1;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 1px var(--ink);
+}
+
+.viewer-thumb:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 /* ─── Appearance: the picker ─────────────────────────────────────────────── */
@@ -608,8 +640,17 @@ h3 {
   }
 
   .band-inner,
-  .split {
+  .split,
+  .viewer-item {
     grid-template-columns: 1fr;
+  }
+
+  .viewer-item {
+    gap: 20px;
+  }
+
+  .viewer-thumb {
+    width: 104px;
   }
 
   .product-links {
@@ -622,10 +663,6 @@ h3 {
 }
 
 @media (max-width: 760px) {
-  :root {
-    --card-w: 82vw;
-  }
-
   h1 {
     font-size: 3.6rem;
   }
