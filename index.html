@@ -171,6 +171,14 @@
               <figure><img src="Assets/screenshots/audio-player-500.webp" alt="Audiobook player with playback, speed, sleep timer, and bookmarks" width="500" height="700" loading="lazy"></figure>
               <h3>The player</h3><p>Listen with built-in playback controls.</p>
             </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/audiobook-narrators-1080.webp" alt="The Narrators page: every reader in the library with how many books each has recorded" width="1080" height="840" loading="lazy"></figure>
+              <h3>Narrators</h3><p>Every reader is a person you can browse to.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/audiobook-edit-880.webp" alt="The Edit Metadata dialog: title, authors, narrators, category and description, with tabs for tags, publishing, series and cover" width="880" height="660" loading="lazy"></figure>
+              <h3>Fix anything</h3><p>Edit titles, people, series, covers, and tags by hand.</p>
+            </article>
           </div>
           <div class="rail-dots" aria-label="Screenshot pages"></div>
         </div>
@@ -564,6 +572,7 @@
           subtitle: "Your collection and a comfortable reader, together in one place.",
           shots: [
             ["ebooks-grid-1080", "Ebooks", "Your ebook collection on one shelf."],
+            ["ebook-authors-1080", "Authors", "Every author across both shelves, in one list."],
             ["ebook-reader-1080", "The reader", "A comfortable reading experience built in."],
             ["book-editions-1020", "Editions", "Keep formats and translations together."]
           ]
@@ -610,7 +619,13 @@
         const step = rail.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).gap);
         positions = [0];
         for (let position = step; position < max - 1; position += step) positions.push(position);
-        if (max > 1) positions.push(max);
+        // The end of the rail is always the last stop, or the final card stays
+        // half off-screen. When it lands close to the last whole step it takes
+        // that step's place rather than adding a dot that moves a sliver.
+        if (max > 1) {
+          if (max - positions[positions.length - 1] > step / 2) positions.push(max);
+          else positions[positions.length - 1] = max;
+        }
         dots.replaceChildren(...positions.map((_, i) => {
           const button = document.createElement("button");
           button.type = "button";
