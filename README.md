@@ -47,10 +47,11 @@ node scripts/marketing-shots.mjs      # captures the masters
 node scripts/marketing-optimise.mjs   # cuts the WebP derivatives
 ```
 
-Captures are cropped to the feature they show - a shelf, a row of faces, a map -
-rather than a whole window. The page itself wears the app's default theme,
-Minimalist, with its exact colour values, so most shots are in that theme too;
-a few (the hero, the map, the timeline, the family tree) are taken in the
-app's dark theme, where the content is the picture, and sit on the grey page as
-its moments of contrast. The rig switches the demo account's theme for the
-shot and switches it back.
+Captures are cropped to the feature they show - a shelf, a book page, a map -
+rather than a whole window, and the fourteen that fill the card rails are cut
+to 4:3 by the rig itself, so the page never has to guess which part of a
+picture matters. The page wears the app's default theme, Minimalist, with its
+exact colour values, so most shots are in that theme too; a few (the map, the
+timeline, the family tree) are taken in the app's dark theme, where the
+content is the picture, and sit on the grey page as its moments of contrast.
+The rig switches the demo account's theme for the shot and switches it back.
