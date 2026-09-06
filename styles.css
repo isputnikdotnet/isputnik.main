@@ -944,6 +944,19 @@ h3 {
   background: var(--raised);
 }
 
+.band-media {
+  margin: 44px auto 0;
+}
+
+.band-media img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--canvas);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
 .band-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);

@@ -66,9 +66,9 @@
             <span>Free · AGPL-3.0</span>
           </div>
           <div class="product-links">
-            <a href="#library">Library</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#stories">Stories</a>
+            <a href="#library" data-feature="audiobooks">Library</a>
+            <a href="#library" data-feature="gallery">Gallery</a>
+            <a href="#library" data-feature="stories">Stories</a>
             <a href="#appearance">Appearance</a>
             <a href="#security">Security</a>
           </div>
@@ -184,391 +184,6 @@
         </div>
       </section>
 
-      <!-- ─── Photos & videos─────────────────────────────────────────────────────── -->
-      <section class="group group-alt" id="gallery" aria-labelledby="g-gallery">
-        <div class="group-head">
-          <p class="eyebrow">Photos &amp; videos</p>
-          <h2 id="g-gallery">Every photo, sorted by itself.</h2>
-        </div>
-        <div class="section-inner viewer">
-          <ul class="viewer-items">
-            <li class="viewer-item is-active" id="gallery-1" role="tabpanel" aria-labelledby="gallery-tab-1">
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/gallery-grid-720.webp"
-                  srcset="Assets/screenshots/gallery-grid-720.webp 720w, Assets/screenshots/gallery-grid-1080.webp 1080w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1440" height="1120" loading="lazy" decoding="async"
-                  alt="The gallery as one continuous grid of small tiles"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Gallery view</h3>
-                <p>
-                  Point it at the folders you already have and the whole library runs as one continuous grid, at the tile size you like — or group it by day instead. Nothing is copied or moved.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="gallery-2" role="tabpanel" aria-labelledby="gallery-tab-2" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/gallery-memories-720.webp"
-                  srcset="Assets/screenshots/gallery-memories-720.webp 720w, Assets/screenshots/gallery-memories-1080.webp 1080w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1440" height="1120" loading="lazy" decoding="async"
-                  alt="The Memories page: photos from around this day three years ago"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Memories</h3>
-                <p>
-                  The same day in earlier years comes back on its own. No album to build and nothing to tag: it is simply there when you open the app, counted in years rather than dates.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="gallery-3" role="tabpanel" aria-labelledby="gallery-tab-3" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/gallery-people-720.webp"
-                  srcset="Assets/screenshots/gallery-people-720.webp 720w, Assets/screenshots/gallery-people-1080.webp 1080w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1440" height="1120" loading="lazy" decoding="async"
-                  alt="The People page: named people in a row, each with a face crop and a photo count"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>People</h3>
-                <p>
-                  Turn it on for a library and a background job finds faces and gathers them into people. Name the ones who matter and the name sticks. The models ship with the app; not one pixel is sent anywhere.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="gallery-4" role="tabpanel" aria-labelledby="gallery-tab-4" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/gallery-map-720.webp"
-                  srcset="Assets/screenshots/gallery-map-720.webp 720w, Assets/screenshots/gallery-map-1080.webp 1080w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1440" height="1120" loading="lazy" decoding="async"
-                  alt="A world map with numbered clusters showing how many photos were taken in each place"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Map</h3>
-                <p>
-                  Anything with a location joins the map, gathered into clusters until you zoom close enough to tell them apart. Photos without one can be placed by hand — search for the town, drop a pin, done for the whole batch.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="gallery-5" role="tabpanel" aria-labelledby="gallery-tab-5" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/gallery-album-720.webp"
-                  srcset="Assets/screenshots/gallery-album-720.webp 720w, Assets/screenshots/gallery-album-1080.webp 1080w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1440" height="1120" loading="lazy" decoding="async"
-                  alt="An album called Sunday dinner, June 2025: a grid of photographs of food and the table"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Albums</h3>
-                <p>
-                  An album is a set you choose, kept apart from the dates. It can carry its own cover, feed a story, or become the source of a slideshow.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="gallery-6" role="tabpanel" aria-labelledby="gallery-tab-6" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/gallery-slideshows-720.webp"
-                  srcset="Assets/screenshots/gallery-slideshows-720.webp 720w, Assets/screenshots/gallery-slideshows-1080.webp 1080w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1440" height="1120" loading="lazy" decoding="async"
-                  alt="The Slideshows page: suggested slideshows across the top and the ones you have built below"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Slideshows</h3>
-                <p>
-                  Choose a transition, lay your own music under it, and render a real 1080p movie in the background — the file lands back in the gallery. The server suggests slideshows on its own too: a day with a lot of photos, or everything with one person in it.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="gallery-7" role="tabpanel" aria-labelledby="gallery-tab-7" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/duplicate-card-720.webp"
-                  srcset="Assets/screenshots/duplicate-card-720.webp 720w, Assets/screenshots/duplicate-card-952.webp 952w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="952" height="714" loading="lazy" decoding="async"
-                  alt="Duplicate sets: two copies of a photo side by side, one marked keep and one marked delete, with the reason"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Duplicate cleanup</h3>
-                <p>
-                  Phone backups run twice. A cleanup finds the copies, says which one it would keep and why, and lets you work through the list at your own pace. Everything removed goes to the Recycle Bin, not to oblivion.
-                </p>
-              </div>
-            </li>
-          </ul>
-          <div class="viewer-thumbs" role="tablist" aria-label="Gallery features">
-            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-1" aria-controls="gallery-1" aria-selected="true">
-              <img src="Assets/screenshots/gallery-grid-720.webp" width="1440" height="1120" loading="lazy" decoding="async" alt="">
-              <span>Gallery view</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-2" aria-controls="gallery-2" aria-selected="false">
-              <img src="Assets/screenshots/gallery-memories-720.webp" width="1440" height="1120" loading="lazy" decoding="async" alt="">
-              <span>Memories</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-3" aria-controls="gallery-3" aria-selected="false">
-              <img src="Assets/screenshots/gallery-people-720.webp" width="1440" height="1120" loading="lazy" decoding="async" alt="">
-              <span>People</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-4" aria-controls="gallery-4" aria-selected="false">
-              <img src="Assets/screenshots/gallery-map-720.webp" width="1440" height="1120" loading="lazy" decoding="async" alt="">
-              <span>Map</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-5" aria-controls="gallery-5" aria-selected="false">
-              <img src="Assets/screenshots/gallery-album-720.webp" width="1440" height="1120" loading="lazy" decoding="async" alt="">
-              <span>Albums</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-6" aria-controls="gallery-6" aria-selected="false">
-              <img src="Assets/screenshots/gallery-slideshows-720.webp" width="1440" height="1120" loading="lazy" decoding="async" alt="">
-              <span>Slideshows</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-7" aria-controls="gallery-7" aria-selected="false">
-              <img src="Assets/screenshots/duplicate-card-720.webp" width="952" height="714" loading="lazy" decoding="async" alt="">
-              <span>Duplicate cleanup</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── Stories & family────────────────────────────────────────────────────── -->
-      <section class="group" id="stories" aria-labelledby="g-stories">
-        <div class="group-head">
-          <p class="eyebrow">Stories &amp; family</p>
-          <h2 id="g-stories">The trip, told properly. The people, kept.</h2>
-        </div>
-        <div class="section-inner viewer">
-          <ul class="viewer-items">
-            <li class="viewer-item is-active" id="stories-1" role="tabpanel" aria-labelledby="stories-tab-1">
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/story-hero-720.webp"
-                  srcset="Assets/screenshots/story-hero-720.webp 720w, Assets/screenshots/story-hero-1016.webp 1016w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1016" height="762" loading="lazy" decoding="async"
-                  alt="A story titled Alps in summer: a mountain photo across the top, the opening paragraph, and a map of where it happened"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Stories</h3>
-                <p>
-                  A page you write yourself — your words, with the photos, the album, the map of the route, a person from the family tree, a quote — placed where they belong in the telling. One scrollable page, or a chapter per day.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="stories-2" role="tabpanel" aria-labelledby="stories-tab-2" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/story-edit-720.webp"
-                  srcset="Assets/screenshots/story-edit-720.webp 720w, Assets/screenshots/story-edit-1080.webp 1080w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1440" height="960" loading="lazy" decoding="async"
-                  alt="The story editor: a chapter list on the left, and a chapter with its cover, heading and a block of writing"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>The editor</h3>
-                <p>
-                  Chapters down the side, blocks down the page. Drag a block to move it, drag a chapter to reorder the days. Nothing is a template: a story is whatever you put in it.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="stories-3" role="tabpanel" aria-labelledby="stories-tab-3" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/story-add-block-720.webp"
-                  srcset="Assets/screenshots/story-add-block-720.webp 720w, Assets/screenshots/story-add-block-760.webp 760w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="760" height="667" loading="lazy" decoding="async"
-                  alt="The Add block dialog: eleven kinds of block, from text and photos to a map, a person, a quote and a book"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Add a block</h3>
-                <p>
-                  Your own writing in Markdown, a photo or a whole album, a slideshow that plays on the page, a map, someone from the family tree, a quote, a book from the shelves.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="stories-4" role="tabpanel" aria-labelledby="stories-tab-4" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/story-map-block-720.webp"
-                  srcset="Assets/screenshots/story-map-block-720.webp 720w, Assets/screenshots/story-map-block-1080.webp 1080w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1180" height="780" loading="lazy" decoding="async"
-                  alt="The map block editor: two stops in the Dolomites with the route drawn between them and a summary underneath"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Draw the route</h3>
-                <p>
-                  Drop a pin where you mean, or paste coordinates. Add more stops and the map joins them up, on foot, by car, by bus or by plane, with the distance worked out for you.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="stories-5" role="tabpanel" aria-labelledby="stories-tab-5" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/family-tree-720.webp"
-                  srcset="Assets/screenshots/family-tree-720.webp 720w, Assets/screenshots/family-tree-1080.webp 1080w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1440" height="1120" loading="lazy" decoding="async"
-                  alt="A family tree chart across four generations, with partners side by side and children beneath them"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Family tree</h3>
-                <p>
-                  Parents above, children below, partners alongside. Second marriages, adoptions and half-siblings drawn the way they were.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="stories-6" role="tabpanel" aria-labelledby="stories-tab-6" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/family-families-720.webp"
-                  srcset="Assets/screenshots/family-families-720.webp 720w, Assets/screenshots/family-families-1080.webp 1080w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1440" height="1120" loading="lazy" decoding="async"
-                  alt="The Families page: three surname cards, each with a count of people and the years they span"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Families</h3>
-                <p>
-                  The same people read as households rather than as a chart: each surname with how many it holds, the years it spans, and the person the chart opens on.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="stories-7" role="tabpanel" aria-labelledby="stories-tab-7" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/family-person-720.webp"
-                  srcset="Assets/screenshots/family-person-720.webp 720w, Assets/screenshots/family-person-1076.webp 1076w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1076" height="807" loading="lazy" decoding="async"
-                  alt="The profile of Margaret Ellis: born 1931, her parents, husband and children laid out as relationships"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>A page for everyone</h3>
-                <p>
-                  Every person has a page: their relationships, a timeline, their photos, the things they said. The people the gallery found can be linked straight to their place on the tree.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="stories-8" role="tabpanel" aria-labelledby="stories-tab-8" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/family-timeline-720.webp"
-                  srcset="Assets/screenshots/family-timeline-720.webp 720w, Assets/screenshots/family-timeline-1080.webp 1080w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1440" height="1120" loading="lazy" decoding="async"
-                  alt="A life timeline: school, graduation, work, marriage, a house move and the births of three children, in date order"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>A life, in order</h3>
-                <p>
-                  School, work, the house they moved into, the year they retired — added by hand, and threaded together with the births and marriages the tree already knows about.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="stories-9" role="tabpanel" aria-labelledby="stories-tab-9" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/family-gedcom-420.webp"
-                  srcset="Assets/screenshots/family-gedcom-420.webp 420w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="420" height="400" loading="lazy" decoding="async"
-                  alt="The Import GEDCOM dialog: a file chooser, and the choice between adding to the current tree or replacing it"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>GEDCOM in and out</h3>
-                <p>
-                  The tree is not locked in here. Import one exported from Ancestry, MyHeritage, FamilySearch or Gramps, adding to what you have or replacing it — and export the whole thing back out the same way.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="stories-10" role="tabpanel" aria-labelledby="stories-tab-10" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/quotes-720.webp"
-                  srcset="Assets/screenshots/quotes-720.webp 720w, Assets/screenshots/quotes-1080.webp 1080w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1440" height="1120" loading="lazy" decoding="async"
-                  alt="The Quotes page: a search box, filters, and quotes by Jane Austen with their tags"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Quotes</h3>
-                <p>
-                  Something worth keeping from a book, a person, or anywhere. Captured from the reader with the page remembered, or typed in by hand. One comes back each morning on the home page.
-                </p>
-              </div>
-            </li>
-          </ul>
-          <div class="viewer-thumbs" role="tablist" aria-label="Stories and family features">
-            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-1" aria-controls="stories-1" aria-selected="true">
-              <img src="Assets/screenshots/story-hero-720.webp" width="1016" height="762" loading="lazy" decoding="async" alt="">
-              <span>Stories</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-2" aria-controls="stories-2" aria-selected="false">
-              <img src="Assets/screenshots/story-edit-720.webp" width="1440" height="960" loading="lazy" decoding="async" alt="">
-              <span>The editor</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-3" aria-controls="stories-3" aria-selected="false">
-              <img src="Assets/screenshots/story-add-block-720.webp" width="760" height="667" loading="lazy" decoding="async" alt="">
-              <span>Add a block</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-4" aria-controls="stories-4" aria-selected="false">
-              <img src="Assets/screenshots/story-map-block-720.webp" width="1180" height="780" loading="lazy" decoding="async" alt="">
-              <span>Draw the route</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-5" aria-controls="stories-5" aria-selected="false">
-              <img src="Assets/screenshots/family-tree-720.webp" width="1440" height="1120" loading="lazy" decoding="async" alt="">
-              <span>Family tree</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-6" aria-controls="stories-6" aria-selected="false">
-              <img src="Assets/screenshots/family-families-720.webp" width="1440" height="1120" loading="lazy" decoding="async" alt="">
-              <span>Families</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-7" aria-controls="stories-7" aria-selected="false">
-              <img src="Assets/screenshots/family-person-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
-              <span>A page for everyone</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-8" aria-controls="stories-8" aria-selected="false">
-              <img src="Assets/screenshots/family-timeline-720.webp" width="1440" height="1120" loading="lazy" decoding="async" alt="">
-              <span>A life, in order</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-9" aria-controls="stories-9" aria-selected="false">
-              <img src="Assets/screenshots/family-gedcom-420.webp" width="420" height="400" loading="lazy" decoding="async" alt="">
-              <span>GEDCOM in and out</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="stories-tab-10" aria-controls="stories-10" aria-selected="false">
-              <img src="Assets/screenshots/quotes-720.webp" width="1440" height="1120" loading="lazy" decoding="async" alt="">
-              <span>Quotes</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
       <!-- ─── Appearance (the paint picker) ────────────────────────────────────── -->
       <section class="group group-alt" id="appearance" aria-labelledby="g-appearance">
         <div class="group-head">
@@ -667,6 +282,15 @@
             app store, and the source is yours to read.
           </p>
         </div>
+        <figure class="band-media section-inner">
+          <img
+            src="Assets/screenshots/backups-1080.webp"
+            srcset="Assets/screenshots/backups-720.webp 720w, Assets/screenshots/backups-1080.webp 1080w, Assets/screenshots/backups-1440.webp 1440w"
+            sizes="(min-width: 960px) 1120px, calc(100vw - 40px)"
+            width="1440" height="1120" loading="lazy" decoding="async"
+            alt="The Backup page: a nightly schedule at 03:00 keeping the newest ten, and three archives listed with their size and a Restore button"
+          >
+        </figure>
       </section>
     </main>
 
@@ -832,6 +456,15 @@
           selectFeature(featureTabs[keys[event.key]], true);
         });
       });
+      // The Gallery and Stories links in the product bar used to reach sections
+      // of their own. Those are gone, and that content lives in this rail now,
+      // so a link opens the matching tab on its way there.
+      for (const link of document.querySelectorAll(".product-links a[data-feature]")) {
+        link.addEventListener("click", () => {
+          const tab = featureTabs.find((item) => item.dataset.feature === link.dataset.feature);
+          if (tab) selectFeature(tab);
+        });
+      }
       previous.addEventListener("click", () => go(page - 1));
       next.addEventListener("click", () => go(page + 1));
       rail.addEventListener("scroll", sync, { passive: true });
