@@ -30,9 +30,11 @@ Gutenberg texts, LibriVox recordings, openly licensed photographs, NASA
 portraits - so nothing in them is anyone's private library. The people in the
 face-recognition shot are astronauts, under their own names.
 
-`Assets/screenshots/*.png` are the 1440px masters; `*-<width>.webp` are what the
-page serves through `srcset`. Both are committed, so a new width can be cut
-without the demo server running.
+`Assets/screenshots/*.png` are the masters; `*-<width>.webp` are what the page
+serves. Both are committed, so a new width can be cut without the demo server
+running. The hero, the Appearance picker and the closing band use `srcset`; the
+cards in the feature rail name one exact width each, because the script that
+builds them swaps `src` by filename.
 
 The Appearance picker shows the Home page in each theme (`theme-*.png`). Five
 are captured; `theme-system.png` is composed by the optimise script from the
@@ -47,11 +49,14 @@ node scripts/marketing-shots.mjs      # captures the masters
 node scripts/marketing-optimise.mjs   # cuts the WebP derivatives
 ```
 
-Captures are cropped to the feature they show - a shelf, a book page, a map -
-rather than a whole window, and the fourteen that fill the card rails are cut
-to 4:3 by the rig itself, so the page never has to guess which part of a
-picture matters. The page wears the app's default theme, Minimalist, with its
-exact colour values, so most shots are in that theme too; a few (the map, the
-timeline, the family tree) are taken in the app's dark theme, where the
-content is the picture, and sit on the grey page as its moments of contrast.
-The rig switches the demo account's theme for the shot and switches it back.
+A shot is framed one of two ways. An index page - a shelf, People, the family
+tree - is captured as the whole app window at 1440x1120, because the left
+navigation is half the point: a bare cover grid says "a grid of covers", where
+the app around it says "a library you navigate". Everything else is cropped to
+the thing itself: a dialog, an editions block, the protection score.
+
+The page wears the app's default theme, Minimalist, with its exact colour
+values, and so does every shot of the app, so that a strip of them reads as one
+product rather than a set of unrelated crops. The only exception is the
+Appearance picker, which needs the same page captured once per theme. The rig
+switches the demo account's theme for the shot and switches it back.

@@ -2,8 +2,8 @@
    from apps/web/src/styles/tokens.css in isputnik.home verbatim: warm platinum
    canvas, black ink, no accent colour beyond the ink itself. Its shape is a
    product overview: one full-bleed hero, a product bar that sticks, a compact
-   feature strip, then feature groups shown one picture at a time with thumbnails
-   to switch, a picker for the finish, and reassurance at the end. */
+   feature strip, then one tabbed rail of screenshots covering every part of the
+   app, a picker for the finish, and reassurance at the end. */
 :root {
   color-scheme: light;
   --ink: #1d1d1f;
@@ -14,10 +14,8 @@
   --surface: #f2f2ef;
   --raised: #ffffff;
   --hover: #e4e4e0;
-  --active: #d4d4cf;
   --button: #1d1d1f;
   --button-hover: #3a3a3e;
-  --shadow: rgba(0, 0, 0, 0.22);
   --max: 1120px;
   --wide: 1660px;
   --page-x: clamp(20px, 4vw, 72px);
@@ -708,121 +706,6 @@ h3 {
   }
 }
 
-/* The viewer: one picture at a time, big, with its title and text beside it,
-   and a strip of labelled thumbnails underneath to switch. */
-.viewer-items {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.viewer-item {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
-  gap: 40px;
-  align-items: start;
-}
-
-.viewer-item[hidden] {
-  display: none;
-}
-
-.viewer-stage {
-  margin: 0;
-}
-
-/* Width fills the column for the wide shots; the height cap is what holds a
-   portrait one (the player's own window) to the same visual weight. */
-.viewer-stage img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  max-height: 600px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--raised);
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.viewer-copy {
-  padding-top: 8px;
-}
-
-.viewer-copy h3 {
-  font-size: 1.6rem;
-}
-
-.viewer-copy p {
-  margin: 14px 0 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-}
-
-.viewer-thumbs {
-  display: flex;
-  gap: 12px;
-  margin-top: 28px;
-  padding: 4px 0;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.viewer-thumbs::-webkit-scrollbar {
-  display: none;
-}
-
-.viewer-thumb {
-  flex: 0 0 auto;
-  width: 132px;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--muted);
-  font: inherit;
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-align: left;
-  cursor: pointer;
-}
-
-.viewer-thumb img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  object-position: top;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--raised);
-  opacity: 0.75;
-  transition: opacity 0.15s ease;
-}
-
-.viewer-thumb span {
-  display: block;
-  margin-top: 8px;
-}
-
-.viewer-thumb:hover img {
-  opacity: 1;
-}
-
-.viewer-thumb[aria-selected="true"] {
-  color: var(--ink);
-}
-
-.viewer-thumb[aria-selected="true"] img {
-  opacity: 1;
-  border-color: var(--ink);
-  box-shadow: 0 0 0 1px var(--ink);
-}
-
-.viewer-thumb:focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 6px;
-}
-
 /* ─── Appearance: the picker ─────────────────────────────────────────────── */
 
 .picker-swatches {
@@ -1010,17 +893,8 @@ h3 {
   }
 
   .band-inner,
-  .split,
-  .viewer-item {
+  .split {
     grid-template-columns: 1fr;
-  }
-
-  .viewer-item {
-    gap: 20px;
-  }
-
-  .viewer-thumb {
-    width: 104px;
   }
 
   .product-links {

@@ -303,27 +303,6 @@
     </footer>
 
     <script>
-      // Viewers: one big picture at a time; the thumbnails under it are tabs.
-      // Arrow keys move between them as they do between tabs anywhere else.
-      for (const viewer of document.querySelectorAll(".viewer")) {
-        const items = [...viewer.querySelectorAll(".viewer-item")];
-        const tabs = [...viewer.querySelectorAll(".viewer-thumb")];
-        const show = (n, focus = false, scroll = true) => {
-          items.forEach((it, i) => { it.classList.toggle("is-active", i === n); it.hidden = i !== n; });
-          tabs.forEach((tab, i) => { tab.setAttribute("aria-selected", String(i === n)); tab.tabIndex = i === n ? 0 : -1; });
-          if (focus) tabs[n].focus();
-          if (scroll) tabs[n].scrollIntoView({ block: "nearest", inline: "nearest" });
-        };
-        tabs.forEach((tab, i) => {
-          tab.addEventListener("click", () => show(i));
-          tab.addEventListener("keydown", (e) => {
-            const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
-            if (step) { e.preventDefault(); show((i + step + tabs.length) % tabs.length, true); }
-          });
-        });
-        show(0, false, false);
-      }
-
       // Each feature owns its screenshots; carousel positions follow the available width.
       const showcase = document.querySelector(".library-showcase");
       const featureTabs = [...showcase.querySelectorAll("[data-feature]")];
