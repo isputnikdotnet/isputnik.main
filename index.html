@@ -10,7 +10,7 @@
     >
     <link rel="icon" href="Assets/brand/isputnik-logo-sputnik-earth-mark.svg" type="image/svg+xml">
     <link rel="preload" as="image" href="Assets/brand/sputnik-scene.webp" fetchpriority="high">
-    <link rel="preload" as="image" href="Assets/screenshots/theme-minimalist-1080.webp" imagesrcset="Assets/screenshots/theme-minimalist-720.webp 720w, Assets/screenshots/theme-minimalist-1080.webp 1080w, Assets/screenshots/theme-minimalist-1440.webp 1440w" imagesizes="(min-width: 960px) 760px, calc(100vw - 40px)">
+    <link rel="preload" as="image" href="Assets/screenshots/theme-minimalist-1080.webp" imagesrcset="Assets/screenshots/theme-minimalist-720.webp 720w, Assets/screenshots/theme-minimalist-1080.webp 1080w, Assets/screenshots/theme-minimalist-1440.webp 1440w" imagesizes="(min-width: 960px) 640px, calc(100vw - 40px)">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -27,6 +27,14 @@
       <!-- ─── Hero ─────────────────────────────────────────────────────────────── -->
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow eyebrow-light">Open source · Self-hosted</p>
+            <h1 id="hero-title">isputnik.home</h1>
+            <p class="lede">
+              Your family's media library, under your own roof. Audiobooks, ebooks,
+              photos, and videos — served from your home, for the people you trust.
+            </p>
+          </div>
           <!-- The product, as the car sits in the launch photo: the Home page on a
                desktop, and the same page as a phone shows it. -->
           <div class="hero-devices">
@@ -34,7 +42,7 @@
               class="hero-desktop"
               src="Assets/screenshots/theme-minimalist-1080.webp"
               srcset="Assets/screenshots/theme-minimalist-720.webp 720w, Assets/screenshots/theme-minimalist-1080.webp 1080w, Assets/screenshots/theme-minimalist-1440.webp 1440w"
-              sizes="(min-width: 960px) 760px, calc(100vw - 40px)"
+              sizes="(min-width: 960px) 640px, calc(100vw - 40px)"
               width="1440" height="900" fetchpriority="high" decoding="async"
               alt="The isputnik.home home page on a desktop: a quote of the day, photos from this day in earlier years, and the newest stories"
             >
@@ -42,17 +50,11 @@
               class="hero-phone"
               src="Assets/screenshots/home-phone-780.webp"
               srcset="Assets/screenshots/home-phone-720.webp 720w, Assets/screenshots/home-phone-780.webp 780w"
-              sizes="(min-width: 960px) 200px, 34vw"
+              sizes="(min-width: 960px) 180px, 34vw"
               width="780" height="1688" decoding="async"
               alt="The same home page on a phone: continue reading, the quote of the day, and a four-tab bar along the bottom"
             >
           </div>
-          <p class="eyebrow eyebrow-light">Open source · Self-hosted</p>
-          <h1 id="hero-title">isputnik.home</h1>
-          <p class="lede">
-            Your family's media library, under your own roof. Audiobooks, ebooks,
-            photos, and videos — served from your home, for the people you trust.
-          </p>
         </div>
       </section>
 
@@ -77,195 +79,100 @@
         </div>
       </nav>
 
-      <!-- ─── Headline numbers ─────────────────────────────────────────────────── -->
-      <section class="stats" aria-label="At a glance">
-        <ul class="stats-list">
-          <li><strong>4</strong><span>digital libraries: audiobooks, ebooks, photos, video</span></li>
-          <li><strong>0</strong><span>subscriptions. No cloud, no account with anyone but you</span></li>
-          <li><strong>100</strong><span>the score to beat. A security page grades the install and says what to fix</span></li>
-          <li><strong>1</strong><span>database file. Back it up, restore it anywhere</span></li>
+      <!-- ─── Product highlights ───────────────────────────────────────────────── -->
+      <section class="product-highlights" aria-label="At a glance">
+        <ul class="highlight-list">
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <rect x="4" y="4" width="16" height="5" rx="1.5"></rect>
+                <rect x="4" y="10" width="16" height="5" rx="1.5"></rect>
+                <rect x="4" y="16" width="16" height="4" rx="1.5"></rect>
+                <path d="M7 6.5h.01M7 12.5h.01M7 18h.01M10 6.5h7M10 12.5h7M10 18h7"></path>
+              </svg>
+            </span>
+            <div>
+              <p class="highlight-kicker">Your server</p>
+              <h2>Your memories stay with you.</h2>
+              <p>Self-host your books, photos, videos, and family history under your own control.</p>
+            </div>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H7a3 3 0 0 0-3 3Z"></path>
+                <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20"></path>
+                <path d="M8 7h8M8 11h8M8 15h5"></path>
+              </svg>
+            </span>
+            <div>
+              <p class="highlight-kicker">One home</p>
+              <h2>Books. Photos. Stories. Family.</h2>
+              <p>Audiobooks, ebooks, Gallery, Stories, and Family Tree together in one place.</p>
+            </div>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="m10 8 6 4-6 4Z"></path>
+              </svg>
+            </span>
+            <div>
+              <p class="highlight-kicker">Pick up where you left off</p>
+              <h2>Listen. Read. Continue.</h2>
+              <p>iSputnik remembers audiobook and EPUB progress for each user.</p>
+            </div>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M12 3 19 6v5c0 4.5-2.8 8.2-7 10-4.2-1.8-7-5.5-7-10V6Z"></path>
+                <path d="m9 12 2 2 4-5"></path>
+              </svg>
+            </span>
+            <div>
+              <p class="highlight-kicker">Private by design</p>
+              <h2>Made for the people you trust.</h2>
+              <p>Private libraries, granular permissions, and optional multi-factor authentication.</p>
+            </div>
+          </li>
         </ul>
       </section>
 
-      <!-- ─── Library─────────────────────────────────────────────────────────────── -->
-      <section class="group" id="library" aria-labelledby="g-library">
-        <div class="group-head">
-          <p class="eyebrow">Library</p>
-          <h2 id="g-library">Every book you own, on one shelf.</h2>
+      <!-- ─── Books & audiobooks ───────────────────────────────────────────────── -->
+      <section class="library-showcase group" id="library" aria-labelledby="g-library">
+        <div class="feature-tabs" role="tablist" aria-label="Product features">
+          <button id="feature-audiobooks" type="button" role="tab" aria-selected="true" aria-controls="feature-panel" data-feature="audiobooks"><img src="Assets/icons/headphones.svg" alt="" width="28" height="28">Audiobooks</button>
+          <button id="feature-ebooks" type="button" role="tab" aria-selected="false" aria-controls="feature-panel" tabindex="-1" data-feature="ebooks"><img src="Assets/icons/book-open.svg" alt="" width="28" height="28">Ebooks</button>
+          <button id="feature-gallery" type="button" role="tab" aria-selected="false" aria-controls="feature-panel" tabindex="-1" data-feature="gallery"><img src="Assets/icons/images.svg" alt="" width="28" height="28">Gallery</button>
+          <button id="feature-family" type="button" role="tab" aria-selected="false" aria-controls="feature-panel" tabindex="-1" data-feature="family"><img src="Assets/icons/users-round.svg" alt="" width="28" height="28">Family Tree</button>
+          <button id="feature-stories" type="button" role="tab" aria-selected="false" aria-controls="feature-panel" tabindex="-1" data-feature="stories"><img src="Assets/icons/notebook-text.svg" alt="" width="28" height="28">Stories</button>
         </div>
-        <div class="section-inner viewer">
-          <ul class="viewer-items">
-            <li class="viewer-item is-active" id="library-1" role="tabpanel" aria-labelledby="library-tab-1">
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/audiobooks-grid-720.webp"
-                  srcset="Assets/screenshots/audiobooks-grid-720.webp 720w, Assets/screenshots/audiobooks-grid-1076.webp 1076w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1076" height="807" loading="lazy" decoding="async"
-                  alt="An audiobook shelf: a grid of covers with running time and series position under each"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Audiobooks</h3>
-                <p>
-                  A folder of files becomes a book with chapters, a cover, the reader who recorded it, and its place in the series. Stop on your phone, pick up on the laptop, come back a year later — the bookmark is still there.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="library-2" role="tabpanel" aria-labelledby="library-tab-2" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/audiobook-detail-720.webp"
-                  srcset="Assets/screenshots/audiobook-detail-720.webp 720w, Assets/screenshots/audiobook-detail-1076.webp 1076w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1076" height="807" loading="lazy" decoding="async"
-                  alt="A book page for The Hound of the Baskervilles: cover, narrator, series position, a Start listening button and the editions it belongs to"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>A page per book</h3>
-                <p>
-                  Cover, description, narrator, series position, the chapters, and how far along you are. Send it to a phone for the plane; it comes back with the progress made offline.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="library-3" role="tabpanel" aria-labelledby="library-tab-3" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/audio-player-500.webp"
-                  srcset="Assets/screenshots/audio-player-500.webp 500w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="500" height="700" loading="lazy" decoding="async"
-                  alt="The audiobook player: cover, title, narrator, a progress bar, transport controls, speed and sleep, and buttons for likes, bookmarks and chapters"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>The player</h3>
-                <p>
-                  Chapters, bookmarks, a speed dial and a sleep timer. Where you stopped is kept on the server, so the phone and the laptop always agree on where you are.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="library-4" role="tabpanel" aria-labelledby="library-tab-4" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/ebooks-grid-720.webp"
-                  srcset="Assets/screenshots/ebooks-grid-720.webp 720w, Assets/screenshots/ebooks-grid-1076.webp 1076w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1076" height="807" loading="lazy" decoding="async"
-                  alt="An ebook shelf: cover grid with author under each, a small badge marking books that have more than one edition"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Ebooks</h3>
-                <p>
-                  EPUB and FB2 open in a reader built in; PDF opens as itself. The same title in three formats is one book, not three. OPDS feeds let your own e-reader app browse the shelf.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="library-5" role="tabpanel" aria-labelledby="library-tab-5" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/book-editions-720.webp"
-                  srcset="Assets/screenshots/book-editions-720.webp 720w, Assets/screenshots/book-editions-1020.webp 1020w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1020" height="765" loading="lazy" decoding="async"
-                  alt="The Editions block on a book page: three editions of Alice's Adventures in Wonderland, one marked primary"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Editions</h3>
-                <p>
-                  A second translation, another publisher's text, the audiobook of a book you also own — those are editions, grouped on one page with the one you're reading marked.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="library-6" role="tabpanel" aria-labelledby="library-tab-6" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/ebook-reader-720.webp"
-                  srcset="Assets/screenshots/ebook-reader-720.webp 720w, Assets/screenshots/ebook-reader-1080.webp 1080w, Assets/screenshots/ebook-reader-1440.webp 1440w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1440" height="1080" loading="lazy" decoding="async"
-                  alt="The built-in reader open on the first chapter of Alice's Adventures in Wonderland"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>The reader</h3>
-                <p>
-                  Paged or scrolled, day or night, your typeface. Highlight a passage and keep it as a quote — it remembers the page. Or send the book straight to a Kindle from its page.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="library-7" role="tabpanel" aria-labelledby="library-tab-7" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/scan-layout-ebooks-720.webp"
-                  srcset="Assets/screenshots/scan-layout-ebooks-720.webp 720w, Assets/screenshots/scan-layout-ebooks-1040.webp 1040w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1040" height="585" loading="lazy" decoding="async"
-                  alt="The Layout panel for an ebook library: a default layout reading Author slash Series slash 01 dash Title, how many books fit it, and a place to add rules for specific folders"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Folders become books</h3>
-                <p>
-                  Tell the scanner how your ebook folders are arranged once — Author, then Series, then a numbered title — and it reads every book that way. A folder arranged differently gets a rule of its own, and the most specific rule wins.
-                </p>
-              </div>
-            </li>
-            <li class="viewer-item" id="library-8" role="tabpanel" aria-labelledby="library-tab-8" hidden>
-              <figure class="viewer-stage">
-                <img
-                  src="Assets/screenshots/scan-layout-audiobooks-720.webp"
-                  srcset="Assets/screenshots/scan-layout-audiobooks-720.webp 720w, Assets/screenshots/scan-layout-audiobooks-1040.webp 1040w"
-                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
-                  width="1040" height="585" loading="lazy" decoding="async"
-                  alt="The Layout panel for an audiobook library: scanner defaults explaining that each folder holding audio is one book and the details come from the audio tags"
-                >
-              </figure>
-              <div class="viewer-copy">
-                <h3>Audiobooks read themselves</h3>
-                <p>
-                  An audiobook library needs no layout to start: a folder of audio is one book, and the author, title and narrator come from the tags. Give it a layout only when the folder names know something the tags don't.
-                </p>
-              </div>
-            </li>
-          </ul>
-          <div class="viewer-thumbs" role="tablist" aria-label="Library features">
-            <button type="button" class="viewer-thumb" role="tab" id="library-tab-1" aria-controls="library-1" aria-selected="true">
-              <img src="Assets/screenshots/audiobooks-grid-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
-              <span>Audiobooks</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="library-tab-2" aria-controls="library-2" aria-selected="false">
-              <img src="Assets/screenshots/audiobook-detail-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
-              <span>A page per book</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="library-tab-3" aria-controls="library-3" aria-selected="false">
-              <img src="Assets/screenshots/audio-player-500.webp" width="500" height="700" loading="lazy" decoding="async" alt="">
-              <span>The player</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="library-tab-4" aria-controls="library-4" aria-selected="false">
-              <img src="Assets/screenshots/ebooks-grid-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
-              <span>Ebooks</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="library-tab-5" aria-controls="library-5" aria-selected="false">
-              <img src="Assets/screenshots/book-editions-720.webp" width="1020" height="765" loading="lazy" decoding="async" alt="">
-              <span>Editions</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="library-tab-6" aria-controls="library-6" aria-selected="false">
-              <img src="Assets/screenshots/ebook-reader-720.webp" width="1440" height="1080" loading="lazy" decoding="async" alt="">
-              <span>The reader</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="library-tab-7" aria-controls="library-7" aria-selected="false">
-              <img src="Assets/screenshots/scan-layout-ebooks-720.webp" width="1040" height="585" loading="lazy" decoding="async" alt="">
-              <span>Folders become books</span>
-            </button>
-            <button type="button" class="viewer-thumb" role="tab" id="library-tab-8" aria-controls="library-8" aria-selected="false">
-              <img src="Assets/screenshots/scan-layout-audiobooks-720.webp" width="1040" height="585" loading="lazy" decoding="async" alt="">
-              <span>Audiobooks read themselves</span>
-            </button>
+        <div id="feature-panel" role="tabpanel" aria-labelledby="feature-audiobooks">
+          <div class="library-heading">
+            <h2 id="g-library">Your audiobooks, beautifully organized</h2>
+            <p id="library-subtitle">Listen anywhere. Pick up where you left off. All in one place.</p>
+            <div class="library-controls" aria-label="Screenshot navigation">
+              <button class="rail-button" type="button" data-rail-prev aria-label="Previous screenshots" title="Previous screenshots" aria-controls="library-feature-rail" disabled><img src="Assets/icons/chevron-left.svg" alt="" width="24" height="24"></button>
+              <button class="rail-button" type="button" data-rail-next aria-label="Next screenshots" title="Next screenshots" aria-controls="library-feature-rail"><img src="Assets/icons/chevron-right.svg" alt="" width="24" height="24"></button>
+            </div>
           </div>
+          <div class="library-card-rail" id="library-feature-rail" tabindex="0" role="region" aria-label="Audiobook screenshots">
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/audiobooks-grid-1080.webp" alt="The Audiobooks page: the left navigation beside a shelf of covers with author, running time and series position under each" width="1080" height="840" loading="lazy"></figure>
+              <h3>Audiobooks</h3><p>Organize by author, series, genre, or custom libraries.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/audiobook-detail-1076.webp" alt="The Hound of the Baskervilles book details and editions" width="1076" height="807" loading="lazy"></figure>
+              <h3>A page per book</h3><p>Each audiobook has its own page with details.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/audio-player-500.webp" alt="Audiobook player with playback, speed, sleep timer, and bookmarks" width="500" height="700" loading="lazy"></figure>
+              <h3>The player</h3><p>Listen with built-in playback controls.</p>
+            </article>
+          </div>
+          <div class="rail-dots" aria-label="Screenshot pages"></div>
         </div>
       </section>
 
@@ -622,11 +529,11 @@
       for (const viewer of document.querySelectorAll(".viewer")) {
         const items = [...viewer.querySelectorAll(".viewer-item")];
         const tabs = [...viewer.querySelectorAll(".viewer-thumb")];
-        const show = (n, focus = false) => {
+        const show = (n, focus = false, scroll = true) => {
           items.forEach((it, i) => { it.classList.toggle("is-active", i === n); it.hidden = i !== n; });
           tabs.forEach((tab, i) => { tab.setAttribute("aria-selected", String(i === n)); tab.tabIndex = i === n ? 0 : -1; });
           if (focus) tabs[n].focus();
-          tabs[n].scrollIntoView({ block: "nearest", inline: "nearest" });
+          if (scroll) tabs[n].scrollIntoView({ block: "nearest", inline: "nearest" });
         };
         tabs.forEach((tab, i) => {
           tab.addEventListener("click", () => show(i));
@@ -635,8 +542,134 @@
             if (step) { e.preventDefault(); show((i + step + tabs.length) % tabs.length, true); }
           });
         });
-        show(0);
+        show(0, false, false);
       }
+
+      // Each feature owns its screenshots; carousel positions follow the available width.
+      const showcase = document.querySelector(".library-showcase");
+      const featureTabs = [...showcase.querySelectorAll("[data-feature]")];
+      const rail = showcase.querySelector(".library-card-rail");
+      const panel = showcase.querySelector("[role=tabpanel]");
+      const dots = showcase.querySelector(".rail-dots");
+      const previous = showcase.querySelector("[data-rail-prev]");
+      const next = showcase.querySelector("[data-rail-next]");
+      const audiobookCards = [...rail.children].map((card) => card.cloneNode(true));
+      const features = {
+        audiobooks: {
+          title: "Your audiobooks, beautifully organized",
+          subtitle: "Listen anywhere. Pick up where you left off. All in one place."
+        },
+        ebooks: {
+          title: "Your books, always within reach",
+          subtitle: "Your collection and a comfortable reader, together in one place.",
+          shots: [
+            ["ebooks-grid-1080", "Ebooks", "Your ebook collection on one shelf."],
+            ["ebook-reader-1080", "The reader", "A comfortable reading experience built in."],
+            ["book-editions-1020", "Editions", "Keep formats and translations together."]
+          ]
+        },
+        gallery: {
+          title: "Every photo, sorted by itself",
+          subtitle: "Your photos and videos, gathered in one home.",
+          shots: [
+            ["gallery-timeline-1076", "Timeline", "Revisit your memories through the years."],
+            ["gallery-album-1076", "Albums", "Keep the moments that belong together."],
+            ["gallery-people-1076", "People", "Find the familiar faces in your photos."]
+          ]
+        },
+        family: {
+          title: "Your family, connected",
+          subtitle: "Keep your family history close.",
+          shots: [
+            ["family-tree-dark-1076", "Family Tree", "See the connections across generations."],
+            ["family-person-1076", "A page for everyone", "Bring your family's stories together."]
+          ]
+        },
+        stories: {
+          title: "The stories worth keeping",
+          subtitle: "A home for the memories behind the photos.",
+          shots: [["story-hero-1016", "Stories", "Keep your family's stories in your own words."]]
+        }
+      };
+      let positions = [];
+      let page = 0;
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const sync = () => {
+        page = positions.reduce((best, position, i) =>
+          Math.abs(position - rail.scrollLeft) < Math.abs(positions[best] - rail.scrollLeft) ? i : best, 0);
+        [...dots.children].forEach((dot, i) => dot.setAttribute("aria-current", String(i === page)));
+        previous.disabled = page === 0;
+        next.disabled = page === positions.length - 1;
+      };
+      const go = (index) => {
+        rail.scrollTo({ left: positions[Math.max(0, Math.min(index, positions.length - 1))],
+          behavior: reducedMotion.matches ? "instant" : "smooth" });
+      };
+      const measure = () => {
+        const max = Math.max(0, rail.scrollWidth - rail.clientWidth);
+        const step = rail.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).gap);
+        positions = [0];
+        for (let position = step; position < max - 1; position += step) positions.push(position);
+        if (max > 1) positions.push(max);
+        dots.replaceChildren(...positions.map((_, i) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.setAttribute("aria-label", "Show screenshot page " + (i + 1));
+          button.addEventListener("click", () => go(i));
+          return button;
+        }));
+        dots.hidden = positions.length === 1;
+        sync();
+      };
+      const selectFeature = (tab, focus = false) => {
+        const feature = features[tab.dataset.feature];
+        featureTabs.forEach((item) => {
+          item.setAttribute("aria-selected", String(item === tab));
+          item.tabIndex = item === tab ? 0 : -1;
+        });
+        panel.setAttribute("aria-labelledby", tab.id);
+        showcase.querySelector("h2").textContent = feature.title;
+        showcase.querySelector("#library-subtitle").textContent = feature.subtitle;
+        rail.setAttribute("aria-label", tab.textContent + " screenshots");
+        if (feature.shots) {
+          rail.replaceChildren(...feature.shots.map(([file, title, description]) => {
+            const card = audiobookCards[0].cloneNode(true);
+            const img = card.querySelector("img");
+            img.src = "Assets/screenshots/" + file + ".webp";
+            img.alt = title + ": " + description;
+            card.querySelector("h3").textContent = title;
+            card.querySelector("p").textContent = description;
+            return card;
+          }));
+        } else {
+          rail.replaceChildren(...audiobookCards.map((card) => card.cloneNode(true)));
+        }
+        rail.scrollTo({ left: 0, behavior: "instant" });
+        measure();
+        if (focus) tab.focus();
+        tab.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "instant" });
+      };
+      featureTabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => selectFeature(tab));
+        tab.addEventListener("keydown", (event) => {
+          const keys = { ArrowRight: (i + 1) % featureTabs.length,
+            ArrowLeft: (i + featureTabs.length - 1) % featureTabs.length,
+            Home: 0, End: featureTabs.length - 1 };
+          if (!(event.key in keys)) return;
+          event.preventDefault();
+          selectFeature(featureTabs[keys[event.key]], true);
+        });
+      });
+      previous.addEventListener("click", () => go(page - 1));
+      next.addEventListener("click", () => go(page + 1));
+      rail.addEventListener("scroll", sync, { passive: true });
+      rail.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault();
+        go(page + (event.key === "ArrowLeft" ? -1 : 1));
+      });
+      new ResizeObserver(measure).observe(rail);
+      measure();
 
       // The theme picker: a swatch swaps the stage image and the caption. Each
       // swatch names its capture; the three widths follow from that name.
