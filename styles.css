@@ -193,8 +193,8 @@ h3 {
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: max(560px, 84vh);
-  padding: 120px 20px 64px;
+  min-height: 84vh;
+  padding: 104px 20px 64px;
   color: #f2f2ef;
   background: #06090d url("Assets/brand/sputnik-scene.webp") center right / cover no-repeat;
   isolation: isolate;
@@ -214,6 +214,35 @@ h3 {
 .hero-content {
   width: min(var(--max), calc(100vw - 40px));
   margin: 0 auto;
+}
+
+/* The two product shots above the title: the desktop Home page, with the
+   phone's Home page overlapping its lower right corner. They sit on the
+   artwork's empty half; Sputnik stays clear on the right. */
+.hero-devices {
+  position: relative;
+  width: min(760px, 100%);
+  margin-bottom: 52px;
+}
+
+.hero-desktop {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(242, 242, 239, 0.28);
+  border-radius: 10px;
+  background: var(--canvas);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.hero-phone {
+  position: absolute;
+  right: -72px;
+  bottom: -36px;
+  width: 200px;
+  border: 5px solid #101214;
+  border-radius: 26px;
+  background: #101214;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 4px 14px rgba(0, 0, 0, 0.5);
 }
 
 .hero h1 {
@@ -606,9 +635,22 @@ h3 {
   }
 
   .hero {
-    min-height: max(520px, 78vh);
+    min-height: 0;
     padding-bottom: 44px;
     background-position: 68% center;
+  }
+
+  .hero-devices {
+    width: 86%;
+    margin-bottom: 44px;
+  }
+
+  .hero-phone {
+    right: -14%;
+    bottom: -24px;
+    width: 34%;
+    border-width: 3px;
+    border-radius: 18px;
   }
 
   .lede {

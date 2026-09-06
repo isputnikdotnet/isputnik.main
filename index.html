@@ -10,6 +10,7 @@
     >
     <link rel="icon" href="Assets/brand/isputnik-logo-sputnik-earth-mark.svg" type="image/svg+xml">
     <link rel="preload" as="image" href="Assets/brand/sputnik-scene.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="Assets/screenshots/theme-minimalist-1080.webp" imagesrcset="Assets/screenshots/theme-minimalist-720.webp 720w, Assets/screenshots/theme-minimalist-1080.webp 1080w, Assets/screenshots/theme-minimalist-1440.webp 1440w" imagesizes="(min-width: 960px) 760px, calc(100vw - 40px)">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -26,6 +27,26 @@
       <!-- ─── Hero ─────────────────────────────────────────────────────────────── -->
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
+          <!-- The product, as the car sits in the launch photo: the Home page on a
+               desktop, and the same page as a phone shows it. -->
+          <div class="hero-devices">
+            <img
+              class="hero-desktop"
+              src="Assets/screenshots/theme-minimalist-1080.webp"
+              srcset="Assets/screenshots/theme-minimalist-720.webp 720w, Assets/screenshots/theme-minimalist-1080.webp 1080w, Assets/screenshots/theme-minimalist-1440.webp 1440w"
+              sizes="(min-width: 960px) 760px, calc(100vw - 40px)"
+              width="1440" height="900" fetchpriority="high" decoding="async"
+              alt="The isputnik.home home page on a desktop: a quote of the day, photos from this day in earlier years, and the newest stories"
+            >
+            <img
+              class="hero-phone"
+              src="Assets/screenshots/home-phone-780.webp"
+              srcset="Assets/screenshots/home-phone-720.webp 720w, Assets/screenshots/home-phone-780.webp 780w"
+              sizes="(min-width: 960px) 200px, 34vw"
+              width="780" height="1688" decoding="async"
+              alt="The same home page on a phone: continue reading, the quote of the day, and a four-tab bar along the bottom"
+            >
+          </div>
           <p class="eyebrow eyebrow-light">Open source · Self-hosted</p>
           <h1 id="hero-title">isputnik.home</h1>
           <p class="lede">
