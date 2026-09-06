@@ -80,9 +80,9 @@
       <!-- ─── Headline numbers ─────────────────────────────────────────────────── -->
       <section class="stats" aria-label="At a glance">
         <ul class="stats-list">
-          <li><strong>4</strong><span>kinds of media: audiobooks, ebooks, photos, video</span></li>
+          <li><strong>4</strong><span>digital libraries: audiobooks, ebooks, photos, video</span></li>
           <li><strong>0</strong><span>subscriptions. No cloud, no account with anyone but you</span></li>
-          <li><strong>2</strong><span>interface languages, English and Russian</span></li>
+          <li><strong>100</strong><span>the score to beat. A security page grades the install and says what to fix</span></li>
           <li><strong>1</strong><span>database file. Back it up, restore it anywhere</span></li>
         </ul>
       </section>
@@ -132,6 +132,23 @@
             <li class="viewer-item" id="library-3" role="tabpanel" aria-labelledby="library-tab-3" hidden>
               <figure class="viewer-stage">
                 <img
+                  src="Assets/screenshots/audio-player-500.webp"
+                  srcset="Assets/screenshots/audio-player-500.webp 500w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="500" height="700" loading="lazy" decoding="async"
+                  alt="The audiobook player: cover, title, narrator, a progress bar, transport controls, speed and sleep, and buttons for likes, bookmarks and chapters"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>The player</h3>
+                <p>
+                  Chapters, bookmarks, a speed dial and a sleep timer. Where you stopped is kept on the server, so the phone and the laptop always agree on where you are.
+                </p>
+              </div>
+            </li>
+            <li class="viewer-item" id="library-4" role="tabpanel" aria-labelledby="library-tab-4" hidden>
+              <figure class="viewer-stage">
+                <img
                   src="Assets/screenshots/ebooks-grid-720.webp"
                   srcset="Assets/screenshots/ebooks-grid-720.webp 720w, Assets/screenshots/ebooks-grid-1076.webp 1076w"
                   sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
@@ -146,7 +163,7 @@
                 </p>
               </div>
             </li>
-            <li class="viewer-item" id="library-4" role="tabpanel" aria-labelledby="library-tab-4" hidden>
+            <li class="viewer-item" id="library-5" role="tabpanel" aria-labelledby="library-tab-5" hidden>
               <figure class="viewer-stage">
                 <img
                   src="Assets/screenshots/book-editions-720.webp"
@@ -163,7 +180,7 @@
                 </p>
               </div>
             </li>
-            <li class="viewer-item" id="library-5" role="tabpanel" aria-labelledby="library-tab-5" hidden>
+            <li class="viewer-item" id="library-6" role="tabpanel" aria-labelledby="library-tab-6" hidden>
               <figure class="viewer-stage">
                 <img
                   src="Assets/screenshots/ebook-reader-720.webp"
@@ -180,6 +197,40 @@
                 </p>
               </div>
             </li>
+            <li class="viewer-item" id="library-7" role="tabpanel" aria-labelledby="library-tab-7" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/scan-layout-ebooks-720.webp"
+                  srcset="Assets/screenshots/scan-layout-ebooks-720.webp 720w, Assets/screenshots/scan-layout-ebooks-1040.webp 1040w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1040" height="585" loading="lazy" decoding="async"
+                  alt="The Layout panel for an ebook library: a default layout reading Author slash Series slash 01 dash Title, how many books fit it, and a place to add rules for specific folders"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Folders become books</h3>
+                <p>
+                  Tell the scanner how your ebook folders are arranged once — Author, then Series, then a numbered title — and it reads every book that way. A folder arranged differently gets a rule of its own, and the most specific rule wins.
+                </p>
+              </div>
+            </li>
+            <li class="viewer-item" id="library-8" role="tabpanel" aria-labelledby="library-tab-8" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/scan-layout-audiobooks-720.webp"
+                  srcset="Assets/screenshots/scan-layout-audiobooks-720.webp 720w, Assets/screenshots/scan-layout-audiobooks-1040.webp 1040w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1040" height="585" loading="lazy" decoding="async"
+                  alt="The Layout panel for an audiobook library: scanner defaults explaining that each folder holding audio is one book and the details come from the audio tags"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Audiobooks read themselves</h3>
+                <p>
+                  An audiobook library needs no layout to start: a folder of audio is one book, and the author, title and narrator come from the tags. Give it a layout only when the folder names know something the tags don't.
+                </p>
+              </div>
+            </li>
           </ul>
           <div class="viewer-thumbs" role="tablist" aria-label="Library features">
             <button type="button" class="viewer-thumb" role="tab" id="library-tab-1" aria-controls="library-1" aria-selected="true">
@@ -191,16 +242,28 @@
               <span>A page per book</span>
             </button>
             <button type="button" class="viewer-thumb" role="tab" id="library-tab-3" aria-controls="library-3" aria-selected="false">
+              <img src="Assets/screenshots/audio-player-500.webp" width="500" height="700" loading="lazy" decoding="async" alt="">
+              <span>The player</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="library-tab-4" aria-controls="library-4" aria-selected="false">
               <img src="Assets/screenshots/ebooks-grid-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
               <span>Ebooks</span>
             </button>
-            <button type="button" class="viewer-thumb" role="tab" id="library-tab-4" aria-controls="library-4" aria-selected="false">
+            <button type="button" class="viewer-thumb" role="tab" id="library-tab-5" aria-controls="library-5" aria-selected="false">
               <img src="Assets/screenshots/book-editions-720.webp" width="1020" height="765" loading="lazy" decoding="async" alt="">
               <span>Editions</span>
             </button>
-            <button type="button" class="viewer-thumb" role="tab" id="library-tab-5" aria-controls="library-5" aria-selected="false">
+            <button type="button" class="viewer-thumb" role="tab" id="library-tab-6" aria-controls="library-6" aria-selected="false">
               <img src="Assets/screenshots/ebook-reader-720.webp" width="1440" height="1080" loading="lazy" decoding="async" alt="">
               <span>The reader</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="library-tab-7" aria-controls="library-7" aria-selected="false">
+              <img src="Assets/screenshots/scan-layout-ebooks-720.webp" width="1040" height="585" loading="lazy" decoding="async" alt="">
+              <span>Folders become books</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="library-tab-8" aria-controls="library-8" aria-selected="false">
+              <img src="Assets/screenshots/scan-layout-audiobooks-720.webp" width="1040" height="585" loading="lazy" decoding="async" alt="">
+              <span>Audiobooks read themselves</span>
             </button>
           </div>
         </div>
@@ -217,11 +280,11 @@
             <li class="viewer-item is-active" id="gallery-1" role="tabpanel" aria-labelledby="gallery-tab-1">
               <figure class="viewer-stage">
                 <img
-                  src="Assets/screenshots/gallery-timeline-dark-720.webp"
-                  srcset="Assets/screenshots/gallery-timeline-dark-720.webp 720w, Assets/screenshots/gallery-timeline-dark-1076.webp 1076w"
+                  src="Assets/screenshots/gallery-timeline-720.webp"
+                  srcset="Assets/screenshots/gallery-timeline-720.webp 720w, Assets/screenshots/gallery-timeline-1076.webp 1076w"
                   sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
                   width="1076" height="807" loading="lazy" decoding="async"
-                  alt="The gallery timeline in the dark theme: an Around-this-day card, then photos grouped under their dates"
+                  alt="The gallery timeline: a day's photographs in a grid under its date"
                 >
               </figure>
               <div class="viewer-copy">
@@ -232,6 +295,23 @@
               </div>
             </li>
             <li class="viewer-item" id="gallery-2" role="tabpanel" aria-labelledby="gallery-tab-2" hidden>
+              <figure class="viewer-stage">
+                <img
+                  src="Assets/screenshots/gallery-grid-720.webp"
+                  srcset="Assets/screenshots/gallery-grid-720.webp 720w, Assets/screenshots/gallery-grid-1076.webp 1076w"
+                  sizes="(min-width: 960px) 700px, calc(100vw - 40px)"
+                  width="1076" height="807" loading="lazy" decoding="async"
+                  alt="The gallery as one continuous grid of small tiles, with no dated sections"
+                >
+              </figure>
+              <div class="viewer-copy">
+                <h3>Gallery view</h3>
+                <p>
+                  Or drop the dates and let the whole library run as one continuous grid, at the tile size you like. Both shapes live behind the same View control, and the choice sticks.
+                </p>
+              </div>
+            </li>
+            <li class="viewer-item" id="gallery-3" role="tabpanel" aria-labelledby="gallery-tab-3" hidden>
               <figure class="viewer-stage">
                 <img
                   src="Assets/screenshots/gallery-people-720.webp"
@@ -248,7 +328,7 @@
                 </p>
               </div>
             </li>
-            <li class="viewer-item" id="gallery-3" role="tabpanel" aria-labelledby="gallery-tab-3" hidden>
+            <li class="viewer-item" id="gallery-4" role="tabpanel" aria-labelledby="gallery-tab-4" hidden>
               <figure class="viewer-stage">
                 <img
                   src="Assets/screenshots/gallery-map-dark-720.webp"
@@ -265,7 +345,7 @@
                 </p>
               </div>
             </li>
-            <li class="viewer-item" id="gallery-4" role="tabpanel" aria-labelledby="gallery-tab-4" hidden>
+            <li class="viewer-item" id="gallery-5" role="tabpanel" aria-labelledby="gallery-tab-5" hidden>
               <figure class="viewer-stage">
                 <img
                   src="Assets/screenshots/gallery-album-720.webp"
@@ -282,7 +362,7 @@
                 </p>
               </div>
             </li>
-            <li class="viewer-item" id="gallery-5" role="tabpanel" aria-labelledby="gallery-tab-5" hidden>
+            <li class="viewer-item" id="gallery-6" role="tabpanel" aria-labelledby="gallery-tab-6" hidden>
               <figure class="viewer-stage">
                 <img
                   src="Assets/screenshots/duplicate-card-720.webp"
@@ -302,22 +382,26 @@
           </ul>
           <div class="viewer-thumbs" role="tablist" aria-label="Gallery features">
             <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-1" aria-controls="gallery-1" aria-selected="true">
-              <img src="Assets/screenshots/gallery-timeline-dark-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
+              <img src="Assets/screenshots/gallery-timeline-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
               <span>Timeline</span>
             </button>
             <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-2" aria-controls="gallery-2" aria-selected="false">
+              <img src="Assets/screenshots/gallery-grid-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
+              <span>Gallery view</span>
+            </button>
+            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-3" aria-controls="gallery-3" aria-selected="false">
               <img src="Assets/screenshots/gallery-people-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
               <span>People</span>
             </button>
-            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-3" aria-controls="gallery-3" aria-selected="false">
+            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-4" aria-controls="gallery-4" aria-selected="false">
               <img src="Assets/screenshots/gallery-map-dark-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
               <span>Map</span>
             </button>
-            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-4" aria-controls="gallery-4" aria-selected="false">
+            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-5" aria-controls="gallery-5" aria-selected="false">
               <img src="Assets/screenshots/gallery-album-720.webp" width="1076" height="807" loading="lazy" decoding="async" alt="">
               <span>Albums and slideshows</span>
             </button>
-            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-5" aria-controls="gallery-5" aria-selected="false">
+            <button type="button" class="viewer-thumb" role="tab" id="gallery-tab-6" aria-controls="gallery-6" aria-selected="false">
               <img src="Assets/screenshots/duplicate-card-720.webp" width="952" height="714" loading="lazy" decoding="async" alt="">
               <span>Duplicate cleanup</span>
             </button>

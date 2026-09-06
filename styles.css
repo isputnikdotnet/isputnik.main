@@ -397,9 +397,13 @@ h3 {
   margin: 0;
 }
 
+/* Width fills the column for the wide shots; the height cap is what holds a
+   portrait one (the player's own window) to the same visual weight. */
 .viewer-stage img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: 600px;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: var(--raised);
