@@ -774,7 +774,88 @@ h3 {
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* ─── Split (Security): a picture beside a list ──────────────────────────── */
+/* ─── Highlights: three cards over a picture beside a list ───────────────── */
+
+.highlights .group-lede {
+  max-width: 640px;
+}
+
+.highlight-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.highlight-tab {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  padding: 14px 18px 14px 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  color: var(--ink);
+  background: var(--raised);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.highlight-tab:hover {
+  border-color: var(--line);
+}
+
+/* The chosen card wears the swatch picker's ink ring. */
+.highlight-tab[aria-selected="true"] {
+  border-color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+
+.highlight-tab[aria-selected="true"] .highlight-icon {
+  color: #ffffff;
+  background: var(--ink);
+}
+
+.highlight-tab:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.highlight-tab-text strong {
+  display: block;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.highlight-tab-text small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+/* .split sets display: grid, which would otherwise beat the hidden attribute. */
+.highlight-panel[hidden] {
+  display: none;
+}
+
+/* With the script off every panel shows; keep them apart. */
+.highlight-panel + .highlight-panel {
+  margin-top: 64px;
+}
+
+.highlight-title {
+  font-size: 1.7rem;
+  line-height: 1.12;
+}
+
+.split-copy .highlight-title + .group-lede {
+  margin-top: 14px;
+}
+
+/* ─── Split: a picture beside a list ─────────────────────────────────────── */
 
 .split {
   display: grid;
@@ -819,39 +900,7 @@ h3 {
   font-size: 0.95rem;
 }
 
-/* ─── Reassurance band, footer ───────────────────────────────────────────── */
-
-.band {
-  padding: 72px 20px;
-  border-top: 1px solid var(--line-soft);
-  background: var(--raised);
-}
-
-.band-media {
-  margin: 44px auto 0;
-}
-
-.band-media img {
-  display: block;
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--canvas);
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.band-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 40px;
-  align-items: end;
-}
-
-.band-inner p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 1.08rem;
-}
+/* ─── Footer ─────────────────────────────────────────────────────────────── */
 
 .site-footer {
   padding: 32px 20px;
@@ -892,9 +941,14 @@ h3 {
     max-width: 620px;
   }
 
-  .band-inner,
   .split {
     grid-template-columns: 1fr;
+  }
+
+  .highlight-tab {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: start;
   }
 
   .product-links {
@@ -968,6 +1022,28 @@ h3 {
 
   .product-highlights {
     padding-bottom: 8px;
+  }
+
+  /* Three cards stack; the icon goes back beside the words. */
+  .highlight-tabs {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .highlight-tab {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+    padding: 10px 14px 10px 10px;
+  }
+
+  .highlight-tab .highlight-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .highlight-title {
+    font-size: 1.45rem;
   }
 
 

@@ -70,7 +70,7 @@
             <a href="#library" data-feature="gallery">Gallery</a>
             <a href="#library" data-feature="stories">Stories</a>
             <a href="#appearance">Appearance</a>
-            <a href="#security">Security</a>
+            <a href="#highlights">Highlights</a>
           </div>
           <div class="product-actions">
             <a class="button secondary" href="https://github.com/isputnikdotnet/isputnik.home">Source</a>
@@ -236,61 +236,127 @@
         </div>
       </section>
 
-      <!-- ─── Security ─────────────────────────────────────────────────────────── -->
-      <section class="group" id="security" aria-labelledby="g-security">
+      <!-- ─── Highlights: backups, security, offline maps ──────────────────────── -->
+      <!-- One section for the things that matter once the library is real. It took
+           over from the Security section and the closing backups band. Every panel
+           is in the markup, so without the script they simply stack; the script
+           turns the three cards into tabs. -->
+      <section class="group highlights" id="highlights" aria-labelledby="g-highlights">
         <div class="group-head">
-          <p class="eyebrow">Security</p>
-          <h2 id="g-security">Safe to put on the internet.</h2>
-        </div>
-        <div class="section-inner split">
-          <figure class="split-media">
-            <img
-              src="Assets/screenshots/security-overview-952.webp"
-              srcset="Assets/screenshots/security-overview-720.webp 720w, Assets/screenshots/security-overview-952.webp 952w"
-              sizes="(min-width: 960px) 640px, calc(100vw - 40px)"
-              width="952" height="869" loading="lazy" decoding="async"
-              alt="The Security overview: a protection score of 50 out of 100 marked Fair, and a list of policies with each one graded Strong, Medium or Weak"
-            >
-          </figure>
-          <div class="split-copy">
-            <p class="group-lede">
-              One page scores the whole install out of 100 and grades every policy
-              behind the number. Each row opens the setting that owns it, so raising the
-              score is a matter of working down the list. The pieces are the ones a bank
-              uses, sized for a household.
-            </p>
-            <ul class="plain-list">
-              <li><h3>Two-factor sign-in</h3><p>An authenticator app or an emailed code, and passkeys for the people who have them. It can be required only from outside the house.</p></li>
-              <li><h3>Lockout and blocking</h3><p>Repeated failures lock the account and, if they keep coming, block the address. Rate limits and a strict Content Security Policy sit underneath.</p></li>
-              <li><h3>Trusted networks</h3><p>Your own network is known. Anything from outside it is held to a stricter standard, and deleting can be limited to home.</p></li>
-              <li><h3>Someone is told</h3><p>An email to the admin when a sign-in comes from somewhere new, and a full activity log to check afterwards.</p></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─── Reassurance ──────────────────────────────────────────────────────── -->
-      <section class="band" aria-labelledby="band-title">
-        <div class="section-inner band-inner">
-          <div>
-            <p class="eyebrow">Yours. Really.</p>
-            <h2 id="band-title">One SQLite file, your files where you put them.</h2>
-          </div>
-          <p>
-            Backups you can download and restore anywhere, on a nightly schedule if you
-            like. A Recycle Bin for everything deleted. Runs in Docker or from the Unraid
-            app store, and the source is yours to read.
+          <p class="eyebrow">Highlights</p>
+          <h2 id="g-highlights">Built to keep, safe to share.</h2>
+          <p class="group-lede">
+            The parts you only notice once the library is real: getting it all back,
+            letting only the right people in, and maps that don't depend on someone
+            else's server.
           </p>
         </div>
-        <figure class="band-media section-inner">
-          <img
-            src="Assets/screenshots/backups-1080.webp"
-            srcset="Assets/screenshots/backups-720.webp 720w, Assets/screenshots/backups-1080.webp 1080w, Assets/screenshots/backups-1440.webp 1440w"
-            sizes="(min-width: 960px) 1120px, calc(100vw - 40px)"
-            width="1440" height="1120" loading="lazy" decoding="async"
-            alt="The Backup page: a nightly schedule at 03:00 keeping the newest ten, and three archives listed with their size and a Restore button"
-          >
-        </figure>
+        <div class="section-inner">
+          <div class="highlight-tabs" role="tablist" aria-label="Highlights">
+            <button class="highlight-tab" id="hl-tab-backups" type="button" role="tab" aria-selected="true" aria-controls="hl-backups">
+              <span class="highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+                  <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path>
+                  <path d="M4 11v6c0 1.66 3.58 3 8 3 1 0 1.95-.07 2.83-.2"></path>
+                  <path d="m17 16 2 2 3-3"></path>
+                </svg>
+              </span>
+              <span class="highlight-tab-text"><strong>Backups</strong><small>Three kinds, each on its own schedule</small></span>
+            </button>
+            <button class="highlight-tab" id="hl-tab-security" type="button" role="tab" aria-selected="false" aria-controls="hl-security" tabindex="-1">
+              <span class="highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M12 3 19 6v5c0 4.5-2.8 8.2-7 10-4.2-1.8-7-5.5-7-10V6Z"></path>
+                  <path d="m9 12 2 2 4-5"></path>
+                </svg>
+              </span>
+              <span class="highlight-tab-text"><strong>Security</strong><small>Safe to put on the internet</small></span>
+            </button>
+            <button class="highlight-tab" id="hl-tab-maps" type="button" role="tab" aria-selected="false" aria-controls="hl-maps" tabindex="-1">
+              <span class="highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M9 4 4 6v14l5-2 6 2 5-2V4l-5 2Z"></path>
+                  <path d="M9 4v14M15 6v14"></path>
+                </svg>
+              </span>
+              <span class="highlight-tab-text"><strong>Offline maps</strong><small>Kept on your server, not looked up</small></span>
+            </button>
+          </div>
+
+          <div class="highlight-panel split" id="hl-backups" role="tabpanel" aria-labelledby="hl-tab-backups">
+            <figure class="split-media">
+              <img
+                src="Assets/screenshots/backup-options-1036.webp"
+                srcset="Assets/screenshots/backup-options-720.webp 720w, Assets/screenshots/backup-options-1036.webp 1036w"
+                sizes="(min-width: 960px) 640px, calc(100vw - 40px)"
+                width="1036" height="897" loading="lazy" decoding="async"
+                alt="The Backup page: buttons for a full backup, a minimal backup and a quick database copy, and a weekly full backup and a nightly minimal one, each switched on with the number of copies to keep"
+              >
+            </figure>
+            <div class="split-copy">
+              <h3 class="highlight-title">Everything back, on any machine.</h3>
+              <p class="group-lede">
+                Backups run while the server keeps serving, and each one downloads as a
+                single file you can restore on a fresh install.
+              </p>
+              <ul class="plain-list">
+                <li><h3>Three kinds</h3><p>A full backup carries the database and every cover and preview, so a restore needs no re-render. A minimal one carries only what a rescan could not put back. A quick copy is the database file alone.</p></li>
+                <li><h3>Each on its own clock</h3><p>Full weekly and minimal nightly, say, each keeping its own number of copies. The database is also copied before every upgrade.</p></li>
+                <li><h3>Your files where you put them</h3><p>One SQLite database beside your own folders, and the media in them is never modified. Anything deleted waits in a Recycle Bin.</p></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="highlight-panel split" id="hl-security" role="tabpanel" aria-labelledby="hl-tab-security">
+            <figure class="split-media">
+              <img
+                src="Assets/screenshots/security-overview-952.webp"
+                srcset="Assets/screenshots/security-overview-720.webp 720w, Assets/screenshots/security-overview-952.webp 952w"
+                sizes="(min-width: 960px) 640px, calc(100vw - 40px)"
+                width="952" height="869" loading="lazy" decoding="async"
+                alt="The Security overview: a protection score of 50 out of 100 marked Fair, and a list of policies with each one graded Strong, Medium or Weak"
+              >
+            </figure>
+            <div class="split-copy">
+              <h3 class="highlight-title">Safe to put on the internet.</h3>
+              <p class="group-lede">
+                One page scores the whole install out of 100 and grades every policy
+                behind the number. Each row opens the setting that owns it.
+              </p>
+              <ul class="plain-list">
+                <li><h3>Two-factor sign-in</h3><p>An authenticator app or an emailed code, and passkeys for the people who have them. It can be required only from outside the house.</p></li>
+                <li><h3>Lockout and blocking</h3><p>Repeated failures lock the account and, if they keep coming, block the address. Rate limits and a strict Content Security Policy sit underneath.</p></li>
+                <li><h3>Someone is told</h3><p>An email to the admin when a sign-in comes from somewhere new, and a full activity log to check afterwards.</p></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="highlight-panel split" id="hl-maps" role="tabpanel" aria-labelledby="hl-tab-maps">
+            <figure class="split-media">
+              <img
+                src="Assets/screenshots/maps-offline-868.webp"
+                srcset="Assets/screenshots/maps-offline-720.webp 720w, Assets/screenshots/maps-offline-868.webp 868w"
+                sizes="(min-width: 960px) 640px, calc(100vw - 40px)"
+                width="868" height="694" loading="lazy" decoding="async"
+                alt="The Maps page: Offline maps switched on, using 45.6 MB of a 200 MB limit, and Photo place names built from GeoNames"
+              >
+            </figure>
+            <div class="split-copy">
+              <h3 class="highlight-title">Maps that keep working without the internet.</h3>
+              <p class="group-lede">
+                Photo maps, the family map and story routes share one set of map features.
+                Each is a card with a switch that says what it downloads, and how much room
+                it takes, before it does.
+              </p>
+              <ul class="plain-list">
+                <li><h3>Offline maps</h3><p>The server keeps the maps you've viewed, up to a limit you choose. They draw with the connection down, and the map service no longer sees where you look.</p></li>
+                <li><h3>Place names, built at home</h3><p>Each photo named after the town it was taken in, from a GeoNames database built on your server. No photo's location is sent anywhere.</p></li>
+                <li><h3>Where sign-ins came from</h3><p>Addresses placed on the Dashboard map from a database on the server, never looked up online.</p></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -478,6 +544,30 @@
           });
         }
       }
+      // Highlights: the three cards are tabs over their panels. Without this
+      // script every panel shows, one under the other.
+      const highlightTabs = [...document.querySelectorAll(".highlight-tab")];
+      const showHighlight = (tab, focus = false) => {
+        for (const item of highlightTabs) {
+          const selected = item === tab;
+          item.setAttribute("aria-selected", String(selected));
+          item.tabIndex = selected ? 0 : -1;
+          document.getElementById(item.getAttribute("aria-controls")).hidden = !selected;
+        }
+        if (focus) tab.focus();
+      };
+      highlightTabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => showHighlight(tab));
+        tab.addEventListener("keydown", (event) => {
+          const keys = { ArrowRight: (i + 1) % highlightTabs.length,
+            ArrowLeft: (i + highlightTabs.length - 1) % highlightTabs.length,
+            Home: 0, End: highlightTabs.length - 1 };
+          if (!(event.key in keys)) return;
+          event.preventDefault();
+          showHighlight(highlightTabs[keys[event.key]], true);
+        });
+      });
+      if (highlightTabs.length) showHighlight(highlightTabs[0]);
     </script>
   </body>
 </html>

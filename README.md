@@ -32,9 +32,16 @@ face-recognition shot are astronauts, under their own names.
 
 `Assets/screenshots/*.png` are the masters; `*-<width>.webp` are what the page
 serves. Both are committed, so a new width can be cut without the demo server
-running. The hero, the Appearance picker and the closing band use `srcset`; the
-cards in the feature rail name one exact width each, because the script that
+running. The hero, the Appearance picker and the Highlights panels use `srcset`;
+the cards in the feature rail name one exact width each, because the script that
 builds them swaps `src` by filename.
+
+The Highlights section - backups, security, offline maps - is three cards over
+three panels, each a cropped screenshot beside a short list: `backup-options`,
+`security-overview` and `maps-offline`. The backup shot switches both backup
+schedules on for the capture and back off afterwards, and shows the backup
+folder as a Docker or Unraid install does (`/config/backups`), never the path
+of the machine that took it.
 
 The Appearance picker shows the Home page in each theme (`theme-*.png`). Five
 are captured; `theme-system.png` is composed by the optimise script from the
