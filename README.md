@@ -33,8 +33,12 @@ face-recognition shot are astronauts, under their own names.
 `Assets/screenshots/*.png` are the masters; `*-<width>.webp` are what the page
 serves. Both are committed, so a new width can be cut without the demo server
 running. The hero, the Appearance picker and the Highlights panels use `srcset`;
-the cards in the feature rail name one exact width each, because the script that
-builds them swaps `src` by filename.
+the cards in the feature rail name one exact width each.
+
+The feature rail's five tabs are all in the HTML - one tabpanel per tab, each with
+its own heading, cards and arrows - so the page reads whole to search engines,
+screen readers and link previews. The script only picks which panel shows and
+drives its carousel; without it the panels stack and the arrows stay hidden.
 
 The Highlights section - backups, security, offline maps - is three cards over
 three panels, each a cropped screenshot beside a short list: `backup-options`,

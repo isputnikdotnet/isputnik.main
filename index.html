@@ -152,24 +152,24 @@
       </section>
 
       <!-- ─── Books & audiobooks ───────────────────────────────────────────────── -->
-      <section class="library-showcase group" id="library" aria-labelledby="g-library">
+      <section class="library-showcase group" id="library" aria-label="Features">
         <div class="feature-tabs" role="tablist" aria-label="Product features">
-          <button id="feature-audiobooks" type="button" role="tab" aria-selected="true" aria-controls="feature-panel" data-feature="audiobooks"><img src="Assets/icons/headphones.svg" alt="" width="28" height="28">Audiobooks</button>
-          <button id="feature-ebooks" type="button" role="tab" aria-selected="false" aria-controls="feature-panel" tabindex="-1" data-feature="ebooks"><img src="Assets/icons/book-open.svg" alt="" width="28" height="28">Ebooks</button>
-          <button id="feature-gallery" type="button" role="tab" aria-selected="false" aria-controls="feature-panel" tabindex="-1" data-feature="gallery"><img src="Assets/icons/images.svg" alt="" width="28" height="28">Gallery</button>
-          <button id="feature-family" type="button" role="tab" aria-selected="false" aria-controls="feature-panel" tabindex="-1" data-feature="family"><img src="Assets/icons/users-round.svg" alt="" width="28" height="28">Family Tree</button>
-          <button id="feature-stories" type="button" role="tab" aria-selected="false" aria-controls="feature-panel" tabindex="-1" data-feature="stories"><img src="Assets/icons/notebook-text.svg" alt="" width="28" height="28">Stories</button>
+          <button id="feature-audiobooks" type="button" role="tab" aria-selected="true" aria-controls="feature-panel-audiobooks" data-feature="audiobooks"><img src="Assets/icons/headphones.svg" alt="" width="28" height="28">Audiobooks</button>
+          <button id="feature-ebooks" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-ebooks" tabindex="-1" data-feature="ebooks"><img src="Assets/icons/book-open.svg" alt="" width="28" height="28">Ebooks</button>
+          <button id="feature-gallery" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-gallery" tabindex="-1" data-feature="gallery"><img src="Assets/icons/images.svg" alt="" width="28" height="28">Gallery</button>
+          <button id="feature-family" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-family" tabindex="-1" data-feature="family"><img src="Assets/icons/users-round.svg" alt="" width="28" height="28">Family Tree</button>
+          <button id="feature-stories" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-stories" tabindex="-1" data-feature="stories"><img src="Assets/icons/notebook-text.svg" alt="" width="28" height="28">Stories</button>
         </div>
-        <div id="feature-panel" role="tabpanel" aria-labelledby="feature-audiobooks">
+        <div class="feature-panel" id="feature-panel-audiobooks" role="tabpanel" aria-labelledby="feature-audiobooks">
           <div class="library-heading">
-            <h2 id="g-library">Your audiobooks, beautifully organized</h2>
-            <p id="library-subtitle">Listen anywhere. Pick up where you left off. All in one place.</p>
-            <div class="library-controls" aria-label="Screenshot navigation">
-              <button class="rail-button" type="button" data-rail-prev aria-label="Previous screenshots" title="Previous screenshots" aria-controls="library-feature-rail" disabled><img src="Assets/icons/chevron-left.svg" alt="" width="24" height="24"></button>
-              <button class="rail-button" type="button" data-rail-next aria-label="Next screenshots" title="Next screenshots" aria-controls="library-feature-rail"><img src="Assets/icons/chevron-right.svg" alt="" width="24" height="24"></button>
+            <h2>Your audiobooks, beautifully organized</h2>
+            <p>Listen anywhere. Pick up where you left off. All in one place.</p>
+            <div class="library-controls" aria-label="Screenshot navigation" hidden>
+              <button class="rail-button" type="button" data-rail-prev aria-label="Previous screenshots" title="Previous screenshots" aria-controls="rail-audiobooks" disabled><img src="Assets/icons/chevron-left.svg" alt="" width="24" height="24"></button>
+              <button class="rail-button" type="button" data-rail-next aria-label="Next screenshots" title="Next screenshots" aria-controls="rail-audiobooks"><img src="Assets/icons/chevron-right.svg" alt="" width="24" height="24"></button>
             </div>
           </div>
-          <div class="library-card-rail" id="library-feature-rail" tabindex="0" role="region" aria-label="Audiobook screenshots">
+          <div class="library-card-rail" id="rail-audiobooks" tabindex="0" role="region" aria-label="Audiobook screenshots">
             <article class="library-card">
               <figure><img src="Assets/screenshots/audiobooks-grid-1080.webp" alt="The Audiobooks page: the left navigation beside a shelf of covers with author, running time and series position under each" width="1080" height="840" loading="lazy"></figure>
               <h3>Audiobooks</h3><p>Organize by author, series, genre, or custom libraries.</p>
@@ -189,6 +189,150 @@
             <article class="library-card">
               <figure><img src="Assets/screenshots/audiobook-edit-880.webp" alt="The Edit Metadata dialog: title, authors, narrators, category and description, with tabs for tags, publishing, series and cover" width="880" height="660" loading="lazy"></figure>
               <h3>Fix anything</h3><p>Edit titles, people, series, covers, and tags by hand.</p>
+            </article>
+          </div>
+          <div class="rail-dots" aria-label="Screenshot pages"></div>
+        </div>
+        <div class="feature-panel" id="feature-panel-ebooks" role="tabpanel" aria-labelledby="feature-ebooks">
+          <div class="library-heading">
+            <h2>Your books, always within reach</h2>
+            <p>Your collection and a comfortable reader, together in one place.</p>
+            <div class="library-controls" aria-label="Screenshot navigation" hidden>
+              <button class="rail-button" type="button" data-rail-prev aria-label="Previous screenshots" title="Previous screenshots" aria-controls="rail-ebooks" disabled><img src="Assets/icons/chevron-left.svg" alt="" width="24" height="24"></button>
+              <button class="rail-button" type="button" data-rail-next aria-label="Next screenshots" title="Next screenshots" aria-controls="rail-ebooks"><img src="Assets/icons/chevron-right.svg" alt="" width="24" height="24"></button>
+            </div>
+          </div>
+          <div class="library-card-rail" id="rail-ebooks" tabindex="0" role="region" aria-label="Ebook screenshots">
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/ebooks-grid-1080.webp" alt="Ebooks: Your ebook collection on one shelf." width="1080" height="840" loading="lazy"></figure>
+              <h3>Ebooks</h3><p>Your ebook collection on one shelf.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/ebook-authors-1080.webp" alt="Authors: Every author across both shelves, in one list." width="1080" height="840" loading="lazy"></figure>
+              <h3>Authors</h3><p>Every author across both shelves, in one list.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/ebook-reader-1080.webp" alt="The reader: A comfortable reading experience built in." width="1080" height="810" loading="lazy"></figure>
+              <h3>The reader</h3><p>A comfortable reading experience built in.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/quotes-1080.webp" alt="Quotes: Highlight a line while reading and it is kept." width="1080" height="840" loading="lazy"></figure>
+              <h3>Quotes</h3><p>Highlight a line while reading and it is kept.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/book-editions-1020.webp" alt="Editions: Keep formats and translations together." width="1020" height="765" loading="lazy"></figure>
+              <h3>Editions</h3><p>Keep formats and translations together.</p>
+            </article>
+          </div>
+          <div class="rail-dots" aria-label="Screenshot pages"></div>
+        </div>
+        <div class="feature-panel" id="feature-panel-gallery" role="tabpanel" aria-labelledby="feature-gallery">
+          <div class="library-heading">
+            <h2>Your family's photos, brought back to life</h2>
+            <p>Memories, people, places and slideshows, and the voices that remember them.</p>
+            <div class="library-controls" aria-label="Screenshot navigation" hidden>
+              <button class="rail-button" type="button" data-rail-prev aria-label="Previous screenshots" title="Previous screenshots" aria-controls="rail-gallery" disabled><img src="Assets/icons/chevron-left.svg" alt="" width="24" height="24"></button>
+              <button class="rail-button" type="button" data-rail-next aria-label="Next screenshots" title="Next screenshots" aria-controls="rail-gallery"><img src="Assets/icons/chevron-right.svg" alt="" width="24" height="24"></button>
+            </div>
+          </div>
+          <div class="library-card-rail" id="rail-gallery" tabindex="0" role="region" aria-label="Gallery screenshots">
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/gallery-grid-1080.webp" alt="Gallery view: Your whole library, at the tile size you like." width="1080" height="840" loading="lazy"></figure>
+              <h3>Gallery view</h3><p>Your whole library, at the tile size you like.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/gallery-memories-1080.webp" alt="Memories: This day in earlier years, brought back on its own." width="1080" height="840" loading="lazy"></figure>
+              <h3>Memories</h3><p>This day in earlier years, brought back on its own.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/gallery-voice-note-1010.webp" alt="A photo of a train in an Alpine valley open in the viewer, with a 42-second voice recording under Recordings playing in a waveform player" width="1010" height="842" loading="lazy"></figure>
+              <h3>Voice notes</h3><p>The story behind a photo, in the voice of the person who remembers it.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/gallery-recording-1060.webp" alt="The New recording dialog over the photo: Say what you remember about this photo, a large Record button, up to five minutes" width="1060" height="883" loading="lazy"></figure>
+              <h3>Record a memory</h3><p>Press record, listen back, then save. Or upload a recording you already have.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/gallery-people-1080.webp" alt="People: Find the familiar faces in your photos." width="1080" height="840" loading="lazy"></figure>
+              <h3>People</h3><p>Find the familiar faces in your photos.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/gallery-album-1080.webp" alt="Albums: Keep the moments that belong together." width="1080" height="840" loading="lazy"></figure>
+              <h3>Albums</h3><p>Keep the moments that belong together.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/gallery-slideshows-1080.webp" alt="Slideshows: Turn a day into a movie, music and all." width="1080" height="840" loading="lazy"></figure>
+              <h3>Slideshows</h3><p>Turn a day into a movie, music and all.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/gallery-map-1080.webp" alt="Map: Everywhere you have been, on one map." width="1080" height="840" loading="lazy"></figure>
+              <h3>Map</h3><p>Everywhere you have been, on one map.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/duplicate-card-1080.webp" alt="Duplicate cleanup: Find the copies and decide what to keep." width="1080" height="840" loading="lazy"></figure>
+              <h3>Duplicate cleanup</h3><p>Find the copies and decide what to keep.</p>
+            </article>
+          </div>
+          <div class="rail-dots" aria-label="Screenshot pages"></div>
+        </div>
+        <div class="feature-panel" id="feature-panel-family" role="tabpanel" aria-labelledby="feature-family">
+          <div class="library-heading">
+            <h2>Your family, connected</h2>
+            <p>Keep your family history close.</p>
+            <div class="library-controls" aria-label="Screenshot navigation" hidden>
+              <button class="rail-button" type="button" data-rail-prev aria-label="Previous screenshots" title="Previous screenshots" aria-controls="rail-family" disabled><img src="Assets/icons/chevron-left.svg" alt="" width="24" height="24"></button>
+              <button class="rail-button" type="button" data-rail-next aria-label="Next screenshots" title="Next screenshots" aria-controls="rail-family"><img src="Assets/icons/chevron-right.svg" alt="" width="24" height="24"></button>
+            </div>
+          </div>
+          <div class="library-card-rail" id="rail-family" tabindex="0" role="region" aria-label="Family Tree screenshots">
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/family-tree-1080.webp" alt="Family Tree: See the connections across generations." width="1080" height="840" loading="lazy"></figure>
+              <h3>Family Tree</h3><p>See the connections across generations.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/family-families-1080.webp" alt="Families: The same tree read as households, not a chart." width="1080" height="840" loading="lazy"></figure>
+              <h3>Families</h3><p>The same tree read as households, not a chart.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/family-person-1076.webp" alt="A page for everyone: Bring your family's stories together." width="1076" height="807" loading="lazy"></figure>
+              <h3>A page for everyone</h3><p>Bring your family's stories together.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/family-timeline-1080.webp" alt="A life, in order: Every date you know about someone, on one line." width="1080" height="840" loading="lazy"></figure>
+              <h3>A life, in order</h3><p>Every date you know about someone, on one line.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/family-gedcom-420.webp" alt="GEDCOM in and out: The format Ancestry and FamilySearch already speak." width="420" height="400" loading="lazy"></figure>
+              <h3>GEDCOM in and out</h3><p>The format Ancestry and FamilySearch already speak.</p>
+            </article>
+          </div>
+          <div class="rail-dots" aria-label="Screenshot pages"></div>
+        </div>
+        <div class="feature-panel" id="feature-panel-stories" role="tabpanel" aria-labelledby="feature-stories">
+          <div class="library-heading">
+            <h2>The stories worth keeping</h2>
+            <p>A home for the memories behind the photos.</p>
+            <div class="library-controls" aria-label="Screenshot navigation" hidden>
+              <button class="rail-button" type="button" data-rail-prev aria-label="Previous screenshots" title="Previous screenshots" aria-controls="rail-stories" disabled><img src="Assets/icons/chevron-left.svg" alt="" width="24" height="24"></button>
+              <button class="rail-button" type="button" data-rail-next aria-label="Next screenshots" title="Next screenshots" aria-controls="rail-stories"><img src="Assets/icons/chevron-right.svg" alt="" width="24" height="24"></button>
+            </div>
+          </div>
+          <div class="library-card-rail" id="rail-stories" tabindex="0" role="region" aria-label="Story screenshots">
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/story-hero-1016.webp" alt="Stories: Keep your family's stories in your own words." width="1016" height="762" loading="lazy"></figure>
+              <h3>Stories</h3><p>Keep your family's stories in your own words.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/story-edit-1080.webp" alt="The editor: Chapters down the side, blocks down the page." width="1080" height="840" loading="lazy"></figure>
+              <h3>The editor</h3><p>Chapters down the side, blocks down the page.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/story-add-block-760.webp" alt="Add a block: Text, photos, a map, a person, a quote, a book." width="760" height="667" loading="lazy"></figure>
+              <h3>Add a block</h3><p>Text, photos, a map, a person, a quote, a book.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="Assets/screenshots/story-map-block-1080.webp" alt="Draw the route: Add stops and the map joins them up." width="1080" height="714" loading="lazy"></figure>
+              <h3>Draw the route</h3><p>Add stops and the map joins them up.</p>
             </article>
           </div>
           <div class="rail-dots" aria-label="Screenshot pages"></div>
@@ -440,125 +584,78 @@
     </footer>
 
     <script>
-      // Each feature owns its screenshots; carousel positions follow the available width.
+      // The feature rail. Every tab's heading and cards are in the markup, so the
+      // page reads whole without this script (the panels stack) and to anything
+      // that reads the HTML; the script shows one panel at a time and drives its
+      // carousel. Carousel stops follow the available width.
       const showcase = document.querySelector(".library-showcase");
-      const featureTabs = [...showcase.querySelectorAll("[data-feature]")];
-      const rail = showcase.querySelector(".library-card-rail");
-      const panel = showcase.querySelector("[role=tabpanel]");
-      const dots = showcase.querySelector(".rail-dots");
-      const previous = showcase.querySelector("[data-rail-prev]");
-      const next = showcase.querySelector("[data-rail-next]");
-      const audiobookCards = [...rail.children].map((card) => card.cloneNode(true));
-      const features = {
-        audiobooks: {
-          title: "Your audiobooks, beautifully organized",
-          subtitle: "Listen anywhere. Pick up where you left off. All in one place."
-        },
-        ebooks: {
-          title: "Your books, always within reach",
-          subtitle: "Your collection and a comfortable reader, together in one place.",
-          shots: [
-            ["ebooks-grid-1080", "Ebooks", "Your ebook collection on one shelf."],
-            ["ebook-authors-1080", "Authors", "Every author across both shelves, in one list."],
-            ["ebook-reader-1080", "The reader", "A comfortable reading experience built in."],
-            ["quotes-1080", "Quotes", "Highlight a line while reading and it is kept."],
-            ["book-editions-1020", "Editions", "Keep formats and translations together."]
-          ]
-        },
-        gallery: {
-          title: "Your family's photos, brought back to life",
-          subtitle: "Memories, people, places and slideshows, from the photos you already have.",
-          shots: [
-            ["gallery-grid-1080", "Gallery view", "Your whole library, at the tile size you like."],
-            ["gallery-memories-1080", "Memories", "This day in earlier years, brought back on its own."],
-            ["gallery-people-1080", "People", "Find the familiar faces in your photos."],
-            ["gallery-album-1080", "Albums", "Keep the moments that belong together."],
-            ["gallery-slideshows-1080", "Slideshows", "Turn a day into a movie, music and all."],
-            ["gallery-map-1080", "Map", "Everywhere you have been, on one map."],
-            ["duplicate-card-1080", "Duplicate cleanup", "Find the copies and decide what to keep."]
-          ]
-        },
-        family: {
-          title: "Your family, connected",
-          subtitle: "Keep your family history close.",
-          shots: [
-            ["family-tree-1080", "Family Tree", "See the connections across generations."],
-            ["family-families-1080", "Families", "The same tree read as households, not a chart."],
-            ["family-person-1076", "A page for everyone", "Bring your family's stories together."],
-            ["family-timeline-1080", "A life, in order", "Every date you know about someone, on one line."],
-            ["family-gedcom-420", "GEDCOM in and out", "The format Ancestry and FamilySearch already speak."]
-          ]
-        },
-        stories: {
-          title: "The stories worth keeping",
-          subtitle: "A home for the memories behind the photos.",
-          shots: [
-            ["story-hero-1016", "Stories", "Keep your family's stories in your own words."],
-            ["story-edit-1080", "The editor", "Chapters down the side, blocks down the page."],
-            ["story-add-block-760", "Add a block", "Text, photos, a map, a person, a quote, a book."],
-            ["story-map-block-1080", "Draw the route", "Add stops and the map joins them up."]
-          ]
-        }
-      };
-      let positions = [];
-      let page = 0;
+      const featureTabs = [...showcase.querySelectorAll("[role=tab]")];
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      const sync = () => {
-        page = positions.reduce((best, position, i) =>
-          Math.abs(position - rail.scrollLeft) < Math.abs(positions[best] - rail.scrollLeft) ? i : best, 0);
-        [...dots.children].forEach((dot, i) => dot.setAttribute("aria-current", String(i === page)));
-        previous.disabled = page === 0;
-        next.disabled = page === positions.length - 1;
-      };
-      const go = (index) => {
-        rail.scrollTo({ left: positions[Math.max(0, Math.min(index, positions.length - 1))],
-          behavior: reducedMotion.matches ? "instant" : "smooth" });
-      };
-      const measure = () => {
-        const max = Math.max(0, rail.scrollWidth - rail.clientWidth);
-        const step = rail.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).gap);
-        positions = [0];
-        for (let position = step; position < max - 1; position += step) positions.push(position);
-        // The end of the rail is always the last stop, or the final card stays
-        // half off-screen. When it lands close to the last whole step it takes
-        // that step's place rather than adding a dot that moves a sliver.
-        if (max > 1) {
-          if (max - positions[positions.length - 1] > step / 2) positions.push(max);
-          else positions[positions.length - 1] = max;
-        }
-        dots.replaceChildren(...positions.map((_, i) => {
-          const button = document.createElement("button");
-          button.type = "button";
-          button.setAttribute("aria-label", "Show screenshot page " + (i + 1));
-          button.addEventListener("click", () => go(i));
-          return button;
-        }));
-        dots.hidden = positions.length === 1;
-        sync();
-      };
-      const selectFeature = (tab, focus = false) => {
-        const feature = features[tab.dataset.feature];
-        featureTabs.forEach((item) => {
-          item.setAttribute("aria-selected", String(item === tab));
-          item.tabIndex = item === tab ? 0 : -1;
-        });
-        panel.setAttribute("aria-labelledby", tab.id);
-        showcase.querySelector("h2").textContent = feature.title;
-        showcase.querySelector("#library-subtitle").textContent = feature.subtitle;
-        rail.setAttribute("aria-label", tab.textContent + " screenshots");
-        if (feature.shots) {
-          rail.replaceChildren(...feature.shots.map(([file, title, description]) => {
-            const card = audiobookCards[0].cloneNode(true);
-            const img = card.querySelector("img");
-            img.src = "Assets/screenshots/" + file + ".webp";
-            img.alt = title + ": " + description;
-            card.querySelector("h3").textContent = title;
-            card.querySelector("p").textContent = description;
-            return card;
+      const carousels = new Map();
+      for (const panel of showcase.querySelectorAll("[role=tabpanel]")) {
+        const rail = panel.querySelector(".library-card-rail");
+        const dots = panel.querySelector(".rail-dots");
+        const previous = panel.querySelector("[data-rail-prev]");
+        const next = panel.querySelector("[data-rail-next]");
+        // The arrows are hidden in the markup, where they would do nothing.
+        panel.querySelector(".library-controls").hidden = false;
+        let positions = [0];
+        let page = 0;
+        const sync = () => {
+          page = positions.reduce((best, position, i) =>
+            Math.abs(position - rail.scrollLeft) < Math.abs(positions[best] - rail.scrollLeft) ? i : best, 0);
+          [...dots.children].forEach((dot, i) => dot.setAttribute("aria-current", String(i === page)));
+          previous.disabled = page === 0;
+          next.disabled = page === positions.length - 1;
+        };
+        const go = (index) => {
+          rail.scrollTo({ left: positions[Math.max(0, Math.min(index, positions.length - 1))],
+            behavior: reducedMotion.matches ? "instant" : "smooth" });
+        };
+        const measure = () => {
+          // A hidden panel has no width to measure; it is measured again when
+          // shown, because the resize observer sees it grow.
+          if (panel.hidden || rail.clientWidth === 0) return;
+          const max = Math.max(0, rail.scrollWidth - rail.clientWidth);
+          const step = rail.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).gap);
+          positions = [0];
+          for (let position = step; position < max - 1; position += step) positions.push(position);
+          // The end of the rail is always the last stop, or the final card stays
+          // half off-screen. When it lands close to the last whole step it takes
+          // that step's place rather than adding a dot that moves a sliver.
+          if (max > 1) {
+            if (max - positions[positions.length - 1] > step / 2) positions.push(max);
+            else positions[positions.length - 1] = max;
+          }
+          dots.replaceChildren(...positions.map((_, i) => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.setAttribute("aria-label", "Show screenshot page " + (i + 1));
+            button.addEventListener("click", () => go(i));
+            return button;
           }));
-        } else {
-          rail.replaceChildren(...audiobookCards.map((card) => card.cloneNode(true)));
+          dots.hidden = positions.length === 1;
+          sync();
+        };
+        previous.addEventListener("click", () => go(page - 1));
+        next.addEventListener("click", () => go(page + 1));
+        rail.addEventListener("scroll", sync, { passive: true });
+        rail.addEventListener("keydown", (event) => {
+          if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+          event.preventDefault();
+          go(page + (event.key === "ArrowLeft" ? -1 : 1));
+        });
+        new ResizeObserver(measure).observe(rail);
+        carousels.set(panel.id, { rail, measure });
+      }
+      const selectFeature = (tab, focus = false) => {
+        for (const item of featureTabs) {
+          const selected = item === tab;
+          item.setAttribute("aria-selected", String(selected));
+          item.tabIndex = selected ? 0 : -1;
+          showcase.querySelector("#" + item.getAttribute("aria-controls")).hidden = !selected;
         }
+        const { rail, measure } = carousels.get(tab.getAttribute("aria-controls"));
         rail.scrollTo({ left: 0, behavior: "instant" });
         measure();
         if (focus) tab.focus();
@@ -575,16 +672,10 @@
           selectFeature(featureTabs[keys[event.key]], true);
         });
       });
-      previous.addEventListener("click", () => go(page - 1));
-      next.addEventListener("click", () => go(page + 1));
-      rail.addEventListener("scroll", sync, { passive: true });
-      rail.addEventListener("keydown", (event) => {
-        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-        event.preventDefault();
-        go(page + (event.key === "ArrowLeft" ? -1 : 1));
-      });
-      new ResizeObserver(measure).observe(rail);
-      measure();
+      // Only the first panel shows once the script runs. Hiding the rest here
+      // rather than in the markup is what keeps them readable without it.
+      for (const item of featureTabs.slice(1)) showcase.querySelector("#" + item.getAttribute("aria-controls")).hidden = true;
+      carousels.get(featureTabs[0].getAttribute("aria-controls")).measure();
 
       // The theme picker: a swatch swaps the stage image and the caption. Each
       // swatch names its capture; the three widths follow from that name.

@@ -514,6 +514,11 @@ h3 {
   gap: 14px;
 }
 
+/* Hidden until the script runs; display: flex would otherwise beat the attribute. */
+.library-controls[hidden] {
+  display: none;
+}
+
 .rail-button {
   display: inline-flex;
   align-items: center;
