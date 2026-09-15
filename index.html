@@ -3,11 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>isputnik</title>
+    <title>isputnik.home · A home for your family's memories</title>
     <meta
       name="description"
-      content="isputnik.home is an open source, self-hosted family media library: audiobooks, ebooks, photos, and videos on your own server, under your own roof."
+      content="A self-hosted home for your family's books, photos, videos, stories and family history. Open source, multi-user and built to run on your own server."
     >
+    <!-- Link previews: the Home page, as the hero shows it. PNG, which every
+         preview crawler reads. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="isputnik">
+    <meta property="og:url" content="https://isputnik.net/">
+    <meta property="og:title" content="isputnik.home · A home for your family's memories">
+    <meta property="og:description" content="Books, photos, videos, stories and family history, connected in one place and kept on your own server. Free and open source.">
+    <meta property="og:image" content="https://isputnik.net/Assets/screenshots/theme-minimalist.png">
+    <meta property="og:image:width" content="1440">
+    <meta property="og:image:height" content="900">
+    <meta property="og:image:alt" content="The isputnik.home home page: a quote of the day, photos from this day in earlier years, and the newest stories">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="Assets/brand/isputnik-logo-sputnik-earth-mark.svg" type="image/svg+xml">
     <link rel="preload" as="image" href="Assets/brand/sputnik-scene.webp" fetchpriority="high">
     <link rel="preload" as="image" href="Assets/screenshots/theme-minimalist-1080.webp" imagesrcset="Assets/screenshots/theme-minimalist-720.webp 720w, Assets/screenshots/theme-minimalist-1080.webp 1080w, Assets/screenshots/theme-minimalist-1440.webp 1440w" imagesizes="(min-width: 960px) 640px, calc(100vw - 40px)">
@@ -28,11 +40,11 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
           <div class="hero-copy">
-            <p class="eyebrow eyebrow-light">Open source · Self-hosted</p>
-            <h1 id="hero-title">isputnik.home</h1>
+            <p class="eyebrow eyebrow-light">Beta · Free · Open source</p>
+            <h1 id="hero-title">A home for your family's memories.</h1>
             <p class="lede">
-              Your family's media library, under your own roof. Audiobooks, ebooks,
-              photos, and videos — served from your home, for the people you trust.
+              isputnik.home keeps books, photos, videos, stories and family history
+              connected in one place, on your own server.
             </p>
           </div>
           <!-- The product, as the car sits in the launch photo: the Home page on a
@@ -66,14 +78,13 @@
             <span>Free · AGPL-3.0</span>
           </div>
           <div class="product-links">
-            <a href="#library" data-feature="audiobooks">Library</a>
-            <a href="#library" data-feature="gallery">Gallery</a>
-            <a href="#library" data-feature="stories">Stories</a>
-            <a href="#appearance">Appearance</a>
+            <a href="#library">Features</a>
+            <a href="#family">Family</a>
             <a href="#highlights">Highlights</a>
+            <a href="#appearance">Appearance</a>
           </div>
           <div class="product-actions">
-            <a class="button secondary" href="https://github.com/isputnikdotnet/isputnik.home">Source</a>
+            <a class="button secondary" href="https://github.com/isputnikdotnet/isputnik.home/tree/main/docs/users">Docs</a>
             <a class="button primary" href="https://github.com/isputnikdotnet/isputnik.home#readme">Install</a>
           </div>
         </div>
@@ -107,8 +118,8 @@
             </span>
             <div>
               <p class="highlight-kicker">One home</p>
-              <h2>Books. Photos. Stories. Family.</h2>
-              <p>Audiobooks, ebooks, Gallery, Stories, and Family Tree together in one place.</p>
+              <h2>Everything connects.</h2>
+              <p>A photo becomes part of a person's history, and people, places and books part of a story, without copying a thing.</p>
             </div>
           </li>
           <li>
@@ -121,7 +132,7 @@
             <div>
               <p class="highlight-kicker">Pick up where you left off</p>
               <h2>Listen. Read. Continue.</h2>
-              <p>iSputnik remembers audiobook and EPUB progress for each user.</p>
+              <p>Reading and listening progress follows each person, on a desktop, tablet or phone.</p>
             </div>
           </li>
           <li>
@@ -184,56 +195,64 @@
         </div>
       </section>
 
-      <!-- ─── Appearance (the paint picker) ────────────────────────────────────── -->
-      <section class="group group-alt" id="appearance" aria-labelledby="g-appearance">
+      <!-- ─── Family: everyone can help ────────────────────────────────────────── -->
+      <!-- Text only, on purpose: the rail above carries the pictures, and this is
+           the one idea it cannot show, that the rest of the family takes part. -->
+      <section class="group group-alt" id="family" aria-labelledby="g-family">
         <div class="group-head">
-          <p class="eyebrow">Themes</p>
-          <h2 id="g-appearance">Appearance.</h2>
+          <p class="eyebrow">For the whole family</p>
+          <h2 id="g-family">Memories are better when everyone can help.</h2>
+          <p class="group-lede">
+            Send a photo to your parents and ask who is in it. Let a cousin drop off old
+            photos without an account. What they tell you stays with the photos, not in
+            a message thread.
+          </p>
         </div>
-        <div class="picker section-inner">
-          <div class="picker-swatches" role="group" aria-label="Choose a theme">
-            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-system"
-              data-label="System" data-note="Follows the device: Plain Light by day, Plain Dark at night.">
-              <span class="swatch-chip" style="--a: #f3f6fb; --b: #04080c"></span>
-              <span class="swatch-name">System</span>
-            </button>
-            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-plain-light"
-              data-label="Plain Light" data-note="White, blue accents, nothing in the background.">
-              <span class="swatch-chip" style="--a: #f3f6fb; --b: #2563eb"></span>
-              <span class="swatch-name">Plain Light</span>
-            </button>
-            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-plain-dark"
-              data-label="Plain Dark" data-note="The same, on near-black.">
-              <span class="swatch-chip" style="--a: #04080c; --b: #45bed2"></span>
-              <span class="swatch-name">Plain Dark</span>
-            </button>
-            <button type="button" class="swatch" aria-pressed="true" data-shot="theme-minimalist"
-              data-label="Minimalist" data-note="The default. Platinum grey and black ink, like a certain beige computer.">
-              <span class="swatch-chip" style="--a: #e2e2df; --b: #1d1d1f"></span>
-              <span class="swatch-name">Minimalist</span>
-            </button>
-            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-light"
-              data-label="iSputnik Light" data-note="Cream paper, brass and teal, a faint orbit behind the page.">
-              <span class="swatch-chip" style="--a: #eef1e7; --b: #3f716a"></span>
-              <span class="swatch-name">iSputnik Light</span>
-            </button>
-            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-dark"
-              data-label="iSputnik Night" data-note="Sputnik over Earth, amber type, the one this page's hero is painted in.">
-              <span class="swatch-chip" style="--a: #020b0e; --b: #d14b2d"></span>
-              <span class="swatch-name">iSputnik Night</span>
-            </button>
-          </div>
-          <p class="picker-selection">Selection: <strong>Minimalist</strong> <span>The default. Platinum grey and black ink, like a certain beige computer.</span></p>
-          <figure class="picker-stage">
-            <img
-              src="Assets/screenshots/theme-minimalist-1080.webp"
-              srcset="Assets/screenshots/theme-minimalist-720.webp 720w, Assets/screenshots/theme-minimalist-1080.webp 1080w, Assets/screenshots/theme-minimalist-1440.webp 1440w"
-              sizes="(min-width: 1180px) 1120px, calc(100vw - 40px)"
-              width="1440" height="900" loading="lazy" decoding="async"
-              alt="The isputnik.home home page in the Minimalist theme"
-            >
-          </figure>
-        </div>
+        <ul class="section-inner family-cards">
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M22 12h-6l-2 3h-4l-2-3H2"></path>
+                <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"></path>
+              </svg>
+            </span>
+            <h3>Photo Inbox</h3>
+            <p>Anyone can drop off photos through a link, no account needed. You decide what to keep.</p>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                <path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"></path>
+                <path d="M12 17h.01"></path>
+              </svg>
+            </span>
+            <h3>Ask what they remember</h3>
+            <p>Send photos to someone and get back names, dates, places, notes and voice recordings.</p>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+              </svg>
+            </span>
+            <h3>For you</h3>
+            <p>One page for what was sent to you, and what is waiting on your answer.</p>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"></path>
+              </svg>
+            </span>
+            <h3>Share with family</h3>
+            <p>Everyone gets their own account and access. Guests get a link that expires.</p>
+          </li>
+        </ul>
       </section>
 
       <!-- ─── Highlights: backups, security, offline maps ──────────────────────── -->
@@ -271,7 +290,7 @@
                   <path d="m9 12 2 2 4-5"></path>
                 </svg>
               </span>
-              <span class="highlight-tab-text"><strong>Security</strong><small>Safe to put on the internet</small></span>
+              <span class="highlight-tab-text"><strong>Security</strong><small>For access beyond home</small></span>
             </button>
             <button class="highlight-tab" id="hl-tab-maps" type="button" role="tab" aria-selected="false" aria-controls="hl-maps" tabindex="-1">
               <span class="highlight-icon" aria-hidden="true">
@@ -319,7 +338,7 @@
               >
             </figure>
             <div class="split-copy">
-              <h3 class="highlight-title">Safe to put on the internet.</h3>
+              <h3 class="highlight-title">Security for access beyond home.</h3>
               <p class="group-lede">
                 One page scores the whole install out of 100 and grades every policy
                 behind the number. Each row opens the setting that owns it.
@@ -356,6 +375,58 @@
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+      <!-- ─── Appearance (the paint picker) ────────────────────────────────────── -->
+      <section class="group group-alt" id="appearance" aria-labelledby="g-appearance">
+        <div class="group-head">
+          <p class="eyebrow">Appearance</p>
+          <h2 id="g-appearance">Make it yours.</h2>
+          <p class="group-lede">Six themes, and each person picks their own.</p>
+        </div>
+        <div class="picker section-inner">
+          <div class="picker-swatches" role="group" aria-label="Choose a theme">
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-system"
+              data-label="System" data-note="Follows the device: Plain Light by day, Plain Dark at night.">
+              <span class="swatch-chip" style="--a: #f3f6fb; --b: #04080c"></span>
+              <span class="swatch-name">System</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-plain-light"
+              data-label="Plain Light" data-note="White, blue accents, nothing in the background.">
+              <span class="swatch-chip" style="--a: #f3f6fb; --b: #2563eb"></span>
+              <span class="swatch-name">Plain Light</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-plain-dark"
+              data-label="Plain Dark" data-note="The same, on near-black.">
+              <span class="swatch-chip" style="--a: #04080c; --b: #45bed2"></span>
+              <span class="swatch-name">Plain Dark</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="true" data-shot="theme-minimalist"
+              data-label="Minimalist" data-note="The default. Platinum grey and black ink, like a certain beige computer.">
+              <span class="swatch-chip" style="--a: #e2e2df; --b: #1d1d1f"></span>
+              <span class="swatch-name">Minimalist</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-light"
+              data-label="iSputnik Light" data-note="Cream paper, brass and teal, a faint orbit behind the page.">
+              <span class="swatch-chip" style="--a: #eef1e7; --b: #3f716a"></span>
+              <span class="swatch-name">iSputnik Light</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-dark"
+              data-label="iSputnik Night" data-note="Sputnik over Earth, amber type, the one this page's hero is painted in.">
+              <span class="swatch-chip" style="--a: #020b0e; --b: #d14b2d"></span>
+              <span class="swatch-name">iSputnik Night</span>
+            </button>
+          </div>
+          <p class="picker-selection">Selection: <strong>Minimalist</strong> <span>The default. Platinum grey and black ink, like a certain beige computer.</span></p>
+          <figure class="picker-stage">
+            <img
+              src="Assets/screenshots/theme-minimalist-1080.webp"
+              srcset="Assets/screenshots/theme-minimalist-720.webp 720w, Assets/screenshots/theme-minimalist-1080.webp 1080w, Assets/screenshots/theme-minimalist-1440.webp 1440w"
+              sizes="(min-width: 1180px) 1120px, calc(100vw - 40px)"
+              width="1440" height="900" loading="lazy" decoding="async"
+              alt="The isputnik.home home page in the Minimalist theme"
+            >
+          </figure>
         </div>
       </section>
     </main>
@@ -395,8 +466,8 @@
           ]
         },
         gallery: {
-          title: "Every photo, sorted by itself",
-          subtitle: "Your photos and videos, gathered in one home.",
+          title: "Your family's photos, brought back to life",
+          subtitle: "Memories, people, places and slideshows, from the photos you already have.",
           shots: [
             ["gallery-grid-1080", "Gallery view", "Your whole library, at the tile size you like."],
             ["gallery-memories-1080", "Memories", "This day in earlier years, brought back on its own."],
@@ -504,15 +575,6 @@
           selectFeature(featureTabs[keys[event.key]], true);
         });
       });
-      // The Gallery and Stories links in the product bar used to reach sections
-      // of their own. Those are gone, and that content lives in this rail now,
-      // so a link opens the matching tab on its way there.
-      for (const link of document.querySelectorAll(".product-links a[data-feature]")) {
-        link.addEventListener("click", () => {
-          const tab = featureTabs.find((item) => item.dataset.feature === link.dataset.feature);
-          if (tab) selectFeature(tab);
-        });
-      }
       previous.addEventListener("click", () => go(page - 1));
       next.addEventListener("click", () => go(page + 1));
       rail.addEventListener("scroll", sync, { passive: true });

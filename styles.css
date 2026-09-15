@@ -3,7 +3,7 @@
    canvas, black ink, no accent colour beyond the ink itself. Its shape is a
    product overview: one full-bleed hero, a product bar that sticks, a compact
    feature strip, then one tabbed rail of screenshots covering every part of the
-   app, a picker for the finish, and reassurance at the end. */
+   app, the family taking part, the highlights, and a theme picker at the end. */
 :root {
   color-scheme: light;
   --ink: #1d1d1f;
@@ -253,8 +253,13 @@ h3 {
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 4px 14px rgba(0, 0, 0, 0.5);
 }
 
+/* A sentence now, not the product name, so it runs smaller over two or three lines. */
 .hero h1 {
   color: #f2f2ef;
+  /* Sized so "family's memories." fits the copy column, which the desktop
+     screenshot overlaps from the right. */
+  font-size: clamp(2.4rem, 3.3vw, 3.1rem);
+  line-height: 1.04;
 }
 
 .lede {
@@ -774,6 +779,45 @@ h3 {
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* ─── Family: four text cards ────────────────────────────────────────────── */
+
+.family-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.family-cards li {
+  padding: 22px 22px 24px;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  background: var(--raised);
+}
+
+.family-cards .highlight-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+}
+
+.family-cards .highlight-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.family-cards h3 {
+  font-size: 1.1rem;
+}
+
+.family-cards p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
 /* ─── Highlights: three cards over a picture beside a list ───────────────── */
 
 .highlights .group-lede {
@@ -917,6 +961,14 @@ h3 {
 
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
 
+/* The screenshots lean into the copy column only while it has room to spare;
+   narrower, the lean runs them over the end of the lede. */
+@media (max-width: 1360px) {
+  .hero-devices {
+    transform: none;
+  }
+}
+
 
 
 @media (max-width: 960px) {
@@ -943,6 +995,10 @@ h3 {
 
   .split {
     grid-template-columns: 1fr;
+  }
+
+  .family-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .highlight-tab {
@@ -1022,6 +1078,30 @@ h3 {
 
   .product-highlights {
     padding-bottom: 8px;
+  }
+
+  /* One column, with the icon beside the words so four cards stay short. */
+  .family-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .family-cards li {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    column-gap: 14px;
+    padding: 16px;
+  }
+
+  .family-cards .highlight-icon {
+    grid-row: span 2;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0;
+  }
+
+  .family-cards p {
+    margin-top: 4px;
   }
 
   /* Three cards stack; the icon goes back beside the words. */
