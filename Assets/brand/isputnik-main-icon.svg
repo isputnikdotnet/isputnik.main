@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">isputnik mark</title>
+  <desc id="desc">A flat rounded square: a cream planet with a teal orbit around it and an orange satellite on the orbit.</desc>
+  <defs>
+    <!-- Lower half of the orbit (along its major axis) is drawn again on top of the planet. -->
+    <clipPath id="orbit-front">
+      <rect x="-200" y="240" width="900" height="500" transform="rotate(-24 250 240)"/>
+    </clipPath>
+  </defs>
+
+  <rect width="512" height="512" rx="108" fill="#16213a"/>
+
+  <!-- orbit, behind the planet -->
+  <ellipse cx="250" cy="240" rx="222" ry="80" fill="none" stroke="#5fb8b0" stroke-width="22" transform="rotate(-24 250 240)"/>
+
+  <!-- planet -->
+  <circle cx="256" cy="268" r="108" fill="#f1f3ee"/>
+
+  <!-- orbit, in front of the planet -->
+  <ellipse cx="250" cy="240" rx="222" ry="80" fill="none" stroke="#5fb8b0" stroke-width="22" transform="rotate(-24 250 240)" clip-path="url(#orbit-front)"/>
+
+  <!-- satellite; the navy stroke breaks the orbit around it -->
+  <circle cx="397.5" cy="124.1" r="32" fill="#e9a95f" stroke="#16213a" stroke-width="16"/>
+</svg>
