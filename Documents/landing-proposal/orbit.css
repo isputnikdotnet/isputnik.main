@@ -409,3 +409,11 @@ code { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-siz
   .theme-picker { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 8px; padding-bottom: 4px; scrollbar-width: none; }
   .theme-picker button { flex: 0 0 104px; scroll-snap-align: start; font-size: 11px; }
 }
+
+/* Beta: a small gold pill wherever the site says so */
+.beta-pill { display: inline-flex; align-items: center; padding: 2px 8px; border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--gold) 12%, transparent); color: var(--gold); font-size: 9.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; line-height: 1.5; }
+.beta-note { display: flex; gap: 12px; align-items: flex-start; margin: 0; padding: 14px 16px; border: 1px solid color-mix(in srgb, var(--gold) 30%, transparent); border-radius: 10px; background: color-mix(in srgb, var(--gold) 6%, transparent); font-size: 12.5px; line-height: 1.65; color: #b6c7d5; }
+.beta-note .beta-pill { flex: none; margin-top: 2px; }
+.beta-note strong { color: var(--ink); font-weight: 600; }
+.beta-note a { color: var(--gold); white-space: nowrap; }
+.beta-note a:hover { text-decoration: underline; text-underline-offset: 3px; }

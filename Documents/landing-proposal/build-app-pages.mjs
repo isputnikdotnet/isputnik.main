@@ -35,7 +35,7 @@ function hero(app) {
     : `<figure class="app-hero-shot is-missing" aria-label="Screenshot to come"><div><strong>${app.hero?.alt ?? app.name}</strong><span>Screenshot to come</span></div></figure>`;
   return `    <section class="app-hero wrap" aria-labelledby="app-title">
       <div class="app-hero-copy">
-        <p class="eyebrow">${dot('var(--app)')}${app.eyebrow}</p>
+        <p class="eyebrow">${dot('var(--app)')}${app.eyebrow} <span class="beta-pill">Beta</span></p>
         <h1 id="app-title">${app.title[0]}<br><span>${app.title[1]}</span></h1>
         <p class="intro">${app.intro}</p>
         <div class="actions"><a class="button" href="${app.get.href}">${app.get.label} <span aria-hidden="true">${app.get.icon ?? '↗'}</span></a><a class="text-link" href="#what">See what it does <span aria-hidden="true">↓</span></a></div>
@@ -164,7 +164,7 @@ ${faq}
     </nav>
   </main>
 
-  <footer class="footer wrap"><a class="brand" href="index.html"><img src="../../Assets/brand/isputnik-main-icon.svg" alt="" width="24" height="24"><span>iSputnik.</span></a><span>Your digital library. At home. All yours.</span><a href="https://github.com/isputnikdotnet/isputnik.home">Open source · AGPL-3.0 <span aria-hidden="true">↗</span></a></footer>
+  <footer class="footer wrap"><a class="brand" href="index.html"><img src="../../Assets/brand/isputnik-main-icon.svg" alt="" width="24" height="24"><span>iSputnik.</span></a><span>Your digital library. At home. All yours.</span><a href="https://github.com/isputnikdotnet/isputnik.home">Beta · Open source · AGPL-3.0 <span aria-hidden="true">↗</span></a></footer>
   <dialog id="screenshot-dialog" aria-label="Enlarged screenshot"><button type="button" id="close-dialog" aria-label="Close screenshot">Close ×</button><img id="expanded-image" alt=""></dialog>
   <script src="app-page.js"></script>
 </body>
