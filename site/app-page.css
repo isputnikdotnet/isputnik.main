@@ -1,0 +1,113 @@
+/* App pages: one template for every application, coloured by --app on <body>. */
+
+/* Apps menu in the top bar */
+.apps-menu { position: relative; }
+.apps-menu summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.apps-menu summary::-webkit-details-marker { display: none; }
+.apps-menu summary::after { content: ""; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .15s; }
+.apps-menu[open] summary::after { transform: translateY(1px) rotate(-135deg); }
+.apps-menu summary:hover { color: var(--mint); }
+.apps-menu summary:focus-visible { outline: 2px solid var(--mint); outline-offset: 4px; border-radius: 4px; }
+.apps-menu ul { position: absolute; z-index: 20; top: calc(100% + 14px); left: -14px; min-width: 230px; list-style: none; margin: 0; padding: 6px; background: var(--surface-raised); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 18px 40px -12px var(--shadow); }
+.apps-menu li a { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 7px; font-size: 13px; white-space: nowrap; }
+.apps-menu li a:hover { background: var(--hover); color: var(--mint); text-decoration: none !important; }
+.apps-menu li a[aria-current="page"] { background: var(--active); color: var(--ink); }
+
+/* Hero: copy beside the main screenshot */
+.app-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 48px; align-items: center; padding-block: 72px 64px; }
+.app-hero .eyebrow { gap: 9px; }
+.app-hero h1 { font-size: clamp(38px, 4.2vw, 56px); line-height: 1.08; font-weight: 550; letter-spacing: -2.2px; margin: 18px 0; }
+.app-hero h1 span { color: var(--app); }
+.app-hero .intro { font-size: 16px; color: #b6c7d5; margin: 0; max-width: 520px; }
+.app-hero .actions { justify-content: flex-start; }
+.app-hero-shot { margin: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: 0 30px 70px -30px #000, 0 0 0 6px color-mix(in srgb, var(--app) 8%, transparent); }
+.app-hero-shot img { width: 100%; height: auto; aspect-ratio: 1440 / 900; object-fit: cover; object-position: top left; }
+
+/* Shared section rhythm */
+.app-what, .app-shots, .app-with, .app-needs { padding-block: 56px 64px; border-top: 1px solid var(--line); }
+.app-page section h2 { font-size: 28px; font-weight: 550; letter-spacing: -1px; margin: 10px 0 0; }
+
+/* What it does */
+.what-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.what-grid article { padding: 24px; background: var(--surface); border: 1px solid var(--line); border-top: 2px solid var(--app); border-radius: 12px; }
+.what-grid h3 { font-size: 18px; font-weight: 600; letter-spacing: -.4px; margin: 0 0 6px; }
+.what-grid article > p { font-size: 13px; line-height: 1.65; color: var(--muted); margin: 0 0 16px; }
+.what-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.what-grid li { position: relative; padding-left: 24px; font-size: 13px; line-height: 1.55; color: #cfe0ec; }
+.what-grid li::before { content: "✓"; position: absolute; left: 0; top: 1px; width: 16px; height: 16px; border-radius: 50%; display: grid; place-items: center; font-size: 10px; font-weight: 700; color: var(--app); background: color-mix(in srgb, var(--app) 16%, transparent); }
+
+/* Screenshot strip */
+.shot-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (min-width: 1001px) { .shot-strip:has(> :nth-child(4):last-child) { grid-template-columns: repeat(4, 1fr); } }
+.shot { display: grid; gap: 10px; padding: 0; border: 0; background: none; color: var(--ink); text-align: left; }
+.shot img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; border: 1px solid var(--line); border-radius: 10px; transition: border-color .15s, transform .15s; }
+.shot:hover img { border-color: color-mix(in srgb, var(--app) 60%, transparent); transform: translateY(-2px); }
+.shot span { font-size: 12px; font-weight: 600; }
+.shot:focus-visible { outline: none; }
+.shot:focus-visible img { outline: 2px solid var(--mint); outline-offset: 3px; }
+
+/* Screenshots not captured yet: a dashed frame the same shape as the real thing */
+.shot-ph, .app-hero-shot.is-missing > div { display: grid; place-items: center; aspect-ratio: 16 / 10; border: 1px dashed color-mix(in srgb, var(--app) 45%, transparent); border-radius: 10px; background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--app) 6%, transparent) 0 12px, transparent 12px 24px), var(--field); }
+.shot-ph span { font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.app-hero-shot.is-missing { box-shadow: none; border: 0; }
+.app-hero-shot.is-missing > div { aspect-ratio: 1440 / 900; border-radius: 12px; align-content: center; gap: 6px; text-align: center; padding: 24px; }
+.app-hero-shot.is-missing strong { font-size: 15px; font-weight: 600; color: var(--ink); }
+.app-hero-shot.is-missing span { font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); }
+
+/* Private here, specifically */
+.app-private { background: linear-gradient(180deg, var(--surface) 0%, var(--canvas) 100%); border-block: 1px solid var(--line); }
+.app-private > .wrap { padding-block: 64px; }
+.private-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; }
+.private-list article { display: grid; grid-template-columns: 28px 1fr; column-gap: 14px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.private-list article::before { content: ""; grid-row: span 2; width: 28px; height: 28px; border-radius: 8px; background: var(--active) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6Z' fill='none' stroke='%2324d1e0' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat; }
+.private-list h3 { font-size: 15px; font-weight: 600; letter-spacing: -.25px; margin: 3px 0 4px; }
+.private-list p { font-size: 12.5px; line-height: 1.7; color: #a2b6c7; margin: 0; }
+
+/* Works with */
+.with-grid { display: grid; grid-template-columns: repeat(var(--n, 4), 1fr); gap: 16px; }
+.with-grid a { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 6px 10px; padding: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; transition: border-color .15s, background .15s; }
+.with-grid a:hover { border-color: rgba(36, 209, 224, .45); background: var(--surface-raised); }
+.with-grid strong { font-size: 14px; font-weight: 600; }
+.with-grid a > span:last-child { grid-column: 1 / -1; font-size: 12px; line-height: 1.6; color: #a2b6c7; }
+
+/* What you need */
+.app-needs { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); gap: 56px; }
+.needs-list { margin: 0; border-top: 1px solid var(--line); }
+.needs-list > div { display: grid; grid-template-columns: 220px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.needs-list dt { font-size: 14px; font-weight: 600; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.needs-list dd { margin: 0; font-size: 13px; line-height: 1.65; color: #a2b6c7; }
+
+/* Previous / next */
+.app-pager { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 40px 56px; border-top: 1px solid var(--line); }
+.app-pager a:not(.button) { display: grid; gap: 2px; }
+.app-pager a:not(.button) span { font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); }
+.app-pager a:not(.button) strong { font-size: 15px; font-weight: 600; }
+.app-pager a:not(.button):hover strong { color: var(--mint); }
+.app-pager .next { text-align: right; }
+
+@media (max-width: 1000px) {
+  .app-hero { grid-template-columns: 1fr; padding-top: 52px; }
+  .with-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 850px) {
+  .what-grid, .private-list { grid-template-columns: 1fr; }
+  .shot-strip { grid-template-columns: repeat(2, 1fr); }
+  .app-needs { grid-template-columns: 1fr; gap: 24px; }
+}
+/* On narrow screens the top bar keeps Docs and Get started; the Apps menu stays too. */
+@media (max-width: 760px) {
+  .header nav > .apps-menu { display: block; }
+  .apps-menu ul { left: auto; right: -90px; }
+}
+@media (max-width: 580px) {
+  .app-hero { padding-block: 40px 44px; gap: 32px; }
+  .app-hero h1 { font-size: 36px; letter-spacing: -1.6px; }
+  .app-hero .intro { font-size: 15px; }
+  .app-what, .app-shots, .app-with, .app-needs { padding-block: 38px 44px; }
+  .app-page section h2 { font-size: 24px; }
+  .what-grid article { padding: 18px; }
+  .shot-strip, .with-grid { grid-template-columns: 1fr; }
+  .needs-list > div { grid-template-columns: 1fr; gap: 4px; }
+  .app-pager { flex-wrap: wrap; }
+  .app-pager .button { order: 3; width: 100%; }
+}

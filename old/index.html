@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>isputnik.home · A home for your family's memories</title>
+    <meta
+      name="description"
+      content="A self-hosted home for your family's books, photos, videos, stories and family history. Open source, multi-user and built to run on your own server."
+    >
+    <!-- Link previews: the Home page, as the hero shows it. PNG, which every
+         preview crawler reads. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="isputnik">
+    <meta property="og:url" content="https://isputnik.net/">
+    <meta property="og:title" content="isputnik.home · A home for your family's memories">
+    <meta property="og:description" content="Books, photos, videos, stories and family history, connected in one place and kept on your own server. Free and open source.">
+    <meta property="og:image" content="https://isputnik.net/Assets/screenshots/theme-minimalist.png">
+    <meta property="og:image:width" content="1440">
+    <meta property="og:image:height" content="900">
+    <meta property="og:image:alt" content="The isputnik.home home page: a quote of the day, photos from this day in earlier years, and the newest stories">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/Assets/brand/isputnik-main-icon.svg" type="image/svg+xml">
+    <link rel="preload" as="image" href="/Assets/brand/sputnik-scene.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/Assets/screenshots/theme-minimalist-1080.webp" imagesrcset="/Assets/screenshots/theme-minimalist-720.webp 720w, /Assets/screenshots/theme-minimalist-1080.webp 1080w, /Assets/screenshots/theme-minimalist-1440.webp 1440w" imagesizes="(min-width: 960px) 640px, calc(100vw - 40px)">
+    <link rel="stylesheet" href="/old/styles.css">
+  </head>
+  <body>
+    <!-- The slim site bar scrolls away; the product bar below the hero is what sticks. -->
+    <header class="site-bar">
+      <a class="brand" href="#" aria-label="isputnik">
+        <img src="/Assets/brand/isputnik-main-icon.svg" alt="" width="30" height="30">
+        <span>isputnik</span>
+      </a>
+      <a class="site-bar-link" href="https://github.com/isputnikdotnet">GitHub</a>
+    </header>
+
+    <main>
+      <!-- ─── Hero ─────────────────────────────────────────────────────────────── -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow eyebrow-light">Beta · Free · Open source</p>
+            <h1 id="hero-title">A home for your family's memories.</h1>
+            <p class="lede">
+              isputnik.home keeps books, photos, videos, stories and family history
+              connected in one place, on your own server.
+            </p>
+          </div>
+          <!-- The product, as the car sits in the launch photo: the Home page on a
+               desktop, and the same page as a phone shows it. -->
+          <div class="hero-devices">
+            <img
+              class="hero-desktop"
+              src="/Assets/screenshots/theme-minimalist-1080.webp"
+              srcset="/Assets/screenshots/theme-minimalist-720.webp 720w, /Assets/screenshots/theme-minimalist-1080.webp 1080w, /Assets/screenshots/theme-minimalist-1440.webp 1440w"
+              sizes="(min-width: 960px) 640px, calc(100vw - 40px)"
+              width="1440" height="900" fetchpriority="high" decoding="async"
+              alt="The isputnik.home home page on a desktop: a quote of the day, photos from this day in earlier years, and the newest stories"
+            >
+            <img
+              class="hero-phone"
+              src="/Assets/screenshots/home-phone-780.webp"
+              srcset="/Assets/screenshots/home-phone-720.webp 720w, /Assets/screenshots/home-phone-780.webp 780w"
+              sizes="(min-width: 960px) 180px, 34vw"
+              width="780" height="1688" decoding="async"
+              alt="The same home page on a phone: continue reading, the quote of the day, and a four-tab bar along the bottom"
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Product bar ──────────────────────────────────────────────────────── -->
+      <nav class="product-bar" aria-label="Page sections">
+        <div class="product-bar-inner">
+          <div class="product-id">
+            <strong>isputnik.home</strong>
+            <span>Free · AGPL-3.0</span>
+          </div>
+          <div class="product-links">
+            <a href="#library">Features</a>
+            <a href="#family">Family</a>
+            <a href="#highlights">Highlights</a>
+            <a href="#appearance">Appearance</a>
+          </div>
+          <div class="product-actions">
+            <a class="button secondary" href="https://github.com/isputnikdotnet/isputnik.home/tree/main/docs/users">Docs</a>
+            <a class="button primary" href="https://github.com/isputnikdotnet/isputnik.home#readme">Install</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ─── Product highlights ───────────────────────────────────────────────── -->
+      <section class="product-highlights" aria-label="At a glance">
+        <ul class="highlight-list">
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <rect x="4" y="4" width="16" height="5" rx="1.5"></rect>
+                <rect x="4" y="10" width="16" height="5" rx="1.5"></rect>
+                <rect x="4" y="16" width="16" height="4" rx="1.5"></rect>
+                <path d="M7 6.5h.01M7 12.5h.01M7 18h.01M10 6.5h7M10 12.5h7M10 18h7"></path>
+              </svg>
+            </span>
+            <div>
+              <p class="highlight-kicker">Your server</p>
+              <h2>Your memories stay with you.</h2>
+              <p>Self-host your books, photos, videos, and family history under your own control.</p>
+            </div>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H7a3 3 0 0 0-3 3Z"></path>
+                <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20"></path>
+                <path d="M8 7h8M8 11h8M8 15h5"></path>
+              </svg>
+            </span>
+            <div>
+              <p class="highlight-kicker">One home</p>
+              <h2>Everything connects.</h2>
+              <p>A photo becomes part of a person's history, and people, places and books part of a story, without copying a thing.</p>
+            </div>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="m10 8 6 4-6 4Z"></path>
+              </svg>
+            </span>
+            <div>
+              <p class="highlight-kicker">Pick up where you left off</p>
+              <h2>Listen. Read. Continue.</h2>
+              <p>Reading and listening progress follows each person, on a desktop, tablet or phone.</p>
+            </div>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M12 3 19 6v5c0 4.5-2.8 8.2-7 10-4.2-1.8-7-5.5-7-10V6Z"></path>
+                <path d="m9 12 2 2 4-5"></path>
+              </svg>
+            </span>
+            <div>
+              <p class="highlight-kicker">Private by design</p>
+              <h2>Made for the people you trust.</h2>
+              <p>Private libraries, granular permissions, and optional multi-factor authentication.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ─── Books & audiobooks ───────────────────────────────────────────────── -->
+      <section class="library-showcase group" id="library" aria-label="Features">
+        <div class="feature-tabs" role="tablist" aria-label="Product features">
+          <button id="feature-audiobooks" type="button" role="tab" aria-selected="true" aria-controls="feature-panel-audiobooks" data-feature="audiobooks"><img src="/Assets/icons/headphones.svg" alt="" width="28" height="28">Audiobooks</button>
+          <button id="feature-ebooks" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-ebooks" tabindex="-1" data-feature="ebooks"><img src="/Assets/icons/book-open.svg" alt="" width="28" height="28">Ebooks</button>
+          <button id="feature-gallery" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-gallery" tabindex="-1" data-feature="gallery"><img src="/Assets/icons/images.svg" alt="" width="28" height="28">Gallery</button>
+          <button id="feature-family" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-family" tabindex="-1" data-feature="family"><img src="/Assets/icons/users-round.svg" alt="" width="28" height="28">Family Tree</button>
+          <button id="feature-stories" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-stories" tabindex="-1" data-feature="stories"><img src="/Assets/icons/notebook-text.svg" alt="" width="28" height="28">Stories</button>
+        </div>
+        <div class="feature-panel" id="feature-panel-audiobooks" role="tabpanel" aria-labelledby="feature-audiobooks">
+          <div class="library-heading">
+            <h2>Your audiobooks, beautifully organized</h2>
+            <p>Listen anywhere. Pick up where you left off. All in one place.</p>
+            <div class="library-controls" aria-label="Screenshot navigation" hidden>
+              <button class="rail-button" type="button" data-rail-prev aria-label="Previous screenshots" title="Previous screenshots" aria-controls="rail-audiobooks" disabled><img src="/Assets/icons/chevron-left.svg" alt="" width="24" height="24"></button>
+              <button class="rail-button" type="button" data-rail-next aria-label="Next screenshots" title="Next screenshots" aria-controls="rail-audiobooks"><img src="/Assets/icons/chevron-right.svg" alt="" width="24" height="24"></button>
+            </div>
+          </div>
+          <div class="library-card-rail" id="rail-audiobooks" tabindex="0" role="region" aria-label="Audiobook screenshots">
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/audiobooks-grid-1080.webp" alt="The Audiobooks page: the left navigation beside a shelf of covers with author, running time and series position under each" width="1080" height="840" loading="lazy"></figure>
+              <h3>Audiobooks</h3><p>Organize by author, series, genre, or custom libraries.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/audiobook-detail-1080.webp" alt="The Hound of the Baskervilles book details and editions" width="1080" height="804" loading="lazy"></figure>
+              <h3>A page per book</h3><p>Each audiobook has its own page with details.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/audio-player-500.webp" alt="Audiobook player with playback, speed, sleep timer, and bookmarks" width="500" height="700" loading="lazy"></figure>
+              <h3>The player</h3><p>Listen with built-in playback controls.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/audiobook-narrators-1080.webp" alt="The Narrators page: every reader in the library with how many books each has recorded" width="1080" height="840" loading="lazy"></figure>
+              <h3>Narrators</h3><p>Every reader is a person you can browse to.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/audiobook-edit-880.webp" alt="The Edit Metadata dialog: title, authors, narrators, category and description, with tabs for tags, publishing, series and cover" width="880" height="660" loading="lazy"></figure>
+              <h3>Fix anything</h3><p>Edit titles, people, series, covers, and tags by hand.</p>
+            </article>
+          </div>
+          <div class="rail-dots" aria-label="Screenshot pages"></div>
+        </div>
+        <div class="feature-panel" id="feature-panel-ebooks" role="tabpanel" aria-labelledby="feature-ebooks">
+          <div class="library-heading">
+            <h2>Your books, always within reach</h2>
+            <p>Your collection and a comfortable reader, together in one place.</p>
+            <div class="library-controls" aria-label="Screenshot navigation" hidden>
+              <button class="rail-button" type="button" data-rail-prev aria-label="Previous screenshots" title="Previous screenshots" aria-controls="rail-ebooks" disabled><img src="/Assets/icons/chevron-left.svg" alt="" width="24" height="24"></button>
+              <button class="rail-button" type="button" data-rail-next aria-label="Next screenshots" title="Next screenshots" aria-controls="rail-ebooks"><img src="/Assets/icons/chevron-right.svg" alt="" width="24" height="24"></button>
+            </div>
+          </div>
+          <div class="library-card-rail" id="rail-ebooks" tabindex="0" role="region" aria-label="Ebook screenshots">
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/ebooks-grid-1080.webp" alt="Ebooks: Your ebook collection on one shelf." width="1080" height="840" loading="lazy"></figure>
+              <h3>Ebooks</h3><p>Your ebook collection on one shelf.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/ebook-authors-1080.webp" alt="Authors: Every author across both shelves, in one list." width="1080" height="840" loading="lazy"></figure>
+              <h3>Authors</h3><p>Every author across both shelves, in one list.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/ebook-reader-1080.webp" alt="The reader: A comfortable reading experience built in." width="1080" height="810" loading="lazy"></figure>
+              <h3>The reader</h3><p>A comfortable reading experience built in.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/quotes-1080.webp" alt="Quotes: Highlight a line while reading and it is kept." width="1080" height="840" loading="lazy"></figure>
+              <h3>Quotes</h3><p>Highlight a line while reading and it is kept.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/book-editions-1080.webp" alt="Editions: Keep formats and translations together." width="1080" height="810" loading="lazy"></figure>
+              <h3>Editions</h3><p>Keep formats and translations together.</p>
+            </article>
+          </div>
+          <div class="rail-dots" aria-label="Screenshot pages"></div>
+        </div>
+        <div class="feature-panel" id="feature-panel-gallery" role="tabpanel" aria-labelledby="feature-gallery">
+          <div class="library-heading">
+            <h2>Your family's photos, brought back to life</h2>
+            <p>Memories, people, places and slideshows, and the voices that remember them.</p>
+            <div class="library-controls" aria-label="Screenshot navigation" hidden>
+              <button class="rail-button" type="button" data-rail-prev aria-label="Previous screenshots" title="Previous screenshots" aria-controls="rail-gallery" disabled><img src="/Assets/icons/chevron-left.svg" alt="" width="24" height="24"></button>
+              <button class="rail-button" type="button" data-rail-next aria-label="Next screenshots" title="Next screenshots" aria-controls="rail-gallery"><img src="/Assets/icons/chevron-right.svg" alt="" width="24" height="24"></button>
+            </div>
+          </div>
+          <div class="library-card-rail" id="rail-gallery" tabindex="0" role="region" aria-label="Gallery screenshots">
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/gallery-grid-1080.webp" alt="Gallery view: Your whole library, at the tile size you like." width="1080" height="840" loading="lazy"></figure>
+              <h3>Gallery view</h3><p>Your whole library, at the tile size you like.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/gallery-memories-1080.webp" alt="Memories: This day in earlier years, brought back on its own." width="1080" height="840" loading="lazy"></figure>
+              <h3>Memories</h3><p>This day in earlier years, brought back on its own.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/gallery-voice-note-1010.webp" alt="A photo of a train in an Alpine valley open in the viewer, with a 42-second voice recording under Recordings playing in a waveform player" width="1010" height="842" loading="lazy"></figure>
+              <h3>Voice notes</h3><p>The story behind a photo, in the voice of the person who remembers it.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/gallery-recording-1060.webp" alt="The New recording dialog over the photo: Say what you remember about this photo, a large Record button, up to five minutes" width="1060" height="883" loading="lazy"></figure>
+              <h3>Record a memory</h3><p>Press record, listen back, then save. Or upload a recording you already have.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/gallery-dictation-1000.webp" alt="The Add a note dialog while dictating: two spoken sentences about Grandma's Sunday dinners already in the note, and the button reading Listening, tap to stop" width="1000" height="834" loading="lazy"></figure>
+              <h3>Dictate a note</h3><p>Speak instead of typing, and each sentence lands in the note as you say it.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/gallery-people-1080.webp" alt="People: Find the familiar faces in your photos." width="1080" height="840" loading="lazy"></figure>
+              <h3>People</h3><p>Find the familiar faces in your photos.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/gallery-album-1080.webp" alt="Albums: Keep the moments that belong together." width="1080" height="840" loading="lazy"></figure>
+              <h3>Albums</h3><p>Keep the moments that belong together.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/gallery-slideshows-1080.webp" alt="Slideshows: Turn a day into a movie, music and all." width="1080" height="840" loading="lazy"></figure>
+              <h3>Slideshows</h3><p>Turn a day into a movie, music and all.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/gallery-map-1080.webp" alt="Map: Everywhere you have been, on one map." width="1080" height="840" loading="lazy"></figure>
+              <h3>Map</h3><p>Everywhere you have been, on one map.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/duplicate-card-1080.webp" alt="Duplicate cleanup: Find the copies and decide what to keep." width="1080" height="840" loading="lazy"></figure>
+              <h3>Duplicate cleanup</h3><p>Find the copies and decide what to keep.</p>
+            </article>
+          </div>
+          <div class="rail-dots" aria-label="Screenshot pages"></div>
+        </div>
+        <div class="feature-panel" id="feature-panel-family" role="tabpanel" aria-labelledby="feature-family">
+          <div class="library-heading">
+            <h2>Your family, connected</h2>
+            <p>Keep your family history close.</p>
+            <div class="library-controls" aria-label="Screenshot navigation" hidden>
+              <button class="rail-button" type="button" data-rail-prev aria-label="Previous screenshots" title="Previous screenshots" aria-controls="rail-family" disabled><img src="/Assets/icons/chevron-left.svg" alt="" width="24" height="24"></button>
+              <button class="rail-button" type="button" data-rail-next aria-label="Next screenshots" title="Next screenshots" aria-controls="rail-family"><img src="/Assets/icons/chevron-right.svg" alt="" width="24" height="24"></button>
+            </div>
+          </div>
+          <div class="library-card-rail" id="rail-family" tabindex="0" role="region" aria-label="Family Tree screenshots">
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/family-tree-1080.webp" alt="Family Tree: See the connections across generations." width="1080" height="840" loading="lazy"></figure>
+              <h3>Family Tree</h3><p>See the connections across generations.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/family-families-1080.webp" alt="Families: The same tree read as households, not a chart." width="1080" height="840" loading="lazy"></figure>
+              <h3>Families</h3><p>The same tree read as households, not a chart.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/family-person-1080.webp" alt="A page for everyone: Bring your family's stories together." width="1080" height="804" loading="lazy"></figure>
+              <h3>A page for everyone</h3><p>Bring your family's stories together.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/family-timeline-1080.webp" alt="A life, in order: Every date you know about someone, on one line." width="1080" height="840" loading="lazy"></figure>
+              <h3>A life, in order</h3><p>Every date you know about someone, on one line.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/family-gedcom-420.webp" alt="GEDCOM in and out: The format Ancestry and FamilySearch already speak." width="420" height="400" loading="lazy"></figure>
+              <h3>GEDCOM in and out</h3><p>The format Ancestry and FamilySearch already speak.</p>
+            </article>
+          </div>
+          <div class="rail-dots" aria-label="Screenshot pages"></div>
+        </div>
+        <div class="feature-panel" id="feature-panel-stories" role="tabpanel" aria-labelledby="feature-stories">
+          <div class="library-heading">
+            <h2>The stories worth keeping</h2>
+            <p>A home for the memories behind the photos.</p>
+            <div class="library-controls" aria-label="Screenshot navigation" hidden>
+              <button class="rail-button" type="button" data-rail-prev aria-label="Previous screenshots" title="Previous screenshots" aria-controls="rail-stories" disabled><img src="/Assets/icons/chevron-left.svg" alt="" width="24" height="24"></button>
+              <button class="rail-button" type="button" data-rail-next aria-label="Next screenshots" title="Next screenshots" aria-controls="rail-stories"><img src="/Assets/icons/chevron-right.svg" alt="" width="24" height="24"></button>
+            </div>
+          </div>
+          <div class="library-card-rail" id="rail-stories" tabindex="0" role="region" aria-label="Story screenshots">
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/story-hero-1016.webp" alt="Stories: Keep your family's stories in your own words." width="1016" height="762" loading="lazy"></figure>
+              <h3>Stories</h3><p>Keep your family's stories in your own words.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/story-edit-1080.webp" alt="The editor: Chapters down the side, blocks down the page." width="1080" height="840" loading="lazy"></figure>
+              <h3>The editor</h3><p>Chapters down the side, blocks down the page.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/story-add-block-760.webp" alt="Add a block: Text, photos, a map, a person, a quote, a book." width="760" height="667" loading="lazy"></figure>
+              <h3>Add a block</h3><p>Text, photos, a map, a person, a quote, a book.</p>
+            </article>
+            <article class="library-card">
+              <figure><img src="/Assets/screenshots/story-map-block-1080.webp" alt="Draw the route: Add stops and the map joins them up." width="1080" height="714" loading="lazy"></figure>
+              <h3>Draw the route</h3><p>Add stops and the map joins them up.</p>
+            </article>
+          </div>
+          <div class="rail-dots" aria-label="Screenshot pages"></div>
+        </div>
+      </section>
+
+      <!-- ─── Family: everyone can help ────────────────────────────────────────── -->
+      <!-- Text only, on purpose: the rail above carries the pictures, and this is
+           the one idea it cannot show, that the rest of the family takes part. -->
+      <section class="group group-alt" id="family" aria-labelledby="g-family">
+        <div class="group-head">
+          <p class="eyebrow">For the whole family</p>
+          <h2 id="g-family">Memories are better when everyone can help.</h2>
+          <p class="group-lede">
+            Send a photo to your parents and ask who is in it. Let a cousin drop off old
+            photos without an account. What they tell you stays with the photos, not in
+            a message thread.
+          </p>
+        </div>
+        <ul class="section-inner family-cards">
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M22 12h-6l-2 3h-4l-2-3H2"></path>
+                <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"></path>
+              </svg>
+            </span>
+            <h3>Photo Inbox</h3>
+            <p>Anyone can drop off photos through a link, no account needed. You decide what to keep.</p>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                <path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"></path>
+                <path d="M12 17h.01"></path>
+              </svg>
+            </span>
+            <h3>Ask what they remember</h3>
+            <p>Send photos to someone and get back names, dates, places, notes and voice recordings.</p>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+              </svg>
+            </span>
+            <h3>For you</h3>
+            <p>One page for what was sent to you, and what is waiting on your answer.</p>
+          </li>
+          <li>
+            <span class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"></path>
+              </svg>
+            </span>
+            <h3>Share with family</h3>
+            <p>Everyone gets their own account and access. Guests get a link that expires.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ─── Highlights: backups, security, offline maps ──────────────────────── -->
+      <!-- One section for the things that matter once the library is real. It took
+           over from the Security section and the closing backups band. Every panel
+           is in the markup, so without the script they simply stack; the script
+           turns the three cards into tabs. -->
+      <section class="group highlights" id="highlights" aria-labelledby="g-highlights">
+        <div class="group-head">
+          <p class="eyebrow">Highlights</p>
+          <h2 id="g-highlights">Built to keep, safe to share.</h2>
+          <p class="group-lede">
+            The parts you only notice once the library is real: getting it all back,
+            letting only the right people in, and maps that don't depend on someone
+            else's server.
+          </p>
+        </div>
+        <div class="section-inner">
+          <div class="highlight-tabs" role="tablist" aria-label="Highlights">
+            <button class="highlight-tab" id="hl-tab-backups" type="button" role="tab" aria-selected="true" aria-controls="hl-backups">
+              <span class="highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+                  <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path>
+                  <path d="M4 11v6c0 1.66 3.58 3 8 3 1 0 1.95-.07 2.83-.2"></path>
+                  <path d="m17 16 2 2 3-3"></path>
+                </svg>
+              </span>
+              <span class="highlight-tab-text"><strong>Backups</strong><small>Three kinds, each on its own schedule</small></span>
+            </button>
+            <button class="highlight-tab" id="hl-tab-security" type="button" role="tab" aria-selected="false" aria-controls="hl-security" tabindex="-1">
+              <span class="highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M12 3 19 6v5c0 4.5-2.8 8.2-7 10-4.2-1.8-7-5.5-7-10V6Z"></path>
+                  <path d="m9 12 2 2 4-5"></path>
+                </svg>
+              </span>
+              <span class="highlight-tab-text"><strong>Security</strong><small>For access beyond home</small></span>
+            </button>
+            <button class="highlight-tab" id="hl-tab-maps" type="button" role="tab" aria-selected="false" aria-controls="hl-maps" tabindex="-1">
+              <span class="highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M9 4 4 6v14l5-2 6 2 5-2V4l-5 2Z"></path>
+                  <path d="M9 4v14M15 6v14"></path>
+                </svg>
+              </span>
+              <span class="highlight-tab-text"><strong>Offline maps</strong><small>Kept on your server, not looked up</small></span>
+            </button>
+          </div>
+
+          <div class="highlight-panel split" id="hl-backups" role="tabpanel" aria-labelledby="hl-tab-backups">
+            <figure class="split-media">
+              <img
+                src="/Assets/screenshots/backup-options-808.webp"
+                srcset="/Assets/screenshots/backup-options-720.webp 720w, /Assets/screenshots/backup-options-808.webp 808w"
+                sizes="(min-width: 960px) 640px, calc(100vw - 40px)"
+                width="808" height="853" loading="lazy" decoding="async"
+                alt="The Backup page: buttons for a full backup, a minimal backup and a quick database copy, and a weekly full backup and a daily minimal one on schedule, and how many of each to keep"
+              >
+            </figure>
+            <div class="split-copy">
+              <h3 class="highlight-title">Everything back, on any machine.</h3>
+              <p class="group-lede">
+                Backups run while the server keeps serving, and each one downloads as a
+                single file you can restore on a fresh install.
+              </p>
+              <ul class="plain-list">
+                <li><h3>Three kinds</h3><p>A full backup carries the database and every cover and preview, so a restore needs no re-render. A minimal one carries only what a rescan could not put back. A quick copy is the database file alone.</p></li>
+                <li><h3>Each on its own clock</h3><p>Full weekly and minimal nightly, say, each keeping its own number of copies. The database is also copied before every upgrade.</p></li>
+                <li><h3>Your files where you put them</h3><p>One SQLite database beside your own folders, and the media in them is never modified. Anything deleted waits in a Recycle Bin.</p></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="highlight-panel split" id="hl-security" role="tabpanel" aria-labelledby="hl-tab-security">
+            <figure class="split-media">
+              <img
+                src="/Assets/screenshots/security-overview-988.webp"
+                srcset="/Assets/screenshots/security-overview-720.webp 720w, /Assets/screenshots/security-overview-988.webp 988w"
+                sizes="(min-width: 960px) 640px, calc(100vw - 40px)"
+                width="988" height="843" loading="lazy" decoding="async"
+                alt="The Security overview: a protection score of 50 out of 100 marked Fair, and a list of policies with each one graded Strong, Medium or Weak"
+              >
+            </figure>
+            <div class="split-copy">
+              <h3 class="highlight-title">Security for access beyond home.</h3>
+              <p class="group-lede">
+                One page scores the whole install out of 100 and grades every policy
+                behind the number. Each row opens the setting that owns it.
+              </p>
+              <ul class="plain-list">
+                <li><h3>Two-factor sign-in</h3><p>An authenticator app or an emailed code, and passkeys for the people who have them. It can be required only from outside the house.</p></li>
+                <li><h3>Lockout and blocking</h3><p>Repeated failures lock the account and, if they keep coming, block the address. Rate limits and a strict Content Security Policy sit underneath.</p></li>
+                <li><h3>Someone is told</h3><p>An email to the admin when a sign-in comes from somewhere new, and a full activity log to check afterwards.</p></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="highlight-panel split" id="hl-maps" role="tabpanel" aria-labelledby="hl-tab-maps">
+            <figure class="split-media">
+              <img
+                src="/Assets/screenshots/maps-offline-1036.webp"
+                srcset="/Assets/screenshots/maps-offline-720.webp 720w, /Assets/screenshots/maps-offline-1036.webp 1036w"
+                sizes="(min-width: 960px) 640px, calc(100vw - 40px)"
+                width="1036" height="829" loading="lazy" decoding="async"
+                alt="The Maps page: Offline maps switched on, using 45.6 MB of a 200 MB limit, and Photo place names built from GeoNames"
+              >
+            </figure>
+            <div class="split-copy">
+              <h3 class="highlight-title">Maps that keep working without the internet.</h3>
+              <p class="group-lede">
+                Photo maps, the family map and story routes share one set of map features.
+                Each is a card with a switch that says what it downloads, and how much room
+                it takes, before it does.
+              </p>
+              <ul class="plain-list">
+                <li><h3>Offline maps</h3><p>The server keeps the maps you've viewed, up to a limit you choose. They draw with the connection down, and the map service no longer sees where you look.</p></li>
+                <li><h3>Place names, built at home</h3><p>Each photo named after the town it was taken in, from a GeoNames database built on your server. No photo's location is sent anywhere.</p></li>
+                <li><h3>Where sign-ins came from</h3><p>Addresses placed on the Dashboard map from a database on the server, never looked up online.</p></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ─── Appearance (the paint picker) ────────────────────────────────────── -->
+      <section class="group group-alt" id="appearance" aria-labelledby="g-appearance">
+        <div class="group-head">
+          <p class="eyebrow">Appearance</p>
+          <h2 id="g-appearance">Make it yours.</h2>
+          <p class="group-lede">Six themes, and each person picks their own.</p>
+        </div>
+        <div class="picker section-inner">
+          <div class="picker-swatches" role="group" aria-label="Choose a theme">
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-system"
+              data-label="System" data-note="Follows the device: Plain Light by day, Plain Dark at night.">
+              <span class="swatch-chip" style="--a: #f3f6fb; --b: #04080c"></span>
+              <span class="swatch-name">System</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-plain-light"
+              data-label="Plain Light" data-note="White, blue accents, nothing in the background.">
+              <span class="swatch-chip" style="--a: #f3f6fb; --b: #2563eb"></span>
+              <span class="swatch-name">Plain Light</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-plain-dark"
+              data-label="Plain Dark" data-note="The same, on near-black.">
+              <span class="swatch-chip" style="--a: #04080c; --b: #45bed2"></span>
+              <span class="swatch-name">Plain Dark</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="true" data-shot="theme-minimalist"
+              data-label="Minimalist" data-note="The default. Platinum grey and black ink, like a certain beige computer.">
+              <span class="swatch-chip" style="--a: #e2e2df; --b: #1d1d1f"></span>
+              <span class="swatch-name">Minimalist</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-light"
+              data-label="iSputnik Light" data-note="Cream paper, brass and teal, a faint orbit behind the page.">
+              <span class="swatch-chip" style="--a: #eef1e7; --b: #3f716a"></span>
+              <span class="swatch-name">iSputnik Light</span>
+            </button>
+            <button type="button" class="swatch" aria-pressed="false" data-shot="theme-dark"
+              data-label="iSputnik Night" data-note="Sputnik over Earth, amber type, the one this page's hero is painted in.">
+              <span class="swatch-chip" style="--a: #020b0e; --b: #d14b2d"></span>
+              <span class="swatch-name">iSputnik Night</span>
+            </button>
+          </div>
+          <p class="picker-selection">Selection: <strong>Minimalist</strong> <span>The default. Platinum grey and black ink, like a certain beige computer.</span></p>
+          <figure class="picker-stage">
+            <img
+              src="/Assets/screenshots/theme-minimalist-1080.webp"
+              srcset="/Assets/screenshots/theme-minimalist-720.webp 720w, /Assets/screenshots/theme-minimalist-1080.webp 1080w, /Assets/screenshots/theme-minimalist-1440.webp 1440w"
+              sizes="(min-width: 1180px) 1120px, calc(100vw - 40px)"
+              width="1440" height="900" loading="lazy" decoding="async"
+              alt="The isputnik.home home page in the Minimalist theme"
+            >
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-inner footer-inner">
+        <a href="https://github.com/isputnikdotnet/isputnik.home">github.com/isputnikdotnet/isputnik.home</a>
+        <a href="https://github.com/isputnikdotnet/isputnik.main">github.com/isputnikdotnet/isputnik.main</a>
+        <span>Open source under the AGPL-3.0.</span>
+      </div>
+    </footer>
+
+    <script>
+      // The feature rail. Every tab's heading and cards are in the markup, so the
+      // page reads whole without this script (the panels stack) and to anything
+      // that reads the HTML; the script shows one panel at a time and drives its
+      // carousel. Carousel stops follow the available width.
+      const showcase = document.querySelector(".library-showcase");
+      const featureTabs = [...showcase.querySelectorAll("[role=tab]")];
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const carousels = new Map();
+      for (const panel of showcase.querySelectorAll("[role=tabpanel]")) {
+        const rail = panel.querySelector(".library-card-rail");
+        const dots = panel.querySelector(".rail-dots");
+        const previous = panel.querySelector("[data-rail-prev]");
+        const next = panel.querySelector("[data-rail-next]");
+        // The arrows are hidden in the markup, where they would do nothing.
+        panel.querySelector(".library-controls").hidden = false;
+        let positions = [0];
+        let page = 0;
+        const sync = () => {
+          page = positions.reduce((best, position, i) =>
+            Math.abs(position - rail.scrollLeft) < Math.abs(positions[best] - rail.scrollLeft) ? i : best, 0);
+          [...dots.children].forEach((dot, i) => dot.setAttribute("aria-current", String(i === page)));
+          previous.disabled = page === 0;
+          next.disabled = page === positions.length - 1;
+        };
+        const go = (index) => {
+          rail.scrollTo({ left: positions[Math.max(0, Math.min(index, positions.length - 1))],
+            behavior: reducedMotion.matches ? "instant" : "smooth" });
+        };
+        const measure = () => {
+          // A hidden panel has no width to measure; it is measured again when
+          // shown, because the resize observer sees it grow.
+          if (panel.hidden || rail.clientWidth === 0) return;
+          const max = Math.max(0, rail.scrollWidth - rail.clientWidth);
+          const step = rail.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).gap);
+          positions = [0];
+          for (let position = step; position < max - 1; position += step) positions.push(position);
+          // The end of the rail is always the last stop, or the final card stays
+          // half off-screen. When it lands close to the last whole step it takes
+          // that step's place rather than adding a dot that moves a sliver.
+          if (max > 1) {
+            if (max - positions[positions.length - 1] > step / 2) positions.push(max);
+            else positions[positions.length - 1] = max;
+          }
+          dots.replaceChildren(...positions.map((_, i) => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.setAttribute("aria-label", "Show screenshot page " + (i + 1));
+            button.addEventListener("click", () => go(i));
+            return button;
+          }));
+          dots.hidden = positions.length === 1;
+          sync();
+        };
+        previous.addEventListener("click", () => go(page - 1));
+        next.addEventListener("click", () => go(page + 1));
+        rail.addEventListener("scroll", sync, { passive: true });
+        rail.addEventListener("keydown", (event) => {
+          if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+          event.preventDefault();
+          go(page + (event.key === "ArrowLeft" ? -1 : 1));
+        });
+        new ResizeObserver(measure).observe(rail);
+        carousels.set(panel.id, { rail, measure });
+      }
+      const selectFeature = (tab, focus = false) => {
+        for (const item of featureTabs) {
+          const selected = item === tab;
+          item.setAttribute("aria-selected", String(selected));
+          item.tabIndex = selected ? 0 : -1;
+          showcase.querySelector("#" + item.getAttribute("aria-controls")).hidden = !selected;
+        }
+        const { rail, measure } = carousels.get(tab.getAttribute("aria-controls"));
+        rail.scrollTo({ left: 0, behavior: "instant" });
+        measure();
+        if (focus) tab.focus();
+        tab.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "instant" });
+      };
+      featureTabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => selectFeature(tab));
+        tab.addEventListener("keydown", (event) => {
+          const keys = { ArrowRight: (i + 1) % featureTabs.length,
+            ArrowLeft: (i + featureTabs.length - 1) % featureTabs.length,
+            Home: 0, End: featureTabs.length - 1 };
+          if (!(event.key in keys)) return;
+          event.preventDefault();
+          selectFeature(featureTabs[keys[event.key]], true);
+        });
+      });
+      // Only the first panel shows once the script runs. Hiding the rest here
+      // rather than in the markup is what keeps them readable without it.
+      for (const item of featureTabs.slice(1)) showcase.querySelector("#" + item.getAttribute("aria-controls")).hidden = true;
+      carousels.get(featureTabs[0].getAttribute("aria-controls")).measure();
+
+      // The theme picker: a swatch swaps the stage image and the caption. Each
+      // swatch names its capture; the three widths follow from that name.
+      const picker = document.querySelector(".picker");
+      if (picker) {
+        const stage = picker.querySelector(".picker-stage img");
+        const label = picker.querySelector(".picker-selection strong");
+        const note = picker.querySelector(".picker-selection span");
+        const file = (shot, w) => `Assets/screenshots/${shot}-${w}.webp`;
+        for (const swatch of picker.querySelectorAll(".swatch")) {
+          swatch.addEventListener("click", () => {
+            for (const s of picker.querySelectorAll(".swatch")) s.setAttribute("aria-pressed", String(s === swatch));
+            const shot = swatch.dataset.shot;
+            stage.srcset = [720, 1080, 1440].map((w) => `${file(shot, w)} ${w}w`).join(", ");
+            stage.src = file(shot, 1080);
+            stage.alt = `The isputnik.home home page in the ${swatch.dataset.label} theme`;
+            label.textContent = swatch.dataset.label;
+            note.textContent = swatch.dataset.note;
+          });
+        }
+      }
+      // Highlights: the three cards are tabs over their panels. Without this
+      // script every panel shows, one under the other.
+      const highlightTabs = [...document.querySelectorAll(".highlight-tab")];
+      const showHighlight = (tab, focus = false) => {
+        for (const item of highlightTabs) {
+          const selected = item === tab;
+          item.setAttribute("aria-selected", String(selected));
+          item.tabIndex = selected ? 0 : -1;
+          document.getElementById(item.getAttribute("aria-controls")).hidden = !selected;
+        }
+        if (focus) tab.focus();
+      };
+      highlightTabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => showHighlight(tab));
+        tab.addEventListener("keydown", (event) => {
+          const keys = { ArrowRight: (i + 1) % highlightTabs.length,
+            ArrowLeft: (i + highlightTabs.length - 1) % highlightTabs.length,
+            Home: 0, End: highlightTabs.length - 1 };
+          if (!(event.key in keys)) return;
+          event.preventDefault();
+          showHighlight(highlightTabs[keys[event.key]], true);
+        });
+      });
+      if (highlightTabs.length) showHighlight(highlightTabs[0]);
+    </script>
+  </body>
+</html>

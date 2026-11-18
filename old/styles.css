@@ -199,7 +199,7 @@ h3 {
   min-height: clamp(650px, 74vh, 820px);
   padding: 96px var(--page-x) 82px;
   color: #f2f2ef;
-  background: #06090d url("Assets/brand/sputnik-scene.webp") center right / cover no-repeat;
+  background: #06090d url("/Assets/brand/sputnik-scene.webp") center right / cover no-repeat;
   isolation: isolate;
   overflow: hidden;
 }

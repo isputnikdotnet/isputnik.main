@@ -12,15 +12,37 @@ This repository is the public-facing index for related isputnik repos:
 
 ## Project layout
 
-- `index.html` - static landing page
-- `styles.css` - landing page styling
+Since 2026-11-17 the site is the Orbit redesign. Its **source** is
+`Documents/landing-proposal/`; the pages at the root are generated from it, so
+edit there, never the generated files.
+
+- `Documents/landing-proposal/index.html` - the landing page (source)
+- `Documents/landing-proposal/apps-data.mjs` - one entry per application; the
+  eight app pages are built from it by `build-app-pages.mjs`
+- `Documents/landing-proposal/*.css`, `*.js` - styling and behaviour
+- `index.html`, `<app>/index.html` (`/audiobooks/`, `/photos/`, `/movies/`, …),
+  `site/` - **generated** by `publish.mjs`, served by GitHub Pages
+- `old/` - the previous landing page, kept for a while (not indexed)
 - `Assets/brand/` - shared brand marks and app icons
 - `Assets/screenshots/` - product screenshots, see below
 - `Documents/architecture.md` - high-level platform architecture notes
 
+## Change the site
+
+```bash
+cd Documents/landing-proposal
+node build-app-pages.mjs   # the eight app pages, from apps-data.mjs
+node publish.mjs           # writes the live pages at the root
+```
+
+`publish.mjs` rewrites paths for the root (`/Assets/…`, `/site/…`, `/photos/`),
+drops the preview's noindex, and stops with a list if anything preview-relative is
+left. The preview itself stays at `/Documents/landing-proposal/`.
+
 ## Open locally
 
-Open `index.html` directly in a browser. No build step is required.
+Serve the repository root with any static server (the pages use root-absolute
+paths), e.g. `npx http-server -p 8090`, and open <http://localhost:8090/>.
 
 ## Screenshots
 
@@ -66,8 +88,9 @@ navigation is half the point: a bare cover grid says "a grid of covers", where
 the app around it says "a library you navigate". Everything else is cropped to
 the thing itself: a dialog, an editions block, the protection score.
 
-The page wears the app's default theme, Minimalist, with its exact colour
-values, and so does every shot of the app, so that a strip of them reads as one
-product rather than a set of unrelated crops. The only exception is the
-Appearance picker, which needs the same page captured once per theme. The rig
-switches the demo account's theme for the shot and switches it back.
+Every shot of the app wears the Orbit theme with the top bar (re-taken
+2026-11-17 against 4.90.0), so that a strip of them reads as one product rather
+than a set of unrelated crops. The only exception is the Appearance picker,
+which needs the same page captured once per theme. The rig switches the demo
+account's theme for the shot and switches it back. The backup shot needs the
+schedules on: `node scripts/backup-schedules.mjs on`, the shot, then `off`.
