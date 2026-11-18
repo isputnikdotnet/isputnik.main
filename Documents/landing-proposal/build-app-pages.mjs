@@ -1,0 +1,178 @@
+// Builds the eight app pages (<slug>.html) from apps-data.mjs — the mockup's stand-in
+// for _data/apps.yml + _layouts/app.html. Run: node build-app-pages.mjs
+import { readdirSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { apps } from './apps-data.mjs';
+
+const here = dirname(fileURLToPath(import.meta.url));
+const SHOTS = '../../Assets/screenshots/';
+const DOCS = 'https://github.com/isputnikdotnet/isputnik.home/blob/main/docs/users/';
+const sizes = {};
+for (const dir of [join(here, '../../Assets/screenshots'), join(here, 'shots')]) {
+  const prefix = dir.endsWith('shots') && !dir.includes('Assets') ? 'shots/' : SHOTS;
+  for (const f of readdirSync(dir)) {
+    const m = f.match(/^(.+)-(\d+)\.webp$/);
+    if (m) (sizes[prefix + m[1]] ??= []).push(Number(m[2]));
+  }
+}
+function shotFiles(name) {
+  const base = name.startsWith('shots/') ? name : SHOTS + name;
+  const list = (sizes[base] ?? []).sort((a, b) => a - b);
+  if (!list.length) return null;
+  const thumb = list.find(w => w >= 700) ?? list[list.length - 1];
+  return { thumb: `${base}-${thumb}.webp`, full: `${base}-${list[list.length - 1]}.webp`, width: list[list.length - 1] };
+}
+
+const dot = c => `<span class="app-dot" style="--c:${c}"></span>`;
+const href = slug => `${slug}.html`;
+const bySlug = Object.fromEntries(apps.map(a => [a.slug, a]));
+
+function hero(app) {
+  const f = app.hero && shotFiles(app.hero.name);
+  const shot = f
+    ? `<figure class="app-hero-shot"><img src="${f.full}" width="1440" height="900" alt="${app.hero.alt}" fetchpriority="high"></figure>`
+    : `<figure class="app-hero-shot is-missing" aria-label="Screenshot to come"><div><strong>${app.hero?.alt ?? app.name}</strong><span>Screenshot to come</span></div></figure>`;
+  return `    <section class="app-hero wrap" aria-labelledby="app-title">
+      <div class="app-hero-copy">
+        <p class="eyebrow">${dot('var(--app)')}${app.eyebrow}</p>
+        <h1 id="app-title">${app.title[0]}<br><span>${app.title[1]}</span></h1>
+        <p class="intro">${app.intro}</p>
+        <div class="actions"><a class="button" href="${app.get.href}">${app.get.label} <span aria-hidden="true">${app.get.icon ?? '↗'}</span></a><a class="text-link" href="#what">See what it does <span aria-hidden="true">↓</span></a></div>
+        <ul class="promise-line" aria-label="Our promises"><li>No cloud needed</li><li>No ads</li><li>No hidden costs</li><li>No tracking</li></ul>
+      </div>
+      ${shot}
+    </section>`;
+}
+
+function shots(app) {
+  const items = app.shots.map(([name, label, alt]) => {
+    const f = shotFiles(name);
+    if (!f) return `        <div class="shot shot-missing"><div class="shot-ph" role="img" aria-label="${alt} — screenshot to come"><span>Screenshot to come</span></div><span>${label}</span></div>`;
+    return `        <button type="button" class="shot" data-full="${f.full}"><img src="${f.thumb}" alt="${alt}" loading="lazy"><span>${label}</span></button>`;
+  }).join('\n');
+  const real = app.shots.some(([n]) => shotFiles(n));
+  return `    <section class="app-shots wrap" aria-labelledby="shots-title">
+      <div class="news-head"><div><p class="eyebrow">SCREENSHOTS</p><h2 id="shots-title">A look inside.</h2></div><span class="preview-tag">${real ? app.shotsTag ?? 'Actual app screenshots · demo library' : 'Captures planned for the Orbit re-take'}</span></div>
+      <div class="shot-strip">
+${items}
+      </div>
+    </section>`;
+}
+
+function page(app, i) {
+  const prev = apps[(i + apps.length - 1) % apps.length];
+  const next = apps[(i + 1) % apps.length];
+  const menu = apps.map(a => `          <li><a href="${href(a.slug)}"${a === app ? ' aria-current="page"' : ''}>${dot(a.color)}${a.name}</a></li>`).join('\n');
+  const groups = app.what.groups.map(g => `        <article>
+          <h3>${g.title}</h3>
+          <p>${g.text}</p>
+          <ul>
+${g.items.map(x => `            <li>${x}</li>`).join('\n')}
+          </ul>
+        </article>`).join('\n');
+  const privacy = app.private.items.map(([h, p]) => `          <article><h3>${h}</h3><p>${p}</p></article>`).join('\n');
+  const withCards = app.with.items.map(([slug, text]) => `        <a href="${href(slug)}">${dot(bySlug[slug].color)}<strong>${bySlug[slug].name}</strong><span>${text}</span></a>`).join('\n');
+  const needs = app.needs.items.map(([dt, dd, tag]) => `        <div><dt>${dt}${tag ? ` <span class="addon-tag">${tag}</span>` : ''}</dt><dd>${dd}</dd></div>`).join('\n');
+  const faq = app.faq.items.map(([q, a], n) => `        <details${n === 0 ? ' open' : ''}><summary>${q}</summary><p>${a}</p></details>`).join('\n');
+  const more = app.faq.guides.map(([label, file]) => `<a href="${file.startsWith('http') ? file : DOCS + file}">${label}</a>`);
+  const moreText = more.length === 1 ? more[0] : `${more.slice(0, -1).join(', ')} and ${more[more.length - 1]}`;
+
+  return `<!doctype html>
+<!-- Generated by build-app-pages.mjs from apps-data.mjs — edit those, not this file. -->
+<html lang="en" data-theme="orbit">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>${app.name} — iSputnik | Design proposal</title>
+  <meta name="description" content="${app.description}">
+  <link rel="icon" href="../../Assets/brand/isputnik-main-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="proposal.css">
+  <link rel="stylesheet" href="orbit.css">
+  <link rel="stylesheet" href="app-page.css">
+</head>
+<body class="app-page" style="--app:${app.color}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header wrap">
+    <a class="brand" href="index.html" aria-label="iSputnik home"><img src="../../Assets/brand/isputnik-main-icon.svg" width="32" height="32" alt=""><span>iSputnik<span class="brand-dot">.</span></span></a>
+    <nav aria-label="Main navigation">
+      <details class="apps-menu">
+        <summary>Apps</summary>
+        <ul>
+${menu}
+        </ul>
+      </details>
+      <a href="https://github.com/isputnikdotnet/isputnik.home/tree/main/docs/users">Docs</a>
+      <a href="index.html#download">Download</a>
+      <a href="index.html#support">Support</a>
+      <a href="index.html#news">News</a>
+      <a href="https://github.com/isputnikdotnet">GitHub <span aria-hidden="true">↗</span></a>
+      <a class="button small" href="index.html#download">Get started <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+${hero(app)}
+
+    <section class="app-what wrap" id="what" aria-labelledby="what-title">
+      <div class="news-head"><div><p class="eyebrow">WHAT IT DOES</p><h2 id="what-title">${app.what.title}</h2></div></div>
+      <div class="what-grid">
+${groups}
+      </div>
+    </section>
+
+${shots(app)}
+
+    <section class="app-private" aria-labelledby="private-title">
+      <div class="wrap">
+        <div class="news-head"><div><p class="eyebrow">PRIVATE HERE, SPECIFICALLY</p><h2 id="private-title">${app.private.title}</h2><p class="roadmap-intro">${app.private.intro ?? `The general promises hold everywhere. These are the ones that matter most for ${app.short}.`}</p></div></div>
+        <div class="private-list">
+${privacy}
+        </div>
+      </div>
+    </section>
+
+    <section class="app-with wrap" aria-labelledby="with-title">
+      <div class="news-head"><div><p class="eyebrow">WORKS WITH</p><h2 id="with-title">${app.with.title}</h2></div></div>
+      <div class="with-grid" style="--n:${Math.max(app.with.items.length, 2)}">
+${withCards}
+      </div>
+    </section>
+
+    <section class="app-needs wrap" aria-labelledby="needs-title">
+      <div>
+        <p class="eyebrow">WHAT YOU NEED</p>
+        <h2 id="needs-title">${app.needs.title}</h2>
+      </div>
+      <dl class="needs-list">
+${needs}
+      </dl>
+    </section>
+
+    <section class="faq wrap" aria-labelledby="app-faq-title">
+      <div class="faq-head"><p class="eyebrow">QUESTIONS</p><h2 id="app-faq-title">About ${app.short}.</h2><p>More in ${moreText}.</p></div>
+      <div class="faq-list">
+${faq}
+      </div>
+    </section>
+
+    <nav class="app-pager wrap" aria-label="Other applications">
+      <a href="${href(prev.slug)}" class="prev"><span>Previous</span><strong>← ${prev.name}</strong></a>
+      <a href="${app.get.href}" class="button">${app.get.label} <span aria-hidden="true">${app.get.icon ?? '↗'}</span></a>
+      <a href="${href(next.slug)}" class="next"><span>Next</span><strong>${next.name} →</strong></a>
+    </nav>
+  </main>
+
+  <footer class="footer wrap"><a class="brand" href="index.html"><img src="../../Assets/brand/isputnik-main-icon.svg" alt="" width="24" height="24"><span>iSputnik.</span></a><span>Your digital library. At home. All yours.</span><a href="https://github.com/isputnikdotnet/isputnik.home">Open source · AGPL-3.0 <span aria-hidden="true">↗</span></a></footer>
+  <dialog id="screenshot-dialog" aria-label="Enlarged screenshot"><button type="button" id="close-dialog" aria-label="Close screenshot">Close ×</button><img id="expanded-image" alt=""></dialog>
+  <script src="app-page.js"></script>
+</body>
+</html>
+`;
+}
+
+apps.forEach((app, i) => {
+  writeFileSync(join(here, href(app.slug)), page(app, i));
+  console.log('wrote', href(app.slug));
+});
